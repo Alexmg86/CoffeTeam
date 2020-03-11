@@ -1,24 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Display-Light.otf">
+            <string>SFProDisplay-Light</string>
+        </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="Jnk-qR-FCL">
+            <objects>
+                <pageViewController storyboardIdentifier="WPViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="MvY-zt-GzH" customClass="WPViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q6X-ch-mv9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1635" y="139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="o7L-g4-M6G">
+            <objects>
+                <viewController storyboardIdentifier="WCViewController" id="tav-2H-v3N" customClass="WCViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dz2-9g-Jlk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cbw-vo-xdt">
+                                <rect key="frame" x="59.5" y="130" width="295" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="IOK-3r-jju"/>
+                                    <constraint firstAttribute="width" constant="295" id="x3F-6c-ViP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wN-BJ-SFH">
+                                <rect key="frame" x="20" y="400" width="374" height="27"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHF-OM-Ayi">
+                                <rect key="frame" x="20" y="442" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EhP-Re-qxO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="QfA-cf-7GB">
+                                <rect key="frame" x="20" y="507" width="374" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbE-p3-eWE">
+                                <rect key="frame" x="77" y="559" width="260" height="60"/>
+                                <color key="backgroundColor" red="0.34509803921568627" green="0.58823529411764708" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aBE-zI-ThQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="fLK-nU-OgD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="14"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Создать аккаунт">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pO0-M9-0Fr">
+                                <rect key="frame" x="77" y="634" width="260" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="Wzc-WE-3q2"/>
+                                    <constraint firstAttribute="height" constant="60" id="kCp-me-m9w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="14"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Войти">
+                                    <color key="titleColor" red="0.6470588235294118" green="0.65098039215686276" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YTx-al-qfJ" firstAttribute="trailing" secondItem="dHF-OM-Ayi" secondAttribute="trailing" constant="20" id="D05-Ix-XfF"/>
+                            <constraint firstItem="pO0-M9-0Fr" firstAttribute="centerX" secondItem="Dz2-9g-Jlk" secondAttribute="centerX" id="K9O-kO-I2a"/>
+                            <constraint firstItem="pO0-M9-0Fr" firstAttribute="top" secondItem="lbE-p3-eWE" secondAttribute="bottom" constant="15" id="LKK-CK-9sj"/>
+                            <constraint firstItem="dHF-OM-Ayi" firstAttribute="top" secondItem="1wN-BJ-SFH" secondAttribute="bottom" constant="15" id="MWm-IT-gqy"/>
+                            <constraint firstItem="Cbw-vo-xdt" firstAttribute="centerX" secondItem="Dz2-9g-Jlk" secondAttribute="centerX" id="NER-cV-A4P"/>
+                            <constraint firstItem="lbE-p3-eWE" firstAttribute="top" secondItem="QfA-cf-7GB" secondAttribute="bottom" constant="15" id="UDr-Nh-H6q"/>
+                            <constraint firstItem="YTx-al-qfJ" firstAttribute="trailing" secondItem="1wN-BJ-SFH" secondAttribute="trailing" constant="20" id="UJv-gO-St1"/>
+                            <constraint firstItem="QfA-cf-7GB" firstAttribute="leading" secondItem="YTx-al-qfJ" secondAttribute="leading" constant="20" id="XPp-Vs-2lK"/>
+                            <constraint firstItem="1wN-BJ-SFH" firstAttribute="top" secondItem="Cbw-vo-xdt" secondAttribute="bottom" constant="40" id="cNg-wF-iug"/>
+                            <constraint firstItem="YTx-al-qfJ" firstAttribute="trailing" secondItem="QfA-cf-7GB" secondAttribute="trailing" constant="20" id="eoK-6q-L1q"/>
+                            <constraint firstItem="1wN-BJ-SFH" firstAttribute="leading" secondItem="YTx-al-qfJ" secondAttribute="leading" constant="20" id="fRQ-Zr-dIw"/>
+                            <constraint firstItem="QfA-cf-7GB" firstAttribute="top" secondItem="dHF-OM-Ayi" secondAttribute="bottom" constant="15" id="gsi-UJ-tvE"/>
+                            <constraint firstItem="lbE-p3-eWE" firstAttribute="centerX" secondItem="Dz2-9g-Jlk" secondAttribute="centerX" id="ieC-zv-X4i"/>
+                            <constraint firstItem="Cbw-vo-xdt" firstAttribute="top" secondItem="YTx-al-qfJ" secondAttribute="top" constant="86" id="ni6-8N-58K"/>
+                            <constraint firstItem="dHF-OM-Ayi" firstAttribute="leading" secondItem="YTx-al-qfJ" secondAttribute="leading" constant="20" id="q3U-lw-1X1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YTx-al-qfJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="createAccount" destination="lbE-p3-eWE" id="rQD-ST-xnd"/>
+                        <outlet property="enterAccountBtn" destination="pO0-M9-0Fr" id="wCM-dM-zwp"/>
+                        <outlet property="imageView" destination="Cbw-vo-xdt" id="ICd-c7-fYf"/>
+                        <outlet property="mainTitle" destination="1wN-BJ-SFH" id="zxH-8k-zaB"/>
+                        <outlet property="pageControl" destination="QfA-cf-7GB" id="TDt-5e-NkP"/>
+                        <outlet property="subTitle" destination="dHF-OM-Ayi" id="qoE-sO-gh9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CjE-V2-egh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-920.28985507246387" y="138.61607142857142"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133" y="139"/>
         </scene>
     </scenes>
 </document>

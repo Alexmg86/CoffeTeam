@@ -9,22 +9,29 @@
 import UIKit
 
 class WPViewController: UIPageViewController {
+    
+    let wImageViewList = ["welcome_1", "welcome_2", "welcome_3"]
+    let wMainTitleList = ["Все дело в зёрнах!", "Создайте команду", "Уведомляйте коллег"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let wScreen = showViewControllerAtIndex(0) {
+            setViewControllers([wScreen], direction: .forward, animated: true, completion: nil)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func showViewControllerAtIndex(_ index: Int) -> WCViewController? {
+        guard index >= 0 else { return nil }
+        guard index < wMainTitleList.count else { return nil }
+        guard let wScreen = storyboard?.instantiateViewController(withIdentifier: "WCViewController") as? WCViewController else { return nil }
+        
+        wScreen.wImageView = wImageViewList[index]
+        wScreen.wMainTitle = wMainTitleList[index]
+        wScreen.currentPage = index
+        wScreen.numberOfPages = wMainTitleList.count
+        
+        return wScreen
     }
-    */
 
 }

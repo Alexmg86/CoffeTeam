@@ -17,21 +17,19 @@ class WCViewController: UIViewController {
     @IBOutlet weak var createAccount: UIButton!
     @IBOutlet weak var enterAccountBtn: UIButton!
     
+    var wImageView = ""
+    var wMainTitle = ""
+    var currentPage = 0
+    var numberOfPages = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        imageView.image = UIImage(named: wImageView)
+        mainTitle.text = wMainTitle
+        pageControl.currentPage = currentPage
+        pageControl.numberOfPages = numberOfPages
+        createAccount.layer.cornerRadius = 10
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

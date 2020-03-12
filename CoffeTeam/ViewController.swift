@@ -10,11 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        starPresentation()
     }
 
-
+    func starPresentation() {
+        if let pScreen = storyboard?.instantiateViewController(identifier: "WPViewController") as? WPViewController {
+            pScreen.modalPresentationStyle = .fullScreen
+            present(pScreen, animated: true, completion: nil)
+        }
+    }
+        
 }
 

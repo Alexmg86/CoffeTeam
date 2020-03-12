@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let userDefaults = UserDefaults.standard
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -16,10 +18,14 @@ class ViewController: UIViewController {
     }
 
     func starPresentation() {
-        if let pScreen = storyboard?.instantiateViewController(identifier: "WPViewController") as? WPViewController {
-            pScreen.modalPresentationStyle = .fullScreen
-            present(pScreen, animated: true, completion: nil)
+        let isShowed = userDefaults.bool(forKey: "presentationShowed")
+        if isShowed == false {
+            if let pScreen = storyboard?.instantiateViewController(identifier: "WPViewController") as? WPViewController {
+                pScreen.modalPresentationStyle = .fullScreen
+                present(pScreen, animated: true, completion: nil)
+            }
         }
+//        userDefaults.set(false, forKey: "presentationShowed")
     }
         
 }

@@ -19,6 +19,7 @@ class WCViewController: UIViewController {
     
     var wImageView = ""
     var wMainTitle = ""
+    var wSubTitle = ""
     var currentPage = 0
     var numberOfPages = 0
     
@@ -27,8 +28,9 @@ class WCViewController: UIViewController {
 
         imageView.image = UIImage(named: wImageView)
         mainTitle.text = wMainTitle
-        pageControl.currentPage = currentPage
+        subTitle.text = wSubTitle
         pageControl.numberOfPages = numberOfPages
+        pageControl.currentPage = currentPage
         createAccount.layer.cornerRadius = 10
     }
     

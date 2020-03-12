@@ -21,7 +21,7 @@
         <!--View Controller-->
         <scene sceneID="Jnk-qR-FCL">
             <objects>
-                <pageViewController storyboardIdentifier="WPViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="MvY-zt-GzH" customClass="WPViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="WPViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="MvY-zt-GzH" customClass="WPViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6X-ch-mv9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1635" y="139"/>
@@ -29,7 +29,7 @@
         <!--View Controller-->
         <scene sceneID="o7L-g4-M6G">
             <objects>
-                <viewController storyboardIdentifier="WCViewController" id="tav-2H-v3N" customClass="WCViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WCViewController" modalTransitionStyle="flipHorizontal" id="tav-2H-v3N" customClass="WCViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dz2-9g-Jlk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,13 +42,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wN-BJ-SFH">
-                                <rect key="frame" x="20" y="400" width="374" height="27"/>
+                                <rect key="frame" x="20" y="400" width="374" height="26"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHF-OM-Ayi">
-                                <rect key="frame" x="20" y="442" width="374" height="50"/>
+                                <rect key="frame" x="20" y="441" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EhP-Re-qxO"/>
                                 </constraints>
@@ -57,12 +57,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="QfA-cf-7GB">
-                                <rect key="frame" x="20" y="507" width="374" height="37"/>
+                                <rect key="frame" x="20" y="506" width="374" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbE-p3-eWE">
-                                <rect key="frame" x="77" y="559" width="260" height="60"/>
+                                <rect key="frame" x="77" y="558" width="260" height="60"/>
                                 <color key="backgroundColor" red="0.34509803921568627" green="0.58823529411764708" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="aBE-zI-ThQ"/>
@@ -75,7 +75,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pO0-M9-0Fr">
-                                <rect key="frame" x="77" y="634" width="260" height="60"/>
+                                <rect key="frame" x="77" y="633" width="260" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="Wzc-WE-3q2"/>
                                     <constraint firstAttribute="height" constant="60" id="kCp-me-m9w"/>

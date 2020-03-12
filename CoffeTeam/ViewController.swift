@@ -25,7 +25,7 @@ class ViewController: UIViewController {
                 present(pScreen, animated: true, completion: nil)
             }
         }
-//        userDefaults.set(false, forKey: "presentationShowed")
+        userDefaults.set(false, forKey: "presentationShowed")
     }
         
 }

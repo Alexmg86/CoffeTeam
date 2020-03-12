@@ -32,6 +32,18 @@ class WCViewController: UIViewController {
         pageControl.numberOfPages = numberOfPages
         pageControl.currentPage = currentPage
         createAccount.layer.cornerRadius = 10
+        
+        if currentPage == 2 {
+            createAccount.setTitle("Начать", for: .normal)
+            enterAccountBtn.isHidden = true
+        }
     }
     
+    @IBAction func closePresentation(_ sender: UIButton) {
+        if currentPage == 2 {
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(true, forKey: "presentationShowed")
+            dismiss(animated: true, completion: nil)
+        }
+    }
 }

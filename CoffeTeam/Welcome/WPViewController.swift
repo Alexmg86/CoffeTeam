@@ -31,13 +31,9 @@ class WPViewController: UIPageViewController {
     func showViewControllerAtIndex(_ index: Int) -> WCViewController? {
         guard index >= 0 else { return nil }
         guard index < wMainTitleList.count else {
-//            let userDefaults = UserDefaults.standard
-//            userDefaults.set(true, forKey: "presentationShowed")
-            dismiss(animated: true, completion: nil)
             return nil
         }
         guard let wScreen = storyboard?.instantiateViewController(withIdentifier: "WCViewController") as? WCViewController else { return nil }
-        
         wScreen.wImageView = wImageViewList[index]
         wScreen.wMainTitle = wMainTitleList[index]
         wScreen.wSubTitle = wSubTitleList[index]

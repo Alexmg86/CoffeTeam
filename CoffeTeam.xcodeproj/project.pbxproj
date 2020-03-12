@@ -15,9 +15,12 @@
 		2D025F632417D1F9007287FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F612417D1F9007287FC /* LaunchScreen.storyboard */; };
 		2D93DC2624192436008E7972 /* WPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC2524192436008E7972 /* WPViewController.swift */; };
 		2D93DC28241924A9008E7972 /* WCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC27241924A9008E7972 /* WCViewController.swift */; };
+		2DF648BE241A4DB000EABEC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */; };
+		43326B7EA6810C94DDD07007 /* Pods_CoffeTeam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C80FA4EF083C687C8036ADD /* Pods_CoffeTeam.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		288CEF4C9457517F6DF7966E /* Pods-CoffeTeam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeTeam.debug.xcconfig"; path = "Target Support Files/Pods-CoffeTeam/Pods-CoffeTeam.debug.xcconfig"; sourceTree = "<group>"; };
 		2D025F532417D1F7007287FC /* CoffeTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D025F562417D1F7007287FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D025F582417D1F7007287FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,9 @@
 		2D025F642417D1F9007287FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D93DC2524192436008E7972 /* WPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPViewController.swift; sourceTree = "<group>"; };
 		2D93DC27241924A9008E7972 /* WCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCViewController.swift; sourceTree = "<group>"; };
+		2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5C80FA4EF083C687C8036ADD /* Pods_CoffeTeam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeTeam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECA385701A486BE81300D654 /* Pods-CoffeTeam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeTeam.release.xcconfig"; path = "Target Support Files/Pods-CoffeTeam/Pods-CoffeTeam.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43326B7EA6810C94DDD07007 /* Pods_CoffeTeam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +53,8 @@
 			children = (
 				2D025F552417D1F7007287FC /* CoffeTeam */,
 				2D025F542417D1F7007287FC /* Products */,
+				449A6F010FEC1235659C9935 /* Pods */,
+				4689B3128D0871DBA9D7FF6A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +69,7 @@
 		2D025F552417D1F7007287FC /* CoffeTeam */ = {
 			isa = PBXGroup;
 			children = (
+				2D2164C0241A467B00576697 /* Controller */,
 				2D93DC24241923EF008E7972 /* Welcome */,
 				2D025F562417D1F7007287FC /* AppDelegate.swift */,
 				2D025F582417D1F7007287FC /* SceneDelegate.swift */,
@@ -68,8 +78,16 @@
 				2D025F5F2417D1F9007287FC /* Assets.xcassets */,
 				2D025F612417D1F9007287FC /* LaunchScreen.storyboard */,
 				2D025F642417D1F9007287FC /* Info.plist */,
+				2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */,
 			);
 			path = CoffeTeam;
+			sourceTree = "<group>";
+		};
+		2D2164C0241A467B00576697 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		2D93DC24241923EF008E7972 /* Welcome */ = {
@@ -81,6 +99,24 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		449A6F010FEC1235659C9935 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				288CEF4C9457517F6DF7966E /* Pods-CoffeTeam.debug.xcconfig */,
+				ECA385701A486BE81300D654 /* Pods-CoffeTeam.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4689B3128D0871DBA9D7FF6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C80FA4EF083C687C8036ADD /* Pods_CoffeTeam.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,9 +124,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D025F672417D1F9007287FC /* Build configuration list for PBXNativeTarget "CoffeTeam" */;
 			buildPhases = (
+				2DE4DEFC0D93EA49B0C585A1 /* [CP] Check Pods Manifest.lock */,
 				2D025F4F2417D1F7007287FC /* Sources */,
 				2D025F502417D1F7007287FC /* Frameworks */,
 				2D025F512417D1F7007287FC /* Resources */,
+				50685984C2ED82D9D75C3F67 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,12 +178,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D025F632417D1F9007287FC /* LaunchScreen.storyboard in Resources */,
+				2DF648BE241A4DB000EABEC4 /* GoogleService-Info.plist in Resources */,
 				2D025F602417D1F9007287FC /* Assets.xcassets in Resources */,
 				2D025F5E2417D1F7007287FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DE4DEFC0D93EA49B0C585A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoffeTeam-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50685984C2ED82D9D75C3F67 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoffeTeam/Pods-CoffeTeam-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoffeTeam/Pods-CoffeTeam-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoffeTeam/Pods-CoffeTeam-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2D025F4F2417D1F7007287FC /* Sources */ = {
@@ -298,6 +379,7 @@
 		};
 		2D025F682417D1F9007287FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 288CEF4C9457517F6DF7966E /* Pods-CoffeTeam.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -316,6 +398,7 @@
 		};
 		2D025F692417D1F9007287FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECA385701A486BE81300D654 /* Pods-CoffeTeam.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

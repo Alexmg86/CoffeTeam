@@ -26,6 +26,7 @@ class ViewController: UIViewController {
             }
         }
         userDefaults.set(false, forKey: "presentationShowed")
+        
     }
         
 }

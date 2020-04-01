@@ -8,17 +8,20 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: CustomInputField!
+    @IBOutlet weak var passwordTextField: CustomInputField!
+    @IBOutlet weak var nameTextField: CustomInputField!
+    @IBOutlet weak var createAccount: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         view.addGestureRecognizer(tap)
         self.addObserves()
+        createAccount.layer.cornerRadius = 10
     }
     
     @objc func didTapView() {
@@ -48,3 +51,4 @@ class RegistrationViewController: UIViewController {
         
     }
 }
+

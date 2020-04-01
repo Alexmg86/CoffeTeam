@@ -15,6 +15,7 @@
 		2D025F632417D1F9007287FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F612417D1F9007287FC /* LaunchScreen.storyboard */; };
 		2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FC99824234D14004C5A9E /* RegistrationViewController.swift */; };
 		2D84C03F2433593B007ED54D /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C03E2433593B007ED54D /* CustomInputField.swift */; };
+		2D84C0412434BC1F007ED54D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C0402434BC1E007ED54D /* LoginViewController.swift */; };
 		2D93DC2624192436008E7972 /* WPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC2524192436008E7972 /* WPViewController.swift */; };
 		2D93DC28241924A9008E7972 /* WCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC27241924A9008E7972 /* WCViewController.swift */; };
 		2DF648BE241A4DB000EABEC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */; };
@@ -33,6 +34,7 @@
 		2D025F642417D1F9007287FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D7FC99824234D14004C5A9E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2D84C03E2433593B007ED54D /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
+		2D84C0402434BC1E007ED54D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2D93DC2524192436008E7972 /* WPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPViewController.swift; sourceTree = "<group>"; };
 		2D93DC27241924A9008E7972 /* WCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCViewController.swift; sourceTree = "<group>"; };
 		2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				2D7FC99824234D14004C5A9E /* RegistrationViewController.swift */,
+				2D84C0402434BC1E007ED54D /* LoginViewController.swift */,
 				2D84C03E2433593B007ED54D /* CustomInputField.swift */,
 			);
 			path = Auth;
@@ -250,6 +253,7 @@
 				2D025F5B2417D1F7007287FC /* ViewController.swift in Sources */,
 				2D025F572417D1F7007287FC /* AppDelegate.swift in Sources */,
 				2D025F592417D1F7007287FC /* SceneDelegate.swift in Sources */,
+				2D84C0412434BC1F007ED54D /* LoginViewController.swift in Sources */,
 				2D84C03F2433593B007ED54D /* CustomInputField.swift in Sources */,
 				2D93DC2624192436008E7972 /* WPViewController.swift in Sources */,
 				2D93DC28241924A9008E7972 /* WCViewController.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
@@ -48,7 +49,16 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func registerTapped(_ sender: UIButton) {
-        
+        guard let email = emailTextField.text, let password = passwordTextField.text, let nickname = nameTextField.text,
+            email != "", password != "", nickname != "" else { return }
+        print("Все есть")
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            guard let user = authResult?.user, error == nil else {
+                print(error!)
+                return }
+            print(user)
+            print("\(user.email!) created")
+        }
     }
 }
 

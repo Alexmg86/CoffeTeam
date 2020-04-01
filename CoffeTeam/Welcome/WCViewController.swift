@@ -14,7 +14,7 @@ class WCViewController: UIViewController {
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var subTitle: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var createAccount: UIButton!
+    @IBOutlet weak var createAccount: CustomButton!
     @IBOutlet weak var enterAccountBtn: UIButton!
     
     var wImageView = ""
@@ -31,7 +31,6 @@ class WCViewController: UIViewController {
         subTitle.text = wSubTitle
         pageControl.numberOfPages = numberOfPages
         pageControl.currentPage = currentPage
-        createAccount.layer.cornerRadius = 10
         
         if currentPage == 2 {
             createAccount.setTitle("Начать", for: .normal)

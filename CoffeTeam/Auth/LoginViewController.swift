@@ -8,17 +8,15 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: KeyboadController {
 
     @IBOutlet weak var emailTextField: CustomInputField!
     @IBOutlet weak var passwordTextField: CustomInputField!
-    @IBOutlet weak var loginAccount: UIButton!
-    @IBOutlet weak var createAccount: UIButton!
+    @IBOutlet weak var loginAccount: CustomButton!
+    @IBOutlet weak var createAccount: CustomButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func loginTapper(_ sender: UIButton) {

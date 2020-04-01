@@ -50,7 +50,7 @@
                                 <color key="pageIndicatorTintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbE-p3-eWE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbE-p3-eWE" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
                                 <rect key="frame" x="77" y="558.5" width="260" height="60"/>
                                 <color key="backgroundColor" red="0.34509803921568627" green="0.58823529411764708" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -218,7 +218,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Mgm-uV-WJc" secondAttribute="trailing" id="cXn-D2-2l9"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWS-eJ-kNH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWS-eJ-kNH" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
                                         <rect key="frame" x="57" y="511" width="260" height="60"/>
                                         <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -349,7 +349,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cOk-I3-XNE">
                                         <rect key="frame" x="49" y="413.5" width="276" height="241"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21P-sf-zFa">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21P-sf-zFa" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="98" width="260" height="60"/>
                                                 <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -448,6 +448,6 @@
         <image name="open" width="70" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a1X-Uv-PZx"/>
+        <segue reference="ez1-6a-RkT"/>
     </inferredMetricsTieBreakers>
 </document>

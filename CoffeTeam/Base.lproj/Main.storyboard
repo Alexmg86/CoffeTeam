@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NbO-HB-Hio">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UFg-eb-gGS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -115,6 +115,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CjE-V2-egh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-920.28985507246387" y="138.61607142857142"/>
+        </scene>
+        <!--Лавка-->
+        <scene sceneID="Kdc-5A-gnh">
+            <objects>
+                <viewController id="7w2-Eo-h2T" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qTc-hq-MtS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="P0B-Wr-QoP"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Лавка" image="square.grid.2x2" catalog="system" id="muM-B2-ki8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EyY-EY-lZ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-152" y="1029"/>
+        </scene>
+        <!--Группы-->
+        <scene sceneID="T6k-Oj-ZhW">
+            <objects>
+                <viewController id="gcO-zZ-j7x" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L1s-Z0-FhU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aYh-Xi-CwH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Группы" image="person.2.fill" catalog="system" id="YaS-r8-e8c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6V-8M-2m5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672" y="1029"/>
+        </scene>
+        <!--Профиль-->
+        <scene sceneID="UtP-La-CRb">
+            <objects>
+                <viewController id="Ce8-Ab-nxA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sQD-HK-cgY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="IEa-VQ-WAh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="person.fill" catalog="system" id="ZZf-zO-Knc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMV-kY-lzg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1486" y="1029"/>
+        </scene>
+        <!--Покупки-->
+        <scene sceneID="JX1-eZ-22E">
+            <objects>
+                <viewController id="say-9t-vQY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q96-ul-Tzl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="RSn-0u-Pxb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Покупки" image="plus" catalog="system" id="nAz-RG-W3Y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k82-dE-Id6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-920" y="1029"/>
+        </scene>
+        <!--Main Tab Bat View Controller-->
+        <scene sceneID="UdH-3h-Jbk">
+            <objects>
+                <tabBarController id="UFg-eb-gGS" customClass="MainTabBatViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q7a-bW-Kdz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="say-9t-vQY" kind="relationship" relationship="viewControllers" id="xJB-nt-eTq"/>
+                        <segue destination="7w2-Eo-h2T" kind="relationship" relationship="viewControllers" id="ITs-u0-RUp"/>
+                        <segue destination="gcO-zZ-j7x" kind="relationship" relationship="viewControllers" id="lRO-0r-QgA"/>
+                        <segue destination="Ce8-Ab-nxA" kind="relationship" relationship="viewControllers" id="gsv-yZ-9Dh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FHj-YT-5Kj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48" y="139"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="EhP-Tp-YKq">
@@ -415,39 +499,16 @@
             </objects>
             <point key="canvasLocation" x="813" y="-530"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="t8F-gS-cYz">
-            <objects>
-                <viewController id="NbO-HB-Hio" customClass="ViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rDJ-GS-0ln">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Главная" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3D-Gd-af2">
-                                <rect key="frame" x="175.5" y="437.5" width="63" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="V3D-Gd-af2" firstAttribute="centerX" secondItem="rDJ-GS-0ln" secondAttribute="centerX" id="Gmu-cT-to8"/>
-                            <constraint firstItem="V3D-Gd-af2" firstAttribute="centerY" secondItem="rDJ-GS-0ln" secondAttribute="centerY" id="deV-UY-Xxg"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="XTG-hF-FVf"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yT3-y1-duH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="47.826086956521742" y="138.61607142857142"/>
-        </scene>
     </scenes>
     <resources>
         <image name="close" width="70" height="70"/>
         <image name="open" width="70" height="70"/>
+        <image name="person.2.fill" catalog="system" width="64" height="40"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="square.grid.2x2" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ez1-6a-RkT"/>
+        <segue reference="a1X-Uv-PZx"/>
     </inferredMetricsTieBreakers>
 </document>

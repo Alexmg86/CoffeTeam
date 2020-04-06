@@ -13,6 +13,9 @@
 		2D025F5E2417D1F7007287FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F5C2417D1F7007287FC /* Main.storyboard */; };
 		2D025F602417D1F9007287FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F5F2417D1F9007287FC /* Assets.xcassets */; };
 		2D025F632417D1F9007287FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F612417D1F9007287FC /* LaunchScreen.storyboard */; };
+		2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF3243BC85F00464490 /* PopUp.swift */; };
+		2D3BAAF6243BCD6700464490 /* PopUpRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF5243BCD6700464490 /* PopUpRegistrationViewController.swift */; };
+		2D3BAAFA243BCE0700464490 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF9243BCE0700464490 /* ProfileViewController.swift */; };
 		2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FC99824234D14004C5A9E /* RegistrationViewController.swift */; };
 		2D84C03F2433593B007ED54D /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C03E2433593B007ED54D /* CustomInputField.swift */; };
 		2D84C0412434BC1F007ED54D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C0402434BC1E007ED54D /* LoginViewController.swift */; };
@@ -38,6 +41,9 @@
 		2D025F5F2417D1F9007287FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D025F622417D1F9007287FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D025F642417D1F9007287FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D3BAAF3243BC85F00464490 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
+		2D3BAAF5243BCD6700464490 /* PopUpRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpRegistrationViewController.swift; sourceTree = "<group>"; };
+		2D3BAAF9243BCE0700464490 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2D7FC99824234D14004C5A9E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2D84C03E2433593B007ED54D /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		2D84C0402434BC1E007ED54D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +93,7 @@
 		2D025F552417D1F7007287FC /* CoffeTeam */ = {
 			isa = PBXGroup;
 			children = (
+				2D3BAAF7243BCDE400464490 /* Profile */,
 				2D84C0442434EDAD007ED54D /* UiElements */,
 				2D7FC99724234C5B004C5A9E /* Auth */,
 				2D2164C0241A467B00576697 /* Controller */,
@@ -112,6 +119,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		2D3BAAF2243BC83F00464490 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				2D3BAAF3243BC85F00464490 /* PopUp.swift */,
+				2D3BAAF5243BCD6700464490 /* PopUpRegistrationViewController.swift */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
+		2D3BAAF7243BCDE400464490 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2D3BAAF9243BCE0700464490 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		2D7FC99724234C5B004C5A9E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +148,7 @@
 		2D84C0442434EDAD007ED54D /* UiElements */ = {
 			isa = PBXGroup;
 			children = (
+				2D3BAAF2243BC83F00464490 /* PopUp */,
 				2DFA8DC4243A76F500680567 /* TabBar */,
 				2D84C03E2433593B007ED54D /* CustomInputField.swift */,
 				2D84C0452434EE2E007ED54D /* CustomButton.swift */,
@@ -284,11 +309,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */,
+				2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */,
 				2DFA8DCC243A782300680567 /* MainTabBatViewController.swift in Sources */,
 				2D025F5B2417D1F7007287FC /* ViewController.swift in Sources */,
 				2DFA8DC6243A771300680567 /* BubbleTabBar.swift in Sources */,
 				2D025F572417D1F7007287FC /* AppDelegate.swift in Sources */,
 				2D025F592417D1F7007287FC /* SceneDelegate.swift in Sources */,
+				2D3BAAFA243BCE0700464490 /* ProfileViewController.swift in Sources */,
 				2D84C0462434EE2E007ED54D /* CustomButton.swift in Sources */,
 				2D84C0432434E734007ED54D /* KeyboardController.swift in Sources */,
 				2DFA8DCA243A776300680567 /* CBTabBarButton.swift in Sources */,
@@ -296,6 +323,7 @@
 				2D84C0412434BC1F007ED54D /* LoginViewController.swift in Sources */,
 				2D84C03F2433593B007ED54D /* CustomInputField.swift in Sources */,
 				2D93DC2624192436008E7972 /* WPViewController.swift in Sources */,
+				2D3BAAF6243BCD6700464490 /* PopUpRegistrationViewController.swift in Sources */,
 				2D93DC28241924A9008E7972 /* WCViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

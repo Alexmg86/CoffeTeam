@@ -1,18 +1,18 @@
 //
-//  CustomButton.swift
+//  PopUp.swift
 //  CoffeTeam
 //
-//  Created by Алексей Морозов on 01.04.2020.
+//  Created by Алексей Морозов on 06.04.2020.
 //  Copyright © 2020 Алексей Морозов. All rights reserved.
 //
 
 import UIKit
 
-class CustomButton: UIButton {
-
+class PopUp: UIView {
+    
     override func draw(_ rect: CGRect) {
-        self.layer.cornerRadius = 20
+        self.layer.cornerRadius = 16
         self.layer.masksToBounds = true
     }
-
+    
 }

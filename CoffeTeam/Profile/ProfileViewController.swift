@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
 
@@ -17,11 +18,21 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func openModal(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupRegistration") as! PopUpRegistrationViewController
-        self.addChild(popOverVC)
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParent: self)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "RegistrationOne") as! RegistrationViewController
+        self.present(nextViewController, animated:true, completion:nil)
+        
+//        let user = Auth.auth().currentUser
+//        if user != nil {
+//            print(user?.uid)
+//        } else {
+//            print("нет")
+//        }
+//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupRegistration") as! PopUpRegistrationViewController
+//        self.addChild(popOverVC)
+//        popOverVC.view.frame = self.view.frame
+//        self.view.addSubview(popOverVC.view)
+//        popOverVC.didMove(toParent: self)
     }
     
     /*

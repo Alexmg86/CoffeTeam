@@ -12,12 +12,8 @@ class PopUpRegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        
         self.showAnimate()
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +23,6 @@ class PopUpRegistrationViewController: UIViewController {
     
     @IBAction func closePopUp(_ sender: AnyObject) {
         self.removeAnimate()
-        //self.view.removeFromSuperview()
     }
     
     func showAnimate()

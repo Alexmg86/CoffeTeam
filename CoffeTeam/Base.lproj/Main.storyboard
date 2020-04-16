@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="-920" y="1029"/>
         </scene>
-        <!--Main Tab Bat View Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="UdH-3h-Jbk">
             <objects>
-                <tabBarController id="UFg-eb-gGS" customClass="MainTabBatViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="UFg-eb-gGS" customClass="MainTabBarViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q7a-bW-Kdz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

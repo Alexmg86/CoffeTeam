@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainTabBatViewController: BubbleTabBarController {
+class MainTabBarViewController: BubbleTabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

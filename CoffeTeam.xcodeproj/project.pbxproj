@@ -27,7 +27,7 @@
 		2DFA8DC6243A771300680567 /* BubbleTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA8DC5243A771300680567 /* BubbleTabBar.swift */; };
 		2DFA8DC8243A774600680567 /* BubbleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA8DC7243A774600680567 /* BubbleTabBarController.swift */; };
 		2DFA8DCA243A776300680567 /* CBTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA8DC9243A776300680567 /* CBTabBarButton.swift */; };
-		2DFA8DCC243A782300680567 /* MainTabBatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA8DCB243A782300680567 /* MainTabBatViewController.swift */; };
+		2DFA8DCC243A782300680567 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA8DCB243A782300680567 /* MainTabBarViewController.swift */; };
 		43326B7EA6810C94DDD07007 /* Pods_CoffeTeam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C80FA4EF083C687C8036ADD /* Pods_CoffeTeam.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		2DFA8DC5243A771300680567 /* BubbleTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTabBar.swift; sourceTree = "<group>"; };
 		2DFA8DC7243A774600680567 /* BubbleTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTabBarController.swift; sourceTree = "<group>"; };
 		2DFA8DC9243A776300680567 /* CBTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTabBarButton.swift; sourceTree = "<group>"; };
-		2DFA8DCB243A782300680567 /* MainTabBatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBatViewController.swift; path = CoffeTeam/UiElements/TabBar/MainTabBatViewController.swift; sourceTree = SOURCE_ROOT; };
+		2DFA8DCB243A782300680567 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarViewController.swift; path = CoffeTeam/UiElements/TabBar/MainTabBarViewController.swift; sourceTree = SOURCE_ROOT; };
 		5C80FA4EF083C687C8036ADD /* Pods_CoffeTeam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeTeam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA385701A486BE81300D654 /* Pods-CoffeTeam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeTeam.release.xcconfig"; path = "Target Support Files/Pods-CoffeTeam/Pods-CoffeTeam.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				2D84C0422434E734007ED54D /* KeyboardController.swift */,
-				2DFA8DCB243A782300680567 /* MainTabBatViewController.swift */,
+				2DFA8DCB243A782300680567 /* MainTabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 			files = (
 				2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */,
 				2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */,
-				2DFA8DCC243A782300680567 /* MainTabBatViewController.swift in Sources */,
+				2DFA8DCC243A782300680567 /* MainTabBarViewController.swift in Sources */,
 				2D025F5B2417D1F7007287FC /* ViewController.swift in Sources */,
 				2DFA8DC6243A771300680567 /* BubbleTabBar.swift in Sources */,
 				2D025F572417D1F7007287FC /* AppDelegate.swift in Sources */,

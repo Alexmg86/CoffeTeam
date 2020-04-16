@@ -44,11 +44,7 @@ class WCViewController: UIViewController {
             userDefaults.set(true, forKey: "presentationShowed")
             dismiss(animated: true, completion: nil)
         } else {
-//            dismiss(animated: true, completion: nil)
-//            if let pScreen = storyboard?.instantiateViewController(identifier: "RegistrationOne") as? RegistrationViewController {
-//                pScreen.modalPresentationStyle = .fullScreen
-//                present(pScreen, animated: true, completion: nil)
-//            }
+            dismiss(animated: true, completion: nil)
             performSegue(withIdentifier: "RegistrationOne", sender: self)
         }
     }

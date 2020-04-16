@@ -193,7 +193,7 @@
         <!--Main Tab Bar View Controller-->
         <scene sceneID="UdH-3h-Jbk">
             <objects>
-                <tabBarController id="UFg-eb-gGS" customClass="MainTabBarViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" id="UFg-eb-gGS" customClass="MainTabBarViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q7a-bW-Kdz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -521,7 +521,7 @@
                                 <rect key="frame" x="56" y="207.5" width="302" height="481"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_fon" translatesAutoresizingMaskIntoConstraints="NO" id="6nS-LQ-p7C">
-                                        <rect key="frame" x="22" y="20" width="258" height="249.00000000000006"/>
+                                        <rect key="frame" x="-107" y="20" width="516" height="498"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="04u-Bo-Im6">
                                         <rect key="frame" x="63" y="242" width="176.5" height="86.5"/>
@@ -622,6 +622,6 @@
         <image name="square.grid.2x2" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a1X-Uv-PZx"/>
+        <segue reference="ez1-6a-RkT"/>
     </inferredMetricsTieBreakers>
 </document>

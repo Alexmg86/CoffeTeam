@@ -22,6 +22,7 @@ class RegistrationViewController: KeyboadController {
     }
     
     @IBAction func registerTapped(_ sender: UIButton) {
+        print("Начало регистрации")
         guard let email = emailTextField.text, let password = passwordTextField.text, let nickname = nameTextField.text,
             email != "", password != "", nickname != "" else { return }
         print("Все есть")
@@ -32,5 +33,9 @@ class RegistrationViewController: KeyboadController {
             print(user)
             print("\(user.email!) created")
         }
+    }
+    
+    @IBAction func closeRegisterForm(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }

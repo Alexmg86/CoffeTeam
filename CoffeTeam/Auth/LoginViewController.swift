@@ -14,11 +14,15 @@ class LoginViewController: KeyboadController {
     @IBOutlet weak var passwordTextField: CustomInputField!
     @IBOutlet weak var loginAccount: CustomButton!
     @IBOutlet weak var createAccount: CustomButton!
+    @IBOutlet weak var closeButtom: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func loginTapper(_ sender: UIButton) {
+    }
+    @IBAction func closeLoginForm(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }

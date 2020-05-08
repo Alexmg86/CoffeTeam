@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="Jnk-qR-FCL">
             <objects>
-                <pageViewController storyboardIdentifier="WPViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="MvY-zt-GzH" customClass="WPViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="WPViewController" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="MvY-zt-GzH" customClass="WPViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6X-ch-mv9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1635" y="139"/>
@@ -151,24 +151,64 @@
         <!--Профиль-->
         <scene sceneID="UtP-La-CRb">
             <objects>
-                <viewController id="Ce8-Ab-nxA" customClass="ProfileViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileMain" id="Ce8-Ab-nxA" customClass="ProfileViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sQD-HK-cgY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8K-11-fQw">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="openModal:" destination="Ce8-Ab-nxA" eventType="touchUpInside" id="pUn-gj-zKV"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PaC-1p-QKX">
+                                <rect key="frame" x="77" y="380.5" width="260" height="135"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-Xe-fv5" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="60"/>
+                                        <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="aWI-hv-shf"/>
+                                            <constraint firstAttribute="height" constant="60" id="x09-qs-nLg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="Создать аккаунт">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closePresentation:" destination="tav-2H-v3N" eventType="touchUpInside" id="VtX-sA-kPV"/>
+                                            <action selector="createAccount:" destination="Ce8-Ab-nxA" eventType="touchUpInside" id="TVb-DP-Ca1"/>
+                                            <action selector="loginTapper:" destination="0f7-NU-yvf" eventType="touchUpInside" id="TCC-UO-dWr"/>
+                                            <action selector="registerTapped:" destination="Nbd-VN-ZbE" eventType="touchUpInside" id="ien-YB-be4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJ7-4P-MkB">
+                                        <rect key="frame" x="0.0" y="75" width="260" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="jvC-lQ-9Qh"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="tbs-Sq-VRW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="Войти">
+                                            <color key="titleColor" red="0.64705882349999999" green="0.65098039220000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="enterAccount:" destination="Ce8-Ab-nxA" eventType="touchUpInside" id="D6F-Sw-9J9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PaC-1p-QKX" firstAttribute="centerX" secondItem="sQD-HK-cgY" secondAttribute="centerX" id="4MB-Rj-MTr"/>
+                            <constraint firstItem="PaC-1p-QKX" firstAttribute="centerY" secondItem="sQD-HK-cgY" secondAttribute="centerY" id="C1p-u1-BDg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="IEa-VQ-WAh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Профиль" id="hOJ-9m-EoA"/>
+                    <connections>
+                        <outlet property="createAccount" destination="gYY-Xe-fv5" id="0US-0X-bxj"/>
+                        <outlet property="enterAccountBtn" destination="OJ7-4P-MkB" id="NEf-ul-peO"/>
+                        <outlet property="loginStackView" destination="PaC-1p-QKX" id="Jzg-Oq-wSl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMV-kY-lzg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -338,10 +378,27 @@
                                     <constraint firstItem="xkd-qa-DtW" firstAttribute="leading" secondItem="pki-em-KKH" secondAttribute="leading" constant="20" id="mof-f3-BR9"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQv-rG-p3I">
+                                <rect key="frame" x="354" y="64" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="LU2-LE-hkb"/>
+                                    <constraint firstAttribute="height" constant="20" id="zW8-Zp-atw"/>
+                                </constraints>
+                                <color key="tintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="cross">
+                                    <color key="titleColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeLoginForm:" destination="0f7-NU-yvf" eventType="touchUpInside" id="j78-fn-V0f"/>
+                                    <action selector="closeRegisterForm:" destination="Nbd-VN-ZbE" eventType="touchUpInside" id="U0C-Dh-W7u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="jQv-rG-p3I" firstAttribute="top" secondItem="VTv-fp-70f" secondAttribute="top" constant="64" id="3ID-C9-lOs"/>
                             <constraint firstItem="pki-em-KKH" firstAttribute="centerY" secondItem="VTv-fp-70f" secondAttribute="centerY" id="BF3-Rs-G08"/>
+                            <constraint firstItem="bVc-N9-cB6" firstAttribute="trailing" secondItem="jQv-rG-p3I" secondAttribute="trailing" constant="40" id="Xjm-pK-bih"/>
                             <constraint firstItem="pki-em-KKH" firstAttribute="centerX" secondItem="VTv-fp-70f" secondAttribute="centerX" id="bk0-xY-BJj"/>
                             <constraint firstItem="bVc-N9-cB6" firstAttribute="trailing" secondItem="pki-em-KKH" secondAttribute="trailing" constant="20" id="nhH-VQ-2D2"/>
                             <constraint firstItem="pki-em-KKH" firstAttribute="leading" secondItem="bVc-N9-cB6" secondAttribute="leading" constant="20" id="z7d-FU-4XR"/>
@@ -487,9 +544,25 @@
                                     <constraint firstAttribute="trailing" secondItem="b3g-wm-N09" secondAttribute="trailing" constant="20" id="zJr-vH-ZXZ"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1X-vC-Ye7">
+                                <rect key="frame" x="354" y="64" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="66Z-w0-sFx"/>
+                                    <constraint firstAttribute="width" constant="20" id="VPq-4F-xN3"/>
+                                </constraints>
+                                <color key="tintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="cross">
+                                    <color key="titleColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeLoginForm:" destination="0f7-NU-yvf" eventType="touchUpInside" id="JwX-DX-e8T"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="pI3-MP-qCS" firstAttribute="trailing" secondItem="G1X-vC-Ye7" secondAttribute="trailing" constant="40" id="Fra-gw-T4Z"/>
+                            <constraint firstItem="G1X-vC-Ye7" firstAttribute="top" secondItem="sMF-fP-j70" secondAttribute="top" constant="64" id="MDS-UG-7LZ"/>
                             <constraint firstItem="Hmh-7h-TQe" firstAttribute="centerX" secondItem="sMF-fP-j70" secondAttribute="centerX" id="PEB-J4-Sze"/>
                             <constraint firstItem="pI3-MP-qCS" firstAttribute="trailing" secondItem="Hmh-7h-TQe" secondAttribute="trailing" constant="20" id="Wau-YQ-rUj"/>
                             <constraint firstItem="Hmh-7h-TQe" firstAttribute="centerY" secondItem="sMF-fP-j70" secondAttribute="centerY" constant="41.75" id="ZpI-lk-BHO"/>
@@ -499,6 +572,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="VUD-Bt-fmH"/>
                     <connections>
+                        <outlet property="closeButtom" destination="G1X-vC-Ye7" id="8Az-Pv-5t1"/>
                         <outlet property="createAccount" destination="2sx-6k-6et" id="UHa-bj-Ktx"/>
                         <outlet property="emailTextField" destination="n8x-3W-iOF" id="mJo-6k-67h"/>
                         <outlet property="loginAccount" destination="21P-sf-zFa" id="trB-NY-e9Y"/>
@@ -521,7 +595,7 @@
                                 <rect key="frame" x="56" y="207.5" width="302" height="481"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_fon" translatesAutoresizingMaskIntoConstraints="NO" id="6nS-LQ-p7C">
-                                        <rect key="frame" x="-107" y="20" width="516" height="498"/>
+                                        <rect key="frame" x="22" y="20" width="258" height="249.00000000000006"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="04u-Bo-Im6">
                                         <rect key="frame" x="63" y="242" width="176.5" height="86.5"/>
@@ -614,6 +688,7 @@
     </scenes>
     <resources>
         <image name="close" width="70" height="70"/>
+        <image name="cross" width="72" height="72"/>
         <image name="open" width="70" height="70"/>
         <image name="person.2.fill" catalog="system" width="64" height="40"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
@@ -622,6 +697,6 @@
         <image name="square.grid.2x2" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ez1-6a-RkT"/>
+        <segue reference="a1X-Uv-PZx"/>
     </inferredMetricsTieBreakers>
 </document>

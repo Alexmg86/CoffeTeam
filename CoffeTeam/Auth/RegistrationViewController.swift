@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 
 class RegistrationViewController: KeyboadController {
-
     
+    var ref: DatabaseReference!
+
     @IBOutlet weak var emailTextField: CustomInputField!
     @IBOutlet weak var passwordTextField: CustomInputField!
     @IBOutlet weak var nameTextField: CustomInputField!
@@ -19,6 +20,7 @@ class RegistrationViewController: KeyboadController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
     }
     
     @IBAction func registerTapped(_ sender: UIButton) {
@@ -26,12 +28,14 @@ class RegistrationViewController: KeyboadController {
         guard let email = emailTextField.text, let password = passwordTextField.text, let nickname = nameTextField.text,
             email != "", password != "", nickname != "" else { return }
         print("Все есть")
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            guard let user = authResult?.user, error == nil else {
-                print(error!)
-                return }
-            print(user)
-            print("\(user.email!) created")
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (authResult, error) in
+            guard error == nil, authResult?.user != nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            self?.ref.child("users").child((authResult?.user.uid)!).setValue(["nickname": nickname, "email": email])
+            
+            print("created")
         }
     }
     

@@ -44,8 +44,13 @@ class WCViewController: UIViewController {
             userDefaults.set(true, forKey: "presentationShowed")
             dismiss(animated: true, completion: nil)
         } else {
-            dismiss(animated: true, completion: nil)
-            performSegue(withIdentifier: "RegistrationOne", sender: self)
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(true, forKey: "presentationShowed")
+            self.performSegue(withIdentifier: "RegistrationOne", sender: self)
+//            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainTabBar") as! MainTabBarViewController
+//            nextViewController.modalPresentationStyle = .fullScreen
+//            self.present(nextViewController, animated:true, completion:nil)
         }
     }
 }

@@ -8,6 +8,6 @@ target 'CoffeTeam' do
   # Pods for CoffeTeam
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
 
 end

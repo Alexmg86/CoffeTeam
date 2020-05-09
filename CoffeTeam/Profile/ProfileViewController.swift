@@ -10,8 +10,11 @@ import UIKit
 import Firebase
 
 class ProfileViewController: UIViewController {
-
-    let user = Auth.auth().currentUser
+    
+    /** @var handle
+        @brief The handler for the auth state listener, to allow cancelling later.
+    */
+    var handle: AuthStateDidChangeListenerHandle?
     
     @IBOutlet weak var loginStackView: UIStackView!
     @IBOutlet weak var createAccount: CustomButton!
@@ -19,45 +22,42 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginStackView.isHidden = self.isUserExist();
     }
     
-    func isUserExist() -> Bool {
-        if user != nil {
-            return true
-        } else {
-            return false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.isUserExist(user)
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    
+    func isUserExist(_ user: User?) {
+        print("Зашел в проверку")
+        var isUserExist = false
+        if user != nil {
+            isUserExist = true
+        }
+        loginStackView.isHidden = isUserExist
+    }
+
     @IBAction func createAccount(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "RegistrationOne") as! RegistrationViewController
         self.present(nextViewController, animated:true, completion:nil)
         
     }
-    
+
     @IBAction func enterAccount(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginOne") as! LoginViewController
         self.present(nextViewController, animated:true, completion:nil)
     }
-    
-    @IBAction func userInfo(_ sender: Any) {
-        
-        if user != nil {
-            print("user exist")
-        } else {
-            print("user not exist")
-        }
-    }
-    @IBAction func signIn(_ sender: Any) {
-        print("signIn")
-        Auth.auth().signIn(withEmail: "2@mail.ru", password: "1234567") { [weak self] authResult, error in
-            guard self != nil else { return }
-            print(error?.localizedDescription as Any)
-        }
-    }
-    
+
     @IBAction func signOut(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {

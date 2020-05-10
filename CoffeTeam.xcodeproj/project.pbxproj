@@ -13,6 +13,8 @@
 		2D025F5E2417D1F7007287FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F5C2417D1F7007287FC /* Main.storyboard */; };
 		2D025F602417D1F9007287FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F5F2417D1F9007287FC /* Assets.xcassets */; };
 		2D025F632417D1F9007287FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F612417D1F9007287FC /* LaunchScreen.storyboard */; };
+		2D04F450246836370077F34F /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D04F44F246836370077F34F /* GroupViewController.swift */; };
+		2D04F45224683DCD0077F34F /* GroupAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D04F45124683DCD0077F34F /* GroupAddViewController.swift */; };
 		2D3865962466D8B5004D7918 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3865952466D8B5004D7918 /* User.swift */; };
 		2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF3243BC85F00464490 /* PopUp.swift */; };
 		2D3BAAF6243BCD6700464490 /* PopUpRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF5243BCD6700464490 /* PopUpRegistrationViewController.swift */; };
@@ -41,6 +43,8 @@
 		2D025F5F2417D1F9007287FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D025F622417D1F9007287FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D025F642417D1F9007287FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D04F44F246836370077F34F /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		2D04F45124683DCD0077F34F /* GroupAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAddViewController.swift; sourceTree = "<group>"; };
 		2D3865952466D8B5004D7918 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2D3BAAF3243BC85F00464490 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		2D3BAAF5243BCD6700464490 /* PopUpRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpRegistrationViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 		2D025F552417D1F7007287FC /* CoffeTeam */ = {
 			isa = PBXGroup;
 			children = (
+				2D04F44E246835DD0077F34F /* Group */,
 				2D3865922466D823004D7918 /* Models */,
 				2D3BAAF7243BCDE400464490 /* Profile */,
 				2D84C0442434EDAD007ED54D /* UiElements */,
@@ -111,6 +116,15 @@
 				2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */,
 			);
 			path = CoffeTeam;
+			sourceTree = "<group>";
+		};
+		2D04F44E246835DD0077F34F /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				2D04F44F246836370077F34F /* GroupViewController.swift */,
+				2D04F45124683DCD0077F34F /* GroupAddViewController.swift */,
+			);
+			path = Group;
 			sourceTree = "<group>";
 		};
 		2D2164C0241A467B00576697 /* Controller */ = {
@@ -327,11 +341,13 @@
 				2D025F572417D1F7007287FC /* AppDelegate.swift in Sources */,
 				2D025F592417D1F7007287FC /* SceneDelegate.swift in Sources */,
 				2D3BAAFA243BCE0700464490 /* ProfileViewController.swift in Sources */,
+				2D04F45224683DCD0077F34F /* GroupAddViewController.swift in Sources */,
 				2D84C0462434EE2E007ED54D /* CustomButton.swift in Sources */,
 				2D84C0432434E734007ED54D /* KeyboardController.swift in Sources */,
 				2DFA8DCA243A776300680567 /* CBTabBarButton.swift in Sources */,
 				2DFA8DC8243A774600680567 /* BubbleTabBarController.swift in Sources */,
 				2D84C0412434BC1F007ED54D /* LoginViewController.swift in Sources */,
+				2D04F450246836370077F34F /* GroupViewController.swift in Sources */,
 				2D84C03F2433593B007ED54D /* CustomInputField.swift in Sources */,
 				2D3865962466D8B5004D7918 /* User.swift in Sources */,
 				2D93DC2624192436008E7972 /* WPViewController.swift in Sources */,

@@ -114,20 +114,142 @@
             <point key="canvasLocation" x="-152" y="1029"/>
         </scene>
         <!--Группы-->
-        <scene sceneID="T6k-Oj-ZhW">
+        <scene sceneID="yV6-XW-Xnf">
             <objects>
-                <viewController id="gcO-zZ-j7x" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="L1s-Z0-FhU">
+                <tableViewController storyboardIdentifier="GroupMainList" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="aIB-o6-CfN" customClass="GroupViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KvN-zs-sTj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="aYh-Xi-CwH"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Группы" image="person.2.fill" catalog="system" id="YaS-r8-e8c"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O6V-8M-2m5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupListCell" id="bLJ-OS-45b">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bLJ-OS-45b" id="HRl-eZ-AlL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aIB-o6-CfN" id="6fP-Q7-Bkq"/>
+                            <outlet property="delegate" destination="aIB-o6-CfN" id="lzQ-b3-xu0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Группы" id="H7B-fx-GhD">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle.fill" catalog="system" id="Xu9-HK-fVv">
+                            <color key="tintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="8rO-p7-kGl" kind="presentation" id="vH2-BR-0LV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agN-eU-Zon" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672" y="1029"/>
+            <point key="canvasLocation" x="3287" y="1783"/>
+        </scene>
+        <!--Добавить-->
+        <scene sceneID="Fcj-W5-wVw">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="ISs-nh-4ye" customClass="GroupAddViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eqI-R7-IYq" customClass="UIScrollView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="b3T-2m-Nmy">
+                                <rect key="frame" x="20" y="325.5" width="374" height="245"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tUc-z3-ot3">
+                                        <rect key="frame" x="20" y="0.0" width="334" height="66.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhi-jg-sEP">
+                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n0R-fQ-vlP" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28.5" width="334" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="z1V-mj-mWa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="n0R-fQ-vlP" secondAttribute="trailing" id="O7l-6H-aRK"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xq8-JI-XaK">
+                                        <rect key="frame" x="20" y="97.5" width="334" height="66.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ze-ru-Sbe">
+                                                <rect key="frame" x="0.0" y="0.0" width="43" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nFG-lQ-H4B" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28.5" width="334" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="dxs-cm-Q6C"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="nFG-lQ-H4B" secondAttribute="trailing" id="dBE-0k-aMv"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nso-PB-Baj" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
+                                        <rect key="frame" x="107" y="195" width="160" height="50"/>
+                                        <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="KSD-93-GQh"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="bKW-XL-hn6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="Добавить">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closePresentation:" destination="tav-2H-v3N" eventType="touchUpInside" id="T78-37-Ngq"/>
+                                            <action selector="registerTapped:" destination="Nbd-VN-ZbE" eventType="touchUpInside" id="a0x-qr-WwQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Xq8-JI-XaK" secondAttribute="trailing" constant="20" id="2cO-J8-cA0"/>
+                                    <constraint firstItem="tUc-z3-ot3" firstAttribute="leading" secondItem="b3T-2m-Nmy" secondAttribute="leading" constant="20" id="3Nn-Ig-1pA"/>
+                                    <constraint firstItem="Xq8-JI-XaK" firstAttribute="leading" secondItem="b3T-2m-Nmy" secondAttribute="leading" constant="20" id="LUP-yO-aXR"/>
+                                    <constraint firstAttribute="trailing" secondItem="tUc-z3-ot3" secondAttribute="trailing" constant="20" id="ng3-J4-ZER"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="b3T-2m-Nmy" firstAttribute="centerX" secondItem="eqI-R7-IYq" secondAttribute="centerX" id="99m-fK-e0a"/>
+                            <constraint firstItem="iTM-Uf-h2D" firstAttribute="trailing" secondItem="b3T-2m-Nmy" secondAttribute="trailing" constant="20" id="NoJ-uL-IL9"/>
+                            <constraint firstItem="b3T-2m-Nmy" firstAttribute="leading" secondItem="iTM-Uf-h2D" secondAttribute="leading" constant="20" id="uUh-pe-qAT"/>
+                            <constraint firstItem="b3T-2m-Nmy" firstAttribute="centerY" secondItem="eqI-R7-IYq" secondAttribute="centerY" id="wWY-Wv-pcY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iTM-Uf-h2D"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Добавить" id="hQh-Br-y4g">
+                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="scu-v7-BYd">
+                            <connections>
+                                <action selector="closeButton:" destination="ISs-nh-4ye" id="8aC-mI-jtX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byK-pG-kZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5089.8550724637689" y="1782.5892857142856"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="UtP-La-CRb">
@@ -201,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMV-kY-lzg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="1796"/>
+            <point key="canvasLocation" x="3287" y="1029"/>
         </scene>
         <!--Покупки-->
         <scene sceneID="JX1-eZ-22E">
@@ -231,13 +353,13 @@
                     <connections>
                         <segue destination="say-9t-vQY" kind="relationship" relationship="viewControllers" id="xJB-nt-eTq"/>
                         <segue destination="7w2-Eo-h2T" kind="relationship" relationship="viewControllers" id="ITs-u0-RUp"/>
-                        <segue destination="gcO-zZ-j7x" kind="relationship" relationship="viewControllers" id="lRO-0r-QgA"/>
-                        <segue destination="ZmB-ny-zQf" kind="relationship" relationship="viewControllers" id="gsv-yZ-9Dh"/>
+                        <segue destination="eCX-fo-DfU" kind="relationship" relationship="viewControllers" id="C1n-pl-Wvq"/>
+                        <segue destination="EWR-BG-1mR" kind="relationship" relationship="viewControllers" id="Mer-gO-R5J"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHj-YT-5Kj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="139"/>
+            <point key="canvasLocation" x="812" y="139"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="EhP-Tp-YKq">
@@ -248,13 +370,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="pki-em-KKH">
-                                <rect key="frame" x="20" y="162.5" width="374" height="571"/>
+                                <rect key="frame" x="20" y="127.5" width="374" height="641"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="open" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-ge-tC0">
-                                        <rect key="frame" x="152" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="117" y="0.0" width="140" height="140"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H3m-H7-xya">
-                                        <rect key="frame" x="52.5" y="101" width="269" height="86.5"/>
+                                        <rect key="frame" x="52.5" y="171" width="269" height="86.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJS-iK-P9o">
                                                 <rect key="frame" x="0.0" y="0.0" width="269" height="26.5"/>
@@ -276,7 +398,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MHk-dz-2TM">
-                                        <rect key="frame" x="20" y="218.5" width="334" height="66.5"/>
+                                        <rect key="frame" x="20" y="288.5" width="334" height="66.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4O6-le-Boz">
                                                 <rect key="frame" x="0.0" y="0.0" width="50.5" height="13.5"/>
@@ -298,7 +420,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xkd-qa-DtW">
-                                        <rect key="frame" x="20" y="316" width="334" height="66.5"/>
+                                        <rect key="frame" x="20" y="386" width="334" height="66.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Saj-Do-9er">
                                                 <rect key="frame" x="0.0" y="0.0" width="43" height="13.5"/>
@@ -320,7 +442,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4Cd-Bw-fgf">
-                                        <rect key="frame" x="20" y="413.5" width="334" height="66.5"/>
+                                        <rect key="frame" x="20" y="483.5" width="334" height="66.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя (то как вас будут видеть)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4We-Gt-B9t">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="13.5"/>
@@ -342,7 +464,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWS-eJ-kNH" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
-                                        <rect key="frame" x="57" y="511" width="260" height="60"/>
+                                        <rect key="frame" x="57" y="581" width="260" height="60"/>
                                         <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="j83-ZA-r6f"/>
@@ -653,25 +775,61 @@
             </objects>
             <point key="canvasLocation" x="1619" y="-530"/>
         </scene>
-        <!--Профиль-->
-        <scene sceneID="mGl-Ex-JGJ">
+        <!--Группы-->
+        <scene sceneID="eyT-h6-lOe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZmB-ny-zQf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Профиль" image="person.fill" catalog="system" id="ZZf-zO-Knc"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eCX-fo-DfU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Группы" image="person.2.fill" catalog="system" id="axe-wb-qQd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L8h-UG-F28">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RQU-MK-1Uq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.96078431372549022" green="0.96862745098039216" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Ce8-Ab-nxA" kind="relationship" relationship="rootViewController" id="hny-QN-D5v"/>
+                        <segue destination="aIB-o6-CfN" kind="relationship" relationship="rootViewController" id="KvX-wL-S94"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qVc-F7-wSu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cbh-pw-TEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="1029"/>
+            <point key="canvasLocation" x="2394" y="1783"/>
+        </scene>
+        <!--Профиль-->
+        <scene sceneID="pDQ-O5-Zcx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EWR-BG-1mR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Профиль" image="person.fill" catalog="system" id="2Ki-eb-PvT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aM3-dk-Yve">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ce8-Ab-nxA" kind="relationship" relationship="rootViewController" id="y3u-l8-Obt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jRa-JX-M5j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2393" y="1028"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z54-N6-oDY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="8rO-p7-kGl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8PP-fS-G4P">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ISs-nh-4ye" kind="relationship" relationship="rootViewController" id="q8b-NG-YBy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8O-BH-XEg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4179.7101449275369" y="1782.5892857142856"/>
         </scene>
     </scenes>
     <resources>
@@ -681,6 +839,7 @@
         <image name="person.2.fill" catalog="system" width="64" height="40"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
         <image name="share_fon" width="258" height="249"/>
         <image name="square.grid.2x2" catalog="system" width="64" height="56"/>
     </resources>

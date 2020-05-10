@@ -15,7 +15,6 @@ class WCViewController: UIViewController {
     @IBOutlet weak var subTitle: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var createAccount: CustomButton!
-    @IBOutlet weak var enterAccountBtn: UIButton!
     
     var wImageView = ""
     var wMainTitle = ""
@@ -31,6 +30,7 @@ class WCViewController: UIViewController {
         subTitle.text = wSubTitle
         pageControl.numberOfPages = numberOfPages
         pageControl.currentPage = currentPage
+        createAccount.isHidden = currentPage == 2 ? false : true
     }
     
     @IBAction func closePresentation(_ sender: UIButton) {

@@ -31,26 +31,11 @@ class WCViewController: UIViewController {
         subTitle.text = wSubTitle
         pageControl.numberOfPages = numberOfPages
         pageControl.currentPage = currentPage
-        
-        if currentPage == 2 {
-            createAccount.setTitle("Начать", for: .normal)
-            enterAccountBtn.isHidden = true
-        }
     }
     
     @IBAction func closePresentation(_ sender: UIButton) {
-        if currentPage == 2 {
-            let userDefaults = UserDefaults.standard
-            userDefaults.set(true, forKey: "presentationShowed")
-            dismiss(animated: true, completion: nil)
-        } else {
-            let userDefaults = UserDefaults.standard
-            userDefaults.set(true, forKey: "presentationShowed")
-            self.performSegue(withIdentifier: "RegistrationOne", sender: self)
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainTabBar") as! MainTabBarViewController
-//            nextViewController.modalPresentationStyle = .fullScreen
-//            self.present(nextViewController, animated:true, completion:nil)
-        }
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(true, forKey: "presentationShowed")
+        dismiss(animated: true, completion: nil)
     }
 }

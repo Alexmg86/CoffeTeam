@@ -34,7 +34,7 @@ class RegistrationViewController: KeyboadController {
                 return
             }
             self?.ref.child("users").child((authResult?.user.uid)!).setValue(["nickname": nickname, "email": email])
-            
+            self?.dismiss(animated: true, completion: nil)
             print("created")
         }
     }

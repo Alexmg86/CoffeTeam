@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-//            self.isUserExist(user)
+            self.isUserExist(user)
         }
     }
     

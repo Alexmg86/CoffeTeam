@@ -59,35 +59,17 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Создать аккаунт">
+                                <state key="normal" title="Начать">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="closePresentation:" destination="tav-2H-v3N" eventType="touchUpInside" id="iPK-js-WSg"/>
-                                    <segue destination="Nbd-VN-ZbE" kind="show" identifier="RegistrationOne" id="1hl-rg-E9W"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pO0-M9-0Fr">
-                                <rect key="frame" x="77" y="633.5" width="260" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="Wzc-WE-3q2"/>
-                                    <constraint firstAttribute="height" constant="60" id="kCp-me-m9w"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Войти">
-                                    <color key="titleColor" red="0.6470588235294118" green="0.65098039215686276" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0f7-NU-yvf" kind="show" identifier="LoginOne" id="esB-x1-XLT"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="YTx-al-qfJ" firstAttribute="trailing" secondItem="dHF-OM-Ayi" secondAttribute="trailing" constant="20" id="D05-Ix-XfF"/>
-                            <constraint firstItem="pO0-M9-0Fr" firstAttribute="centerX" secondItem="Dz2-9g-Jlk" secondAttribute="centerX" id="K9O-kO-I2a"/>
-                            <constraint firstItem="pO0-M9-0Fr" firstAttribute="top" secondItem="lbE-p3-eWE" secondAttribute="bottom" constant="15" id="LKK-CK-9sj"/>
                             <constraint firstItem="dHF-OM-Ayi" firstAttribute="top" secondItem="1wN-BJ-SFH" secondAttribute="bottom" constant="15" id="MWm-IT-gqy"/>
                             <constraint firstItem="Cbw-vo-xdt" firstAttribute="centerX" secondItem="Dz2-9g-Jlk" secondAttribute="centerX" id="NER-cV-A4P"/>
                             <constraint firstItem="lbE-p3-eWE" firstAttribute="top" secondItem="QfA-cf-7GB" secondAttribute="bottom" constant="15" id="UDr-Nh-H6q"/>
@@ -105,7 +87,6 @@
                     </view>
                     <connections>
                         <outlet property="createAccount" destination="lbE-p3-eWE" id="rQD-ST-xnd"/>
-                        <outlet property="enterAccountBtn" destination="pO0-M9-0Fr" id="wCM-dM-zwp"/>
                         <outlet property="imageView" destination="Cbw-vo-xdt" id="ICd-c7-fYf"/>
                         <outlet property="mainTitle" destination="1wN-BJ-SFH" id="zxH-8k-zaB"/>
                         <outlet property="pageControl" destination="QfA-cf-7GB" id="TDt-5e-NkP"/>
@@ -703,7 +684,4 @@
         <image name="share_fon" width="258" height="249"/>
         <image name="square.grid.2x2" catalog="system" width="64" height="56"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="a1X-Uv-PZx"/>
-    </inferredMetricsTieBreakers>
 </document>

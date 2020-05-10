@@ -24,18 +24,22 @@ class RegistrationViewController: KeyboadController {
     }
     
     @IBAction func registerTapped(_ sender: UIButton) {
-        print("Начало регистрации")
+        weak var pvc = self.presentingViewController
         guard let email = emailTextField.text, let password = passwordTextField.text, let nickname = nameTextField.text,
             email != "", password != "", nickname != "" else { return }
-        print("Все есть")
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] (authResult, error) in
             guard error == nil, authResult?.user != nil else {
                 print(error!.localizedDescription)
                 return
             }
             self?.ref.child("users").child((authResult?.user.uid)!).setValue(["nickname": nickname, "email": email])
-            self?.dismiss(animated: true, completion: nil)
-            print("created")
+            self?.dismiss(animated: true, completion: {
+                let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupRegistration") as! PopUpRegistrationViewController
+                pvc?.addChild(popOverVC)
+                popOverVC.view.frame = (pvc?.view.frame)!
+                pvc?.view.addSubview(popOverVC.view)
+                popOverVC.didMove(toParent: pvc)
+            })
         }
     }
     

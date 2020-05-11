@@ -9,10 +9,22 @@
 import UIKit
 
 class GroupViewController: UITableViewController {
+    
+    override func viewDidLayoutSubviews() {
+       tableView.isScrollEnabled = tableView.contentSize.height > tableView.frame.size.height
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupMain") as! PopUpMainViewController
+        self.addChild(popOverVC)
+        popOverVC.wPopipImage = "groups"
+        popOverVC.wPopipTitle = "Группы"
+        popOverVC.wPopipSubTitle = "Вы можете создавать группы\nили искать уже имеющиеся."
+        popOverVC.view.frame = (self.view.frame)
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParent: self)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

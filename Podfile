@@ -6,7 +6,7 @@ target 'CoffeTeam' do
   use_frameworks!
 
   # Pods for CoffeTeam
-  pod 'Firebase/Analytics'
+  # pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
 

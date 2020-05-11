@@ -19,6 +19,7 @@
 		2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF3243BC85F00464490 /* PopUp.swift */; };
 		2D3BAAF6243BCD6700464490 /* PopUpRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF5243BCD6700464490 /* PopUpRegistrationViewController.swift */; };
 		2D3BAAFA243BCE0700464490 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF9243BCE0700464490 /* ProfileViewController.swift */; };
+		2D7B930F24696306001FF444 /* PopUpMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B930E24696306001FF444 /* PopUpMainViewController.swift */; };
 		2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FC99824234D14004C5A9E /* RegistrationViewController.swift */; };
 		2D84C03F2433593B007ED54D /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C03E2433593B007ED54D /* CustomInputField.swift */; };
 		2D84C0412434BC1F007ED54D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C0402434BC1E007ED54D /* LoginViewController.swift */; };
@@ -49,6 +50,7 @@
 		2D3BAAF3243BC85F00464490 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		2D3BAAF5243BCD6700464490 /* PopUpRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpRegistrationViewController.swift; sourceTree = "<group>"; };
 		2D3BAAF9243BCE0700464490 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2D7B930E24696306001FF444 /* PopUpMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMainViewController.swift; sourceTree = "<group>"; };
 		2D7FC99824234D14004C5A9E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2D84C03E2433593B007ED54D /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		2D84C0402434BC1E007ED54D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				2D3BAAF3243BC85F00464490 /* PopUp.swift */,
 				2D3BAAF5243BCD6700464490 /* PopUpRegistrationViewController.swift */,
+				2D7B930E24696306001FF444 /* PopUpMainViewController.swift */,
 			);
 			path = PopUp;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				2D84C0432434E734007ED54D /* KeyboardController.swift in Sources */,
 				2DFA8DCA243A776300680567 /* CBTabBarButton.swift in Sources */,
 				2DFA8DC8243A774600680567 /* BubbleTabBarController.swift in Sources */,
+				2D7B930F24696306001FF444 /* PopUpMainViewController.swift in Sources */,
 				2D84C0412434BC1F007ED54D /* LoginViewController.swift in Sources */,
 				2D04F450246836370077F34F /* GroupViewController.swift in Sources */,
 				2D84C03F2433593B007ED54D /* CustomInputField.swift in Sources */,

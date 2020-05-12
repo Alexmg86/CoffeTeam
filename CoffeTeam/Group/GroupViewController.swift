@@ -16,6 +16,7 @@ class GroupViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.tableFooterView = UIView()
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupMain") as! PopUpMainViewController
         self.addChild(popOverVC)

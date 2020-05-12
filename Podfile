@@ -7,6 +7,7 @@ target 'CoffeTeam' do
 
   # Pods for CoffeTeam
   # pod 'Firebase/Analytics'
+  platform :ios, '13.2'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
 

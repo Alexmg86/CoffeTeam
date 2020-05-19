@@ -31,13 +31,15 @@ class GroupAddViewController: KeyboadController {
         let groupId: String = reference.key!
         reference.setValue(["name": name, "code": hexValue, "owner": user.uid])
         ref.child("users").child(user.uid).child("groups").child(groupId).setValue(true)
-        
-//        self.dismiss(animated: true, completion: {
-//            let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupRegistration") as! PopUpRegistrationViewController
-//            pvc?.addChild(popOverVC)
-//            popOverVC.view.frame = (pvc?.view.frame)!
-//            pvc?.view.addSubview(popOverVC.view)
-//            popOverVC.didMove(toParent: pvc)
-//        })
+
+        weak var pvc = self.presentingViewController
+        self.dismiss(animated: true, completion: {
+            let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupNewGroup") as! PopUpNewGroupViewController
+            popOverVC.wNumber = hexValue
+            pvc?.addChild(popOverVC)
+            popOverVC.view.frame = (pvc?.view.frame)!
+            pvc?.view.addSubview(popOverVC.view)
+            popOverVC.didMove(toParent: pvc)
+        })
     }
 }

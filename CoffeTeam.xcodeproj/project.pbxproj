@@ -15,6 +15,7 @@
 		2D025F632417D1F9007287FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F612417D1F9007287FC /* LaunchScreen.storyboard */; };
 		2D04F450246836370077F34F /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D04F44F246836370077F34F /* GroupViewController.swift */; };
 		2D04F45224683DCD0077F34F /* GroupAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D04F45124683DCD0077F34F /* GroupAddViewController.swift */; };
+		2D1BC21524743DD100419918 /* PopUpNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1BC21424743DD100419918 /* PopUpNewGroupViewController.swift */; };
 		2D2C8AC6246BCF18003A414D /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8AC5246BCF18003A414D /* CustomLabel.swift */; };
 		2D3865962466D8B5004D7918 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3865952466D8B5004D7918 /* User.swift */; };
 		2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF3243BC85F00464490 /* PopUp.swift */; };
@@ -47,6 +48,7 @@
 		2D025F642417D1F9007287FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D04F44F246836370077F34F /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		2D04F45124683DCD0077F34F /* GroupAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAddViewController.swift; sourceTree = "<group>"; };
+		2D1BC21424743DD100419918 /* PopUpNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpNewGroupViewController.swift; sourceTree = "<group>"; };
 		2D2C8AC5246BCF18003A414D /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		2D3865952466D8B5004D7918 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2D3BAAF3243BC85F00464490 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				2D3BAAF3243BC85F00464490 /* PopUp.swift */,
 				2D3BAAF5243BCD6700464490 /* PopUpRegistrationViewController.swift */,
+				2D1BC21424743DD100419918 /* PopUpNewGroupViewController.swift */,
 				2D7B930E24696306001FF444 /* PopUpMainViewController.swift */,
 			);
 			path = PopUp;
@@ -348,6 +351,7 @@
 				2D025F592417D1F7007287FC /* SceneDelegate.swift in Sources */,
 				2D3BAAFA243BCE0700464490 /* ProfileViewController.swift in Sources */,
 				2D04F45224683DCD0077F34F /* GroupAddViewController.swift in Sources */,
+				2D1BC21524743DD100419918 /* PopUpNewGroupViewController.swift in Sources */,
 				2D84C0462434EE2E007ED54D /* CustomButton.swift in Sources */,
 				2D84C0432434E734007ED54D /* KeyboardController.swift in Sources */,
 				2DFA8DCA243A776300680567 /* CBTabBarButton.swift in Sources */,

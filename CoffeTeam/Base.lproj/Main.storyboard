@@ -828,6 +828,91 @@
             </objects>
             <point key="canvasLocation" x="2446" y="-530"/>
         </scene>
+        <!--Pop Up New Group View Controller-->
+        <scene sceneID="4aX-c0-Rja">
+            <objects>
+                <viewController storyboardIdentifier="popupNewGroup" id="V3f-dQ-y65" customClass="PopUpNewGroupViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wME-cK-MII">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83g-fn-65s" customClass="PopUp" customModule="CoffeTeam" customModuleProvider="target">
+                                <rect key="frame" x="56" y="207.5" width="302" height="481"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp_fon" translatesAutoresizingMaskIntoConstraints="NO" id="iaZ-ST-tqo">
+                                        <rect key="frame" x="22" y="20" width="258" height="249"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Deu-zi-e53">
+                                        <rect key="frame" x="53.5" y="259" width="195.5" height="103"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qq-J1-z5V">
+                                                <rect key="frame" x="0.0" y="0.0" width="195.5" height="43"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3j-9O-ygg">
+                                                <rect key="frame" x="0.0" y="53" width="195.5" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Dcc-mx-SKz"/>
+                                                </constraints>
+                                                <string key="text">Отправьте данный номер
+своим коллегам,
+чтобы они могли найти группу.</string>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wN-31-B7W" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
+                                        <rect key="frame" x="71" y="406" width="160" height="50"/>
+                                        <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ZMO-L4-utD"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="rBs-tZ-swD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="Понятно">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closePopUp:" destination="V3f-dQ-y65" eventType="touchUpInside" id="0XU-4r-18b"/>
+                                            <action selector="closePopUp:" destination="3jV-Lm-oVg" eventType="touchUpInside" id="W88-WH-xOt"/>
+                                            <action selector="closePresentation:" destination="tav-2H-v3N" eventType="touchUpInside" id="6Ss-7M-Kry"/>
+                                            <action selector="loginTapper:" destination="0f7-NU-yvf" eventType="touchUpInside" id="aIy-2i-rbG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4wN-31-B7W" secondAttribute="bottom" constant="25" id="4ug-0h-LCw"/>
+                                    <constraint firstItem="Deu-zi-e53" firstAttribute="centerY" secondItem="83g-fn-65s" secondAttribute="centerY" constant="70" id="DGZ-P5-j7h"/>
+                                    <constraint firstAttribute="width" constant="302" id="M3M-FN-QJI"/>
+                                    <constraint firstItem="iaZ-ST-tqo" firstAttribute="centerX" secondItem="83g-fn-65s" secondAttribute="centerX" id="Wj6-DL-Bok"/>
+                                    <constraint firstAttribute="height" constant="481" id="Xk2-cI-YIx"/>
+                                    <constraint firstItem="4wN-31-B7W" firstAttribute="centerX" secondItem="83g-fn-65s" secondAttribute="centerX" id="anm-aF-N0X"/>
+                                    <constraint firstItem="Deu-zi-e53" firstAttribute="centerX" secondItem="83g-fn-65s" secondAttribute="centerX" id="sYX-xz-6Rh"/>
+                                    <constraint firstItem="iaZ-ST-tqo" firstAttribute="top" secondItem="83g-fn-65s" secondAttribute="top" constant="20" id="yPs-jf-SX4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="83g-fn-65s" firstAttribute="centerX" secondItem="wME-cK-MII" secondAttribute="centerX" id="GFu-2f-ud3"/>
+                            <constraint firstItem="83g-fn-65s" firstAttribute="centerY" secondItem="wME-cK-MII" secondAttribute="centerY" id="tOi-W0-I08"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nAu-rW-Dff"/>
+                    </view>
+                    <connections>
+                        <outlet property="number" destination="2qq-J1-z5V" id="NWe-EW-wZa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4B-Kg-weP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3287" y="-530"/>
+        </scene>
         <!--Группы-->
         <scene sceneID="eyT-h6-lOe">
             <objects>
@@ -888,6 +973,7 @@
     <resources>
         <image name="close" width="70" height="70"/>
         <image name="cross" width="72" height="72"/>
+        <image name="lamp_fon" width="258" height="249"/>
         <image name="open" width="70" height="70"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

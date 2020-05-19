@@ -158,54 +158,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="b3T-2m-Nmy">
-                                <rect key="frame" x="20" y="325.5" width="374" height="245"/>
+                                <rect key="frame" x="20" y="377" width="374" height="142.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tUc-z3-ot3">
-                                        <rect key="frame" x="20" y="0.0" width="334" height="66.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cTW-ma-NKA">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="61.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhi-jg-sEP">
-                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="13.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guE-0g-mm3" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="102" height="13.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n0R-fQ-vlP" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28.5" width="334" height="38"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L3C-jm-E2z" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="23.5" width="374" height="38"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="38" id="z1V-mj-mWa"/>
+                                                    <constraint firstAttribute="height" constant="38" id="had-gW-ysi"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="n0R-fQ-vlP" secondAttribute="trailing" id="O7l-6H-aRK"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xq8-JI-XaK">
-                                        <rect key="frame" x="20" y="97.5" width="334" height="66.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ze-ru-Sbe">
-                                                <rect key="frame" x="0.0" y="0.0" width="43" height="13.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nFG-lQ-H4B" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28.5" width="334" height="38"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="38" id="dxs-cm-Q6C"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            </textField>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="nFG-lQ-H4B" secondAttribute="trailing" id="dBE-0k-aMv"/>
+                                            <constraint firstItem="L3C-jm-E2z" firstAttribute="leading" secondItem="cTW-ma-NKA" secondAttribute="leading" id="hXC-T3-ULj"/>
+                                            <constraint firstAttribute="trailing" secondItem="L3C-jm-E2z" secondAttribute="trailing" id="wsz-m0-5cD"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nso-PB-Baj" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
-                                        <rect key="frame" x="107" y="195" width="160" height="50"/>
+                                        <rect key="frame" x="107" y="92.5" width="160" height="50"/>
                                         <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="KSD-93-GQh"/>
@@ -217,15 +196,14 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="buttonAdd:" destination="ISs-nh-4ye" eventType="touchUpInside" id="lsN-Tn-eb8"/>
                                             <action selector="closePresentation:" destination="tav-2H-v3N" eventType="touchUpInside" id="T78-37-Ngq"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Xq8-JI-XaK" secondAttribute="trailing" constant="20" id="2cO-J8-cA0"/>
-                                    <constraint firstItem="tUc-z3-ot3" firstAttribute="leading" secondItem="b3T-2m-Nmy" secondAttribute="leading" constant="20" id="3Nn-Ig-1pA"/>
-                                    <constraint firstItem="Xq8-JI-XaK" firstAttribute="leading" secondItem="b3T-2m-Nmy" secondAttribute="leading" constant="20" id="LUP-yO-aXR"/>
-                                    <constraint firstAttribute="trailing" secondItem="tUc-z3-ot3" secondAttribute="trailing" constant="20" id="ng3-J4-ZER"/>
+                                    <constraint firstAttribute="trailing" secondItem="cTW-ma-NKA" secondAttribute="trailing" id="VVL-jI-Zmz"/>
+                                    <constraint firstItem="cTW-ma-NKA" firstAttribute="leading" secondItem="b3T-2m-Nmy" secondAttribute="leading" id="rZq-GD-axi"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -245,6 +223,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="groupName" destination="L3C-jm-E2z" id="r8d-Kf-Uya"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byK-pG-kZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

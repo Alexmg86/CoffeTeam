@@ -7,27 +7,37 @@
 //
 
 import UIKit
+import Firebase
 
 class GroupAddViewController: KeyboadController {
 
+    var ref: DatabaseReference!
+    @IBOutlet weak var groupName: CustomInputField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        ref = Database.database().reference()
     }
     
     @IBAction func closeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func buttonAdd(_ sender: Any) {
+        let hexValue = String(format:"%02X", Int64(Date().timeIntervalSince1970))
+        guard let user = Auth.auth().currentUser, let name = groupName.text else { return }
+
+        let reference = ref.child("groups").childByAutoId()
+        let groupId: String = reference.key!
+        reference.setValue(["name": name, "code": hexValue, "owner": user.uid])
+        ref.child("users").child(user.uid).child("groups").child(groupId).setValue(true)
+        
+//        self.dismiss(animated: true, completion: {
+//            let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupRegistration") as! PopUpRegistrationViewController
+//            pvc?.addChild(popOverVC)
+//            popOverVC.view.frame = (pvc?.view.frame)!
+//            pvc?.view.addSubview(popOverVC.view)
+//            popOverVC.didMove(toParent: pvc)
+//        })
     }
-    */
-
 }

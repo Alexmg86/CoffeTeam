@@ -30,6 +30,8 @@
 		2D93DC2624192436008E7972 /* WPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC2524192436008E7972 /* WPViewController.swift */; };
 		2D93DC28241924A9008E7972 /* WCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC27241924A9008E7972 /* WCViewController.swift */; };
 		2DF648BE241A4DB000EABEC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */; };
+		2DF74C8F247688920026EF90 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */; };
+		2DF74C9124768D8E0026EF90 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF74C9024768D8E0026EF90 /* Groups.swift */; };
 		2DFA8DC6243A771300680567 /* BubbleTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA8DC5243A771300680567 /* BubbleTabBar.swift */; };
 		2DFA8DC8243A774600680567 /* BubbleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA8DC7243A774600680567 /* BubbleTabBarController.swift */; };
 		2DFA8DCA243A776300680567 /* CBTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA8DC9243A776300680567 /* CBTabBarButton.swift */; };
@@ -63,6 +65,8 @@
 		2D93DC2524192436008E7972 /* WPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPViewController.swift; sourceTree = "<group>"; };
 		2D93DC27241924A9008E7972 /* WCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCViewController.swift; sourceTree = "<group>"; };
 		2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		2DF74C9024768D8E0026EF90 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		2DFA8DC5243A771300680567 /* BubbleTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTabBar.swift; sourceTree = "<group>"; };
 		2DFA8DC7243A774600680567 /* BubbleTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTabBarController.swift; sourceTree = "<group>"; };
 		2DFA8DC9243A776300680567 /* CBTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTabBarButton.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				2D04F44F246836370077F34F /* GroupViewController.swift */,
+				2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */,
 				2D04F45124683DCD0077F34F /* GroupAddViewController.swift */,
 			);
 			path = Group;
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				2D3865952466D8B5004D7918 /* User.swift */,
+				2DF74C9024768D8E0026EF90 /* Groups.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 				2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */,
 				2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */,
 				2DFA8DCC243A782300680567 /* MainTabBarViewController.swift in Sources */,
+				2DF74C8F247688920026EF90 /* GroupTableViewCell.swift in Sources */,
 				2D025F5B2417D1F7007287FC /* ViewController.swift in Sources */,
 				2DFA8DC6243A771300680567 /* BubbleTabBar.swift in Sources */,
 				2D025F572417D1F7007287FC /* AppDelegate.swift in Sources */,
@@ -354,6 +361,7 @@
 				2D1BC21524743DD100419918 /* PopUpNewGroupViewController.swift in Sources */,
 				2D84C0462434EE2E007ED54D /* CustomButton.swift in Sources */,
 				2D84C0432434E734007ED54D /* KeyboardController.swift in Sources */,
+				2DF74C9124768D8E0026EF90 /* Groups.swift in Sources */,
 				2DFA8DCA243A776300680567 /* CBTabBarButton.swift in Sources */,
 				2DFA8DC8243A774600680567 /* BubbleTabBarController.swift in Sources */,
 				2D7B930F24696306001FF444 /* PopUpMainViewController.swift in Sources */,

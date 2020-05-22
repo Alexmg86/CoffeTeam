@@ -7,17 +7,51 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class GroupViewController: UITableViewController {
-    
+
+    var items = [JSON]()
+
     override func viewDidLayoutSubviews() {
        tableView.isScrollEnabled = tableView.contentSize.height > tableView.frame.size.height
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.callPopup()
         self.tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.loadGroups()
+    }
+    
+    func loadGroups() {
+        AF.request("https://ineedapp:8890/group").responseJSON { [weak self] (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                self?.items = json.arrayValue
+                self?.checkPopup()
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func checkPopup() {
+        if (items.count > 0) {
+            for view in self.view.subviews {
+                view.removeFromSuperview()
+            }
+        }
+    }
+
+    func callPopup() {
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupMain") as! PopUpMainViewController
         self.addChild(popOverVC)
         popOverVC.wPopipImage = "groups"
@@ -26,35 +60,25 @@ class GroupViewController: UITableViewController {
         popOverVC.view.frame = (self.view.frame)
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParent: self)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        print(self.view.subviews)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return items.isEmpty ? 0 : 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.isEmpty ? 0 : items.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "groupListCell", for: indexPath) as! GroupTableViewCell
+        let item = items[indexPath.row]
+        cell.nameLabel.text = item["name"].string
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -80,14 +104,6 @@ class GroupViewController: UITableViewController {
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
     }
     */
 

@@ -328,8 +328,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hbo-Nu-VVq">
-                                <rect key="frame" x="40" y="172.5" width="334" height="551"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hbo-Nu-VVq">
+                                <rect key="frame" x="40" y="174.5" width="334" height="547.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0a6-gV-4Ho">
                                         <rect key="frame" x="32.5" y="0.0" width="269" height="186.5"/>
@@ -351,7 +351,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="cCU-sd-Hbu"/>
                                                         </constraints>
-                                                        <string key="text">Введите свой номер телефона и пароль.
+                                                        <string key="text">Введите свой email и пароль.
 Мы отправим вам код для подтверждения.</string>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                         <nil key="textColor"/>
@@ -361,8 +361,8 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Ym-W2-VLb">
-                                        <rect key="frame" x="0.0" y="216.5" width="334" height="61.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Ym-W2-VLb">
+                                        <rect key="frame" x="0.0" y="201.5" width="334" height="56.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOT-7U-6jm" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="30.5" height="13.5"/>
@@ -371,7 +371,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAW-X8-Myp" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="23.5" width="334" height="38"/>
+                                                <rect key="frame" x="0.0" y="18.5" width="334" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="hzq-Ga-D8s"/>
                                                 </constraints>
@@ -384,17 +384,17 @@
                                             <constraint firstAttribute="trailing" secondItem="XAW-X8-Myp" secondAttribute="trailing" id="tpy-Nl-tBc"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-Df-yJP">
-                                        <rect key="frame" x="0.0" y="308" width="334" height="61.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-Df-yJP">
+                                        <rect key="frame" x="0.0" y="273" width="334" height="56.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1e4-fh-teS" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="registrationPassword" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1e4-fh-teS" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="43" height="13.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AUE-HJ-uKc" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="23.5" width="334" height="38"/>
+                                                <rect key="frame" x="0.0" y="18.5" width="334" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="Nm1-fj-jF3"/>
                                                 </constraints>
@@ -407,8 +407,31 @@
                                             <constraint firstItem="AUE-HJ-uKc" firstAttribute="leading" secondItem="x8d-Df-yJP" secondAttribute="leading" id="ZSu-4F-XpM"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Dv-I9-OSS">
-                                        <rect key="frame" x="0.0" y="399.5" width="334" height="61.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aaS-NC-IJA">
+                                        <rect key="frame" x="0.0" y="344.5" width="334" height="56.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подтвердите пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hga-gU-RVM" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="121" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-Ug-xXp" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="18.5" width="334" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="nRq-w9-0jR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="b9J-Ug-xXp" firstAttribute="leading" secondItem="aaS-NC-IJA" secondAttribute="leading" id="D0i-Fz-Sk4"/>
+                                            <constraint firstAttribute="trailing" secondItem="b9J-Ug-xXp" secondAttribute="trailing" id="DnD-9O-Mn2"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Dv-I9-OSS">
+                                        <rect key="frame" x="0.0" y="416" width="334" height="56.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя (то как вас будут видеть)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yed-Ji-sGj" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="13.5"/>
@@ -417,7 +440,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mgm-id-5cr" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="23.5" width="334" height="38"/>
+                                                <rect key="frame" x="0.0" y="18.5" width="334" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="xDr-mf-IfT"/>
                                                 </constraints>
@@ -431,7 +454,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh1-xZ-bCG" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
-                                        <rect key="frame" x="37" y="491" width="260" height="60"/>
+                                        <rect key="frame" x="37" y="487.5" width="260" height="60"/>
                                         <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="leU-QZ-ODg"/>
@@ -452,7 +475,9 @@
                                     <constraint firstItem="5Dv-I9-OSS" firstAttribute="leading" secondItem="hbo-Nu-VVq" secondAttribute="leading" id="LSf-eP-gcp"/>
                                     <constraint firstAttribute="trailing" secondItem="5Dv-I9-OSS" secondAttribute="trailing" id="VFf-rh-ep0"/>
                                     <constraint firstAttribute="trailing" secondItem="9Ym-W2-VLb" secondAttribute="trailing" id="d93-av-hog"/>
+                                    <constraint firstAttribute="trailing" secondItem="aaS-NC-IJA" secondAttribute="trailing" id="ps2-5R-Kry"/>
                                     <constraint firstAttribute="trailing" secondItem="x8d-Df-yJP" secondAttribute="trailing" id="q1N-OU-8dS"/>
+                                    <constraint firstItem="aaS-NC-IJA" firstAttribute="leading" secondItem="hbo-Nu-VVq" secondAttribute="leading" id="r7q-11-KYI"/>
                                     <constraint firstItem="x8d-Df-yJP" firstAttribute="leading" secondItem="hbo-Nu-VVq" secondAttribute="leading" id="zvc-MW-Jb3"/>
                                 </constraints>
                             </stackView>
@@ -485,9 +510,14 @@
                     <navigationItem key="navigationItem" id="Fvz-G5-06H"/>
                     <connections>
                         <outlet property="createAccount" destination="nh1-xZ-bCG" id="u6R-lu-pKt"/>
+                        <outlet property="email" destination="FOT-7U-6jm" id="CAV-iD-Uf7"/>
                         <outlet property="emailTextField" destination="XAW-X8-Myp" id="ocP-Br-iG5"/>
+                        <outlet property="name" destination="yed-Ji-sGj" id="LJR-JU-aZ0"/>
                         <outlet property="nameTextField" destination="Mgm-id-5cr" id="e9t-0f-sr0"/>
+                        <outlet property="password" destination="1e4-fh-teS" id="4Cb-s4-HwS"/>
+                        <outlet property="passwordConfirmTextField" destination="b9J-Ug-xXp" id="e8E-aO-wIl"/>
                         <outlet property="passwordTextField" destination="AUE-HJ-uKc" id="Qwq-Pz-Shy"/>
+                        <outlet property="password_confirmation" destination="hga-gU-RVM" id="qwP-m9-aUo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acO-5V-SZD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

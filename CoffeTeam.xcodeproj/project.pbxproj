@@ -27,6 +27,7 @@
 		2D84C0412434BC1F007ED54D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C0402434BC1E007ED54D /* LoginViewController.swift */; };
 		2D84C0432434E734007ED54D /* KeyboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C0422434E734007ED54D /* KeyboardController.swift */; };
 		2D84C0462434EE2E007ED54D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C0452434EE2E007ED54D /* CustomButton.swift */; };
+		2D8D171F247819C5009C38CC /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D171E247819C5009C38CC /* Registration.swift */; };
 		2D93DC2624192436008E7972 /* WPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC2524192436008E7972 /* WPViewController.swift */; };
 		2D93DC28241924A9008E7972 /* WCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC27241924A9008E7972 /* WCViewController.swift */; };
 		2DF648BE241A4DB000EABEC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */; };
@@ -62,6 +63,7 @@
 		2D84C0402434BC1E007ED54D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2D84C0422434E734007ED54D /* KeyboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardController.swift; path = CoffeTeam/Auth/KeyboardController.swift; sourceTree = SOURCE_ROOT; };
 		2D84C0452434EE2E007ED54D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		2D8D171E247819C5009C38CC /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		2D93DC2524192436008E7972 /* WPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPViewController.swift; sourceTree = "<group>"; };
 		2D93DC27241924A9008E7972 /* WCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCViewController.swift; sourceTree = "<group>"; };
 		2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				2D3865952466D8B5004D7918 /* User.swift */,
 				2DF74C9024768D8E0026EF90 /* Groups.swift */,
+				2D8D171E247819C5009C38CC /* Registration.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				2DF74C8F247688920026EF90 /* GroupTableViewCell.swift in Sources */,
 				2D025F5B2417D1F7007287FC /* ViewController.swift in Sources */,
 				2DFA8DC6243A771300680567 /* BubbleTabBar.swift in Sources */,
+				2D8D171F247819C5009C38CC /* Registration.swift in Sources */,
 				2D025F572417D1F7007287FC /* AppDelegate.swift in Sources */,
 				2D025F592417D1F7007287FC /* SceneDelegate.swift in Sources */,
 				2D3BAAFA243BCE0700464490 /* ProfileViewController.swift in Sources */,

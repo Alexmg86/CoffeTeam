@@ -8,10 +8,11 @@
 
 import UIKit
 
-class CustomInputField: UITextField, UITextFieldDelegate {
+class CustomInputField: UITextField {
     
     var error: Bool = false
     var count: Int = 0
+    var nameLabel: String = ""
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -20,7 +21,6 @@ class CustomInputField: UITextField, UITextFieldDelegate {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.delegate = self
         textFieldSetup()
     }
     
@@ -33,8 +33,9 @@ class CustomInputField: UITextField, UITextFieldDelegate {
         self.layer.addSublayer(bottomLine)
     }
 
-    func textFieldError() {
+    func textFieldError(name: String) {
         error = true
+        nameLabel = name
         textFieldSetup()
     }
 
@@ -47,7 +48,7 @@ class CustomInputField: UITextField, UITextFieldDelegate {
             error = false
         }
         if (error) {
-            color = UIColor.red
+            color = #colorLiteral(red: 0.9568627451, green: 0.262745098, blue: 0.2117647059, alpha: 1)
         }
         if let sublayers = self.layer.sublayers {
             if let lay = sublayers.filter({ $0.name == "custom_underline" }).first {

@@ -718,8 +718,10 @@
                     <connections>
                         <outlet property="closeButtom" destination="G1X-vC-Ye7" id="8Az-Pv-5t1"/>
                         <outlet property="createAccount" destination="2sx-6k-6et" id="UHa-bj-Ktx"/>
+                        <outlet property="email" destination="cXd-yK-x4g" id="eKu-7t-Z4Z"/>
                         <outlet property="emailTextField" destination="hiF-ib-MMQ" id="9Sy-iX-rut"/>
                         <outlet property="loginAccount" destination="21P-sf-zFa" id="trB-NY-e9Y"/>
+                        <outlet property="password" destination="zTt-b1-GLh" id="SDj-Ve-UrK"/>
                         <outlet property="passwordTextField" destination="tCJ-qb-8m1" id="zCY-3R-IMo"/>
                     </connections>
                 </viewController>

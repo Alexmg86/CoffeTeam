@@ -6,18 +6,10 @@
 //  Copyright © 2020 Алексей Морозов. All rights reserved.
 //
 
-import Foundation
-import Firebase
+import UIKit
 
-//struct User {
-//
-//    let uid: String
-//    let email: String
-//    let nickname: String
-//
-//    init(user: User) {
-//        self.uid = user.uid
-//        self.email = user.email
-//        self.nickname = user.nickname
-//    }
-//}
+struct User: Encodable {
+    let email: String
+    let hash: String
+    let name: String
+}

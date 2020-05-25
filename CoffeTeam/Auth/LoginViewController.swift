@@ -22,12 +22,12 @@ class LoginViewController: KeyboadController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
         email.text = "Email"
         password.text = "Пароль"
     }
-
-    @IBAction func loginTapper(_ sender: UIButton) {
-        guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else { return }
+    
+    func loginUser(email: String, password: String) {
         let login = Login(email: email, password: password)
         
         AF.request("https://ineedapp:8890/login",
@@ -44,6 +44,12 @@ class LoginViewController: KeyboadController {
                         self?.callError(key: key, errors: error)
                     }
                 case 200:
+                    if (json.count == 3) {
+                        let userDefaults = UserDefaults.standard
+                        for (key, value) in json {
+                            userDefaults.set(value.stringValue, forKey: "coffeapp_user_"+key)
+                        }
+                    }
                     self?.dismiss(animated: true, completion: nil)
                 default:
                     print("error")
@@ -52,6 +58,11 @@ class LoginViewController: KeyboadController {
                 print(error)
             }
         }
+    }
+
+    @IBAction func loginTapper(_ sender: UIButton) {
+        guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else { return }
+        loginUser(email: email, password: password)
     }
     
     @IBAction func closeLoginForm(_ sender: Any) {

@@ -7,16 +7,16 @@
 //
 
 import UIKit
-import Firebase
+import Alamofire
+import SwiftyJSON
 
 class GroupAddViewController: KeyboadController {
 
-    var ref: DatabaseReference!
     @IBOutlet weak var groupName: CustomInputField!
+    let user = User()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
     }
     
     @IBAction func closeButton(_ sender: Any) {
@@ -24,22 +24,27 @@ class GroupAddViewController: KeyboadController {
     }
 
     @IBAction func buttonAdd(_ sender: Any) {
-        let hexValue = String(format:"%02X", Int64(Date().timeIntervalSince1970))
-        guard let user = Auth.auth().currentUser, let name = groupName.text else { return }
-
-        let reference = ref.child("groups").childByAutoId()
-        let groupId: String = reference.key!
-        reference.setValue(["name": name, "code": hexValue, "owner": user.uid])
-        ref.child("users").child(user.uid).child("groups").child(groupId).setValue(true)
-
+        let hash = user.getHash()
+        guard let name = groupName.text, name != "", hash != "" else { return }
         weak var pvc = self.presentingViewController
-        self.dismiss(animated: true, completion: {
-            let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupNewGroup") as! PopUpNewGroupViewController
-            popOverVC.wNumber = hexValue
-            pvc?.addChild(popOverVC)
-            popOverVC.view.frame = (pvc?.view.frame)!
-            pvc?.view.addSubview(popOverVC.view)
-            popOverVC.didMove(toParent: pvc)
-        })
+        AF.request("https://ineedapp:8890/group",
+                   method: .post,
+                   parameters: ["name": name, "hash": hash],
+                   encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value as Any)
+                self?.dismiss(animated: true, completion: {
+                    let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupNewGroup") as! PopUpNewGroupViewController
+                    popOverVC.wNumber = json["code"].stringValue
+                    pvc?.addChild(popOverVC)
+                    popOverVC.view.frame = (pvc?.view.frame)!
+                    pvc?.view.addSubview(popOverVC.view)
+                    popOverVC.didMove(toParent: pvc)
+                })
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

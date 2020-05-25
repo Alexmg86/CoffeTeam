@@ -60,7 +60,6 @@ class GroupViewController: UITableViewController {
         popOverVC.view.frame = (self.view.frame)
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParent: self)
-        print(self.view.subviews)
     }
 
     // MARK: - Table view data source

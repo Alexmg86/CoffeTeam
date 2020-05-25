@@ -7,18 +7,16 @@
 //
 
 import UIKit
-import Firebase
+import Alamofire
+import SwiftyJSON
 
 class ProfileViewController: UIViewController {
-    
-    /** @var handle
-        @brief The handler for the auth state listener, to allow cancelling later.
-    */
-    var handle: AuthStateDidChangeListenerHandle?
-    
+
     @IBOutlet weak var loginStackView: UIStackView!
     @IBOutlet weak var createAccount: CustomButton!
     @IBOutlet weak var enterAccountBtn: UIButton!
+    
+    let user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,23 +24,29 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            self.isUserExist(user)
-        }
+        self.isUserExist()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        Auth.auth().removeStateDidChangeListener(handle!)
     }
-    
-    func isUserExist(_ user: User?) {
-        print("Зашел в проверку")
-        var isUserExist = false
-        if user != nil {
-            isUserExist = true
+
+    func getUser() {
+        AF.request("https://ineedapp:8890/getUser").responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+            case .failure(let error):
+                print(error)
+            }
         }
-        loginStackView.isHidden = isUserExist
+//        let defaults = UserDefaults.standard
+//        defaults.dictionaryRepresentation().map{print("\($0.key): \($0.value)")}
+    }
+
+    func isUserExist() {
+        loginStackView.isHidden = user.isUserExist()
     }
 
     @IBAction func createAccount(_ sender: Any) {
@@ -59,28 +63,19 @@ class ProfileViewController: UIViewController {
     }
 
     @IBAction func signOut(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
+        let parameters: Parameters = [:]
+        AF.request("https://ineedapp:8890/logout",
+                   method: .post,
+                   parameters: parameters,
+                   encoding: JSONEncoding.default).response { [weak self] response in
+            switch response.result {
+            case .success( _):
+                self?.user.userExit()
+                self?.isUserExist()
+            case .failure(_):
+                print("error")
+            }
         }
-        
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "RegistrationOne") as! RegistrationViewController
-//        self.present(nextViewController, animated:true, completion:nil)
-        
-//        let user = Auth.auth().currentUser
-//        if user != nil {
-//            print(user?.uid)
-//        } else {
-//            print("нет")
-//        }
-//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupRegistration") as! PopUpRegistrationViewController
-//        self.addChild(popOverVC)
-//        popOverVC.view.frame = self.view.frame
-//        self.view.addSubview(popOverVC.view)
-//        popOverVC.didMove(toParent: self)
     }
     
     /*

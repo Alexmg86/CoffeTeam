@@ -15,6 +15,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var loginStackView: UIStackView!
     @IBOutlet weak var createAccount: CustomButton!
     @IBOutlet weak var enterAccountBtn: UIButton!
+    @IBOutlet weak var infoStackView: UIStackView!
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     let user = User()
     
@@ -44,7 +47,14 @@ class ProfileViewController: UIViewController {
     }
 
     func isUserExist() {
-        loginStackView.isHidden = user.isUserExist()
+        if user.isUserExist() {
+            infoStackView.isHidden = false
+            loginStackView.isHidden = true
+            userNameLabel.text = user.getName()
+        } else {
+            infoStackView.isHidden = true
+            loginStackView.isHidden = false
+        }
     }
 
     @IBAction func createAccount(_ sender: Any) {

@@ -25,6 +25,11 @@ class User {
         return ((hash == nil) ? "" : hash)!
     }
     
+    func getName() -> String {
+        let name = userDefaults.string(forKey: "coffeapp_user_name")
+        return ((name == nil) ? "" : name)!
+    }
+    
     func userExit() {
         userDefaults.set(nil, forKey: "coffeapp_user_hash")
         userDefaults.set(nil, forKey: "coffeapp_user_name")

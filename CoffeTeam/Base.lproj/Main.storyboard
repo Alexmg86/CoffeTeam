@@ -129,20 +129,31 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXu-QZ-aPq">
-                                            <rect key="frame" x="20" y="19.5" width="374" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Zas-aQ-AEH">
+                                            <rect key="frame" x="20" y="10" width="44" height="38.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXu-QZ-aPq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ork-ah-siQ">
+                                                    <rect key="frame" x="0.0" y="26.5" width="44" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="YXu-QZ-aPq" secondAttribute="trailing" id="0iU-VY-cAb"/>
-                                        <constraint firstItem="YXu-QZ-aPq" firstAttribute="leading" secondItem="HRl-eZ-AlL" secondAttribute="leadingMargin" id="JLC-WO-qQH"/>
-                                        <constraint firstItem="YXu-QZ-aPq" firstAttribute="centerY" secondItem="HRl-eZ-AlL" secondAttribute="centerY" id="nzj-zj-eiO"/>
+                                        <constraint firstItem="Zas-aQ-AEH" firstAttribute="top" secondItem="HRl-eZ-AlL" secondAttribute="top" constant="10" id="Pkq-lO-uRt"/>
+                                        <constraint firstItem="Zas-aQ-AEH" firstAttribute="leading" secondItem="HRl-eZ-AlL" secondAttribute="leading" constant="20" id="uEa-GS-Omr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="codeLabel" destination="ork-ah-siQ" id="1r5-69-LG7"/>
                                     <outlet property="nameLabel" destination="YXu-QZ-aPq" id="vcr-bT-eIt"/>
                                 </connections>
                             </tableViewCell>

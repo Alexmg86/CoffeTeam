@@ -41,8 +41,6 @@ class ProfileViewController: UIViewController {
                 print(error)
             }
         }
-//        let defaults = UserDefaults.standard
-//        defaults.dictionaryRepresentation().map{print("\($0.key): \($0.value)")}
     }
 
     func isUserExist() {

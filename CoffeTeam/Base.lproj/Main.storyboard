@@ -100,18 +100,18 @@
         <!--Лавка-->
         <scene sceneID="Kdc-5A-gnh">
             <objects>
-                <viewController id="7w2-Eo-h2T" sceneMemberID="viewController">
+                <viewController id="7w2-Eo-h2T" customClass="ShopViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qTc-hq-MtS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="P0B-Wr-QoP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Лавка" image="square.grid.2x2" catalog="system" id="muM-B2-ki8"/>
+                    <navigationItem key="navigationItem" title="Лавка" id="jun-tv-4Rk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyY-EY-lZ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-152" y="1029"/>
+            <point key="canvasLocation" x="3287" y="269"/>
         </scene>
         <!--Группы-->
         <scene sceneID="yV6-XW-Xnf">
@@ -693,7 +693,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k82-dE-Id6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-920.28985507246387" y="1028.5714285714284"/>
+            <point key="canvasLocation" x="812" y="1783"/>
         </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="UdH-3h-Jbk">
@@ -706,14 +706,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="say-9t-vQY" kind="relationship" relationship="viewControllers" id="xJB-nt-eTq"/>
-                        <segue destination="7w2-Eo-h2T" kind="relationship" relationship="viewControllers" id="ITs-u0-RUp"/>
+                        <segue destination="tmW-OR-iNR" kind="relationship" relationship="viewControllers" id="ITs-u0-RUp"/>
                         <segue destination="eCX-fo-DfU" kind="relationship" relationship="viewControllers" id="C1n-pl-Wvq"/>
                         <segue destination="EWR-BG-1mR" kind="relationship" relationship="viewControllers" id="Mer-gO-R5J"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHj-YT-5Kj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="139"/>
+            <point key="canvasLocation" x="812" y="666"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Cql-vN-ByU">
@@ -1189,6 +1189,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rv4-n1-vzE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4179.7101449275369" y="1027.9017857142858"/>
+        </scene>
+        <!--Лавка-->
+        <scene sceneID="nBB-Pu-wF0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tmW-OR-iNR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Лавка" image="square.grid.2x2" catalog="system" id="muM-B2-ki8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="keK-II-Sed">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7w2-Eo-h2T" kind="relationship" relationship="rootViewController" id="QuK-i5-CrO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gnj-dz-q1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2393" y="269"/>
         </scene>
     </scenes>
     <resources>

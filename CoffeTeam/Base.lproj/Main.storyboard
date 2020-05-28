@@ -97,22 +97,6 @@
             </objects>
             <point key="canvasLocation" x="-920.28985507246387" y="138.61607142857142"/>
         </scene>
-        <!--Лавка-->
-        <scene sceneID="Kdc-5A-gnh">
-            <objects>
-                <viewController id="7w2-Eo-h2T" customClass="ShopViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qTc-hq-MtS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="P0B-Wr-QoP"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Лавка" id="jun-tv-4Rk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EyY-EY-lZ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3287" y="269"/>
-        </scene>
         <!--Группы-->
         <scene sceneID="yV6-XW-Xnf">
             <objects>
@@ -369,6 +353,131 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMV-kY-lzg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3287" y="1029"/>
+        </scene>
+        <!--Добавить-->
+        <scene sceneID="sBL-0L-sIM">
+            <objects>
+                <viewController id="EWN-PL-qcr" customClass="ShopAddViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eyj-t3-TPo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="092-SN-9vr">
+                                <rect key="frame" x="150" y="249" width="160" height="264.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cvY-b4-1DM">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="56.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ks-oo-POJ" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="41" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sR1-Ym-8WF" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="18.5" width="160" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="xa7-JS-iPr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="sR1-Ym-8WF" secondAttribute="trailing" id="JO7-s6-h9D"/>
+                                            <constraint firstItem="sR1-Ym-8WF" firstAttribute="leading" secondItem="cvY-b4-1DM" secondAttribute="leading" id="bAJ-4x-VnO"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aO6-Ya-eQ3">
+                                        <rect key="frame" x="0.0" y="71.5" width="160" height="56.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="registrationPassword" text="Краткое название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5a-Zf-0dB" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="105.5" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EiQ-3w-OAo" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="18.5" width="160" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="yXn-fL-OQz"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="EiQ-3w-OAo" secondAttribute="trailing" id="GEK-x1-OfB"/>
+                                            <constraint firstItem="EiQ-3w-OAo" firstAttribute="leading" secondItem="aO6-Ya-eQ3" secondAttribute="leading" id="HYh-UE-vzg"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yek-Pn-WCQ">
+                                        <rect key="frame" x="0.0" y="143" width="160" height="56.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена за 1 единицу" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2t-b4-w59" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="107" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TTI-uz-Qcx" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="18.5" width="160" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="NkF-zi-HeN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="TTI-uz-Qcx" secondAttribute="trailing" id="C53-az-PIW"/>
+                                            <constraint firstItem="TTI-uz-Qcx" firstAttribute="leading" secondItem="Yek-Pn-WCQ" secondAttribute="leading" id="Sg5-1e-Adr"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fod-xT-yi2" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="214.5" width="160" height="50"/>
+                                        <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="CVm-mH-zCA"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="vQ6-Cu-olJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="Добавить">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerTapped:" destination="Clh-Vh-tMh" eventType="touchUpInside" id="emZ-44-HeB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aO6-Ya-eQ3" secondAttribute="trailing" id="6n5-Ta-ZXk"/>
+                                    <constraint firstAttribute="trailing" secondItem="cvY-b4-1DM" secondAttribute="trailing" id="AdQ-6O-KeZ"/>
+                                    <constraint firstItem="aO6-Ya-eQ3" firstAttribute="leading" secondItem="092-SN-9vr" secondAttribute="leading" id="eFM-HZ-0ir"/>
+                                    <constraint firstItem="cvY-b4-1DM" firstAttribute="leading" secondItem="092-SN-9vr" secondAttribute="leading" id="hRN-dP-iTK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yek-Pn-WCQ" secondAttribute="trailing" id="ybl-iG-PMv"/>
+                                    <constraint firstItem="Yek-Pn-WCQ" firstAttribute="leading" secondItem="092-SN-9vr" secondAttribute="leading" id="zpy-uH-kHi"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="f53-5R-PBN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Добавить" id="ptH-Rk-Ybx">
+                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="fam-aN-l7N">
+                            <connections>
+                                <action selector="closeButton:" destination="EWN-PL-qcr" id="9vZ-dY-C6i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pickerTextField" destination="sR1-Ym-8WF" id="gAo-af-4aW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g02-jk-lRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5090" y="269"/>
         </scene>
         <!--Редактирование-->
         <scene sceneID="iSM-8F-f1b">
@@ -706,9 +815,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="say-9t-vQY" kind="relationship" relationship="viewControllers" id="xJB-nt-eTq"/>
-                        <segue destination="tmW-OR-iNR" kind="relationship" relationship="viewControllers" id="ITs-u0-RUp"/>
-                        <segue destination="eCX-fo-DfU" kind="relationship" relationship="viewControllers" id="C1n-pl-Wvq"/>
+                        <segue destination="rEZ-2Y-4Fn" kind="relationship" relationship="viewControllers" id="9ze-rR-bHL"/>
                         <segue destination="EWR-BG-1mR" kind="relationship" relationship="viewControllers" id="Mer-gO-R5J"/>
+                        <segue destination="eCX-fo-DfU" kind="relationship" relationship="viewControllers" id="C1n-pl-Wvq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHj-YT-5Kj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1135,6 +1244,42 @@
             </objects>
             <point key="canvasLocation" x="2394" y="1783"/>
         </scene>
+        <!--Shop View Controller-->
+        <scene sceneID="6Dg-LM-N9F">
+            <objects>
+                <tableViewController id="rUP-Hp-saU" customClass="ShopViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fAD-5G-6UL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="maZ-al-PIw">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="maZ-al-PIw" id="jDl-EZ-VnP">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rUP-Hp-saU" id="fg8-m2-ovs"/>
+                            <outlet property="delegate" destination="rUP-Hp-saU" id="xyr-rc-PIz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="fYb-Ht-B2P">
+                        <barButtonItem key="rightBarButtonItem" image="plus.circle.fill" catalog="system" id="AAH-FX-OPA">
+                            <color key="tintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="TZp-jU-Avz" kind="presentation" id="WkL-Uk-ItS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWP-6O-EA4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3302.898550724638" y="268.52678571428572"/>
+        </scene>
         <!--Профиль-->
         <scene sceneID="pDQ-O5-Zcx">
             <objects>
@@ -1190,24 +1335,42 @@
             </objects>
             <point key="canvasLocation" x="4179.7101449275369" y="1027.9017857142858"/>
         </scene>
-        <!--Лавка-->
-        <scene sceneID="nBB-Pu-wF0">
+        <!--Navigation Controller-->
+        <scene sceneID="1J1-6n-rZW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tmW-OR-iNR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Лавка" image="square.grid.2x2" catalog="system" id="muM-B2-ki8"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="TZp-jU-Avz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="keK-II-Sed">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RcI-Si-Clj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7w2-Eo-h2T" kind="relationship" relationship="rootViewController" id="QuK-i5-CrO"/>
+                        <segue destination="EWN-PL-qcr" kind="relationship" relationship="rootViewController" id="n3T-fF-qRH"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gnj-dz-q1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VKM-Cu-Ag4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2393" y="269"/>
+            <point key="canvasLocation" x="4180" y="269"/>
+        </scene>
+        <!--Лавка-->
+        <scene sceneID="mhK-ag-TmX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rEZ-2Y-4Fn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Лавка" image="square.grid.2x2" catalog="system" id="O55-cD-JNG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J2q-rb-mgt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rUP-Hp-saU" kind="relationship" relationship="rootViewController" id="daw-uQ-aFA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIt-5J-hBb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2392.753623188406" y="268.52678571428572"/>
         </scene>
     </scenes>
     <resources>

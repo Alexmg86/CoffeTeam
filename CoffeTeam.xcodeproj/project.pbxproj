@@ -33,7 +33,9 @@
 		2D93DC28241924A9008E7972 /* WCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC27241924A9008E7972 /* WCViewController.swift */; };
 		2DA85292247D4B5F00766CD1 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85291247D4B5F00766CD1 /* ProfileEditViewController.swift */; };
 		2DA85294247D568800766CD1 /* KeyboardEasyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85293247D568800766CD1 /* KeyboardEasyViewController.swift */; };
-		2DA85297247E862400766CD1 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85296247E862400766CD1 /* ShopViewController.swift */; };
+		2DA85297247E862400766CD1 /* ShopAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85296247E862400766CD1 /* ShopAddViewController.swift */; };
+		2DA85299247FD88D00766CD1 /* CustomPickerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85298247FD88D00766CD1 /* CustomPickerInput.swift */; };
+		2DA8529B247FFB0000766CD1 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8529A247FFB0000766CD1 /* ShopViewController.swift */; };
 		2DF648BE241A4DB000EABEC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */; };
 		2DF74C8F247688920026EF90 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */; };
 		2DF74C9124768D8E0026EF90 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF74C9024768D8E0026EF90 /* Groups.swift */; };
@@ -73,7 +75,9 @@
 		2D93DC27241924A9008E7972 /* WCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCViewController.swift; sourceTree = "<group>"; };
 		2DA85291247D4B5F00766CD1 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		2DA85293247D568800766CD1 /* KeyboardEasyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardEasyViewController.swift; path = CoffeTeam/Profile/KeyboardEasyViewController.swift; sourceTree = SOURCE_ROOT; };
-		2DA85296247E862400766CD1 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		2DA85296247E862400766CD1 /* ShopAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddViewController.swift; sourceTree = "<group>"; };
+		2DA85298247FD88D00766CD1 /* CustomPickerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerInput.swift; sourceTree = "<group>"; };
+		2DA8529A247FFB0000766CD1 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		2DF74C9024768D8E0026EF90 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 				2D3BAAF2243BC83F00464490 /* PopUp */,
 				2DFA8DC4243A76F500680567 /* TabBar */,
 				2D84C03E2433593B007ED54D /* CustomInputField.swift */,
+				2DA85298247FD88D00766CD1 /* CustomPickerInput.swift */,
 				2D84C0452434EE2E007ED54D /* CustomButton.swift */,
 				2D2C8AC5246BCF18003A414D /* CustomLabel.swift */,
 			);
@@ -223,7 +228,8 @@
 		2DA85295247E860400766CD1 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				2DA85296247E862400766CD1 /* ShopViewController.swift */,
+				2DA85296247E862400766CD1 /* ShopAddViewController.swift */,
+				2DA8529A247FFB0000766CD1 /* ShopViewController.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -373,15 +379,17 @@
 			files = (
 				2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */,
 				2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */,
-				2DA85297247E862400766CD1 /* ShopViewController.swift in Sources */,
+				2DA85297247E862400766CD1 /* ShopAddViewController.swift in Sources */,
 				2DFA8DCC243A782300680567 /* MainTabBarViewController.swift in Sources */,
 				2DF74C8F247688920026EF90 /* GroupTableViewCell.swift in Sources */,
 				2D025F5B2417D1F7007287FC /* ViewController.swift in Sources */,
+				2DA85299247FD88D00766CD1 /* CustomPickerInput.swift in Sources */,
 				2DA85294247D568800766CD1 /* KeyboardEasyViewController.swift in Sources */,
 				2DFA8DC6243A771300680567 /* BubbleTabBar.swift in Sources */,
 				2D8D171F247819C5009C38CC /* Registration.swift in Sources */,
 				2D025F572417D1F7007287FC /* AppDelegate.swift in Sources */,
 				2DA85292247D4B5F00766CD1 /* ProfileEditViewController.swift in Sources */,
+				2DA8529B247FFB0000766CD1 /* ShopViewController.swift in Sources */,
 				2D025F592417D1F7007287FC /* SceneDelegate.swift in Sources */,
 				2D3BAAFA243BCE0700464490 /* ProfileViewController.swift in Sources */,
 				2D04F45224683DCD0077F34F /* GroupAddViewController.swift in Sources */,

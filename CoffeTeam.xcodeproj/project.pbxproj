@@ -36,6 +36,7 @@
 		2DA85297247E862400766CD1 /* ShopAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85296247E862400766CD1 /* ShopAddViewController.swift */; };
 		2DA85299247FD88D00766CD1 /* CustomPickerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85298247FD88D00766CD1 /* CustomPickerInput.swift */; };
 		2DA8529B247FFB0000766CD1 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8529A247FFB0000766CD1 /* ShopViewController.swift */; };
+		2DA8529D24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8529C24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift */; };
 		2DF648BE241A4DB000EABEC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */; };
 		2DF74C8F247688920026EF90 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */; };
 		2DF74C9124768D8E0026EF90 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF74C9024768D8E0026EF90 /* Groups.swift */; };
@@ -78,6 +79,7 @@
 		2DA85296247E862400766CD1 /* ShopAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddViewController.swift; sourceTree = "<group>"; };
 		2DA85298247FD88D00766CD1 /* CustomPickerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerInput.swift; sourceTree = "<group>"; };
 		2DA8529A247FFB0000766CD1 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		2DA8529C24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopIconsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		2DF74C9024768D8E0026EF90 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				2DA85296247E862400766CD1 /* ShopAddViewController.swift */,
 				2DA8529A247FFB0000766CD1 /* ShopViewController.swift */,
+				2DA8529C24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA8529D24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift in Sources */,
 				2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */,
 				2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */,
 				2DA85297247E862400766CD1 /* ShopAddViewController.swift in Sources */,

@@ -13,6 +13,7 @@ class KeyboadController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapView))
+        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         self.addObserves()
     }

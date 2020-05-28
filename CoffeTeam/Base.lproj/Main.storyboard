@@ -362,106 +362,130 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="092-SN-9vr">
-                                <rect key="frame" x="150" y="249" width="160" height="264.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="FHI-oy-Jcz">
+                                <rect key="frame" x="20" y="266" width="374" height="364.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cvY-b4-1DM">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="56.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NR3-xf-fSn">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="gZp-l3-iaA"/>
+                                        </constraints>
+                                        <string key="text">Выберите иконку, группу,
+введите краткое название
+и установите цену за единицу</string>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                        <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="092-SN-9vr">
+                                        <rect key="frame" x="0.0" y="100" width="374" height="264.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ks-oo-POJ" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="41" height="13.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sR1-Ym-8WF" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="18.5" width="160" height="38"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cvY-b4-1DM">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="56.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ks-oo-POJ" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="41" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                        <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sR1-Ym-8WF" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="18.5" width="374" height="38"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="38" id="xa7-JS-iPr"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="38" id="xa7-JS-iPr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sR1-Ym-8WF" secondAttribute="trailing" id="JO7-s6-h9D"/>
+                                                    <constraint firstItem="sR1-Ym-8WF" firstAttribute="leading" secondItem="cvY-b4-1DM" secondAttribute="leading" id="bAJ-4x-VnO"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aO6-Ya-eQ3">
+                                                <rect key="frame" x="0.0" y="71.5" width="374" height="56.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="registrationPassword" text="Краткое название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5a-Zf-0dB" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                        <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EiQ-3w-OAo" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="18.5" width="374" height="38"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="38" id="yXn-fL-OQz"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="EiQ-3w-OAo" secondAttribute="trailing" id="GEK-x1-OfB"/>
+                                                    <constraint firstItem="EiQ-3w-OAo" firstAttribute="leading" secondItem="aO6-Ya-eQ3" secondAttribute="leading" id="HYh-UE-vzg"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yek-Pn-WCQ">
+                                                <rect key="frame" x="0.0" y="143" width="374" height="56.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена за 1 единицу" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2t-b4-w59" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="107" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                        <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TTI-uz-Qcx" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="18.5" width="374" height="38"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="38" id="NkF-zi-HeN"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="TTI-uz-Qcx" secondAttribute="trailing" id="C53-az-PIW"/>
+                                                    <constraint firstItem="TTI-uz-Qcx" firstAttribute="leading" secondItem="Yek-Pn-WCQ" secondAttribute="leading" id="Sg5-1e-Adr"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fod-xT-yi2" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="107" y="214.5" width="160" height="50"/>
+                                                <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="CVm-mH-zCA"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="vQ6-Cu-olJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <state key="normal" title="Добавить">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="registerTapped:" destination="Clh-Vh-tMh" eventType="touchUpInside" id="emZ-44-HeB"/>
+                                                    <action selector="saveGoodTapped:" destination="EWN-PL-qcr" eventType="touchUpInside" id="HQH-DS-NKy"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="sR1-Ym-8WF" secondAttribute="trailing" id="JO7-s6-h9D"/>
-                                            <constraint firstItem="sR1-Ym-8WF" firstAttribute="leading" secondItem="cvY-b4-1DM" secondAttribute="leading" id="bAJ-4x-VnO"/>
+                                            <constraint firstAttribute="trailing" secondItem="aO6-Ya-eQ3" secondAttribute="trailing" id="6n5-Ta-ZXk"/>
+                                            <constraint firstAttribute="trailing" secondItem="cvY-b4-1DM" secondAttribute="trailing" id="AdQ-6O-KeZ"/>
+                                            <constraint firstItem="aO6-Ya-eQ3" firstAttribute="leading" secondItem="092-SN-9vr" secondAttribute="leading" id="eFM-HZ-0ir"/>
+                                            <constraint firstItem="cvY-b4-1DM" firstAttribute="leading" secondItem="092-SN-9vr" secondAttribute="leading" id="hRN-dP-iTK"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yek-Pn-WCQ" secondAttribute="trailing" id="ybl-iG-PMv"/>
+                                            <constraint firstItem="Yek-Pn-WCQ" firstAttribute="leading" secondItem="092-SN-9vr" secondAttribute="leading" id="zpy-uH-kHi"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aO6-Ya-eQ3">
-                                        <rect key="frame" x="0.0" y="71.5" width="160" height="56.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="registrationPassword" text="Краткое название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5a-Zf-0dB" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="105.5" height="13.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EiQ-3w-OAo" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="18.5" width="160" height="38"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="38" id="yXn-fL-OQz"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="EiQ-3w-OAo" secondAttribute="trailing" id="GEK-x1-OfB"/>
-                                            <constraint firstItem="EiQ-3w-OAo" firstAttribute="leading" secondItem="aO6-Ya-eQ3" secondAttribute="leading" id="HYh-UE-vzg"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yek-Pn-WCQ">
-                                        <rect key="frame" x="0.0" y="143" width="160" height="56.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена за 1 единицу" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2t-b4-w59" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="107" height="13.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TTI-uz-Qcx" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="18.5" width="160" height="38"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="38" id="NkF-zi-HeN"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="TTI-uz-Qcx" secondAttribute="trailing" id="C53-az-PIW"/>
-                                            <constraint firstItem="TTI-uz-Qcx" firstAttribute="leading" secondItem="Yek-Pn-WCQ" secondAttribute="leading" id="Sg5-1e-Adr"/>
-                                        </constraints>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fod-xT-yi2" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="214.5" width="160" height="50"/>
-                                        <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="CVm-mH-zCA"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="vQ6-Cu-olJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <state key="normal" title="Добавить">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="registerTapped:" destination="Clh-Vh-tMh" eventType="touchUpInside" id="emZ-44-HeB"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="aO6-Ya-eQ3" secondAttribute="trailing" id="6n5-Ta-ZXk"/>
-                                    <constraint firstAttribute="trailing" secondItem="cvY-b4-1DM" secondAttribute="trailing" id="AdQ-6O-KeZ"/>
-                                    <constraint firstItem="aO6-Ya-eQ3" firstAttribute="leading" secondItem="092-SN-9vr" secondAttribute="leading" id="eFM-HZ-0ir"/>
-                                    <constraint firstItem="cvY-b4-1DM" firstAttribute="leading" secondItem="092-SN-9vr" secondAttribute="leading" id="hRN-dP-iTK"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yek-Pn-WCQ" secondAttribute="trailing" id="ybl-iG-PMv"/>
-                                    <constraint firstItem="Yek-Pn-WCQ" firstAttribute="leading" secondItem="092-SN-9vr" secondAttribute="leading" id="zpy-uH-kHi"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FHI-oy-Jcz" firstAttribute="leading" secondItem="f53-5R-PBN" secondAttribute="leading" constant="20" id="5po-aI-xIp"/>
+                            <constraint firstItem="f53-5R-PBN" firstAttribute="trailing" secondItem="FHI-oy-Jcz" secondAttribute="trailing" constant="20" id="Ryt-RS-2hb"/>
+                            <constraint firstItem="FHI-oy-Jcz" firstAttribute="centerX" secondItem="eyj-t3-TPo" secondAttribute="centerX" id="Vj8-Tc-dcv"/>
+                            <constraint firstItem="FHI-oy-Jcz" firstAttribute="centerY" secondItem="eyj-t3-TPo" secondAttribute="centerY" id="mCe-V1-g6t"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="f53-5R-PBN"/>
                     </view>
                     <navigationItem key="navigationItem" title="Добавить" id="ptH-Rk-Ybx">
@@ -472,7 +496,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="pickerTextField" destination="sR1-Ym-8WF" id="gAo-af-4aW"/>
+                        <outlet property="group_id" destination="0Ks-oo-POJ" id="eYl-NX-5XX"/>
+                        <outlet property="group_idTextField" destination="sR1-Ym-8WF" id="hvf-wt-Bc8"/>
+                        <outlet property="name" destination="y5a-Zf-0dB" id="gQ0-r7-kHO"/>
+                        <outlet property="nameTextField" destination="EiQ-3w-OAo" id="Pg3-sU-NDw"/>
+                        <outlet property="price" destination="x2t-b4-w59" id="bz6-Sg-fmJ"/>
+                        <outlet property="priceTextField" destination="TTI-uz-Qcx" id="rfB-xv-3U8"/>
+                        <outlet property="saveGood" destination="Fod-xT-yi2" id="naf-jz-0bN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g02-jk-lRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

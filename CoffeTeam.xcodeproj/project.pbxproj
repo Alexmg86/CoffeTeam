@@ -29,6 +29,7 @@
 		2D84C0462434EE2E007ED54D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C0452434EE2E007ED54D /* CustomButton.swift */; };
 		2D8D171F247819C5009C38CC /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D171E247819C5009C38CC /* Registration.swift */; };
 		2D8D1721247BB58E009C38CC /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D1720247BB58E009C38CC /* Login.swift */; };
+		2D8D82552481473100B3617A /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D82542481473000B3617A /* Goods.swift */; };
 		2D93DC2624192436008E7972 /* WPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC2524192436008E7972 /* WPViewController.swift */; };
 		2D93DC28241924A9008E7972 /* WCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC27241924A9008E7972 /* WCViewController.swift */; };
 		2DA85292247D4B5F00766CD1 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85291247D4B5F00766CD1 /* ProfileEditViewController.swift */; };
@@ -72,6 +73,7 @@
 		2D84C0452434EE2E007ED54D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		2D8D171E247819C5009C38CC /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		2D8D1720247BB58E009C38CC /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		2D8D82542481473000B3617A /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
 		2D93DC2524192436008E7972 /* WPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPViewController.swift; sourceTree = "<group>"; };
 		2D93DC27241924A9008E7972 /* WCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCViewController.swift; sourceTree = "<group>"; };
 		2DA85291247D4B5F00766CD1 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				2D3865952466D8B5004D7918 /* User.swift */,
 				2DF74C9024768D8E0026EF90 /* Groups.swift */,
 				2D8D171E247819C5009C38CC /* Registration.swift */,
+				2D8D82542481473000B3617A /* Goods.swift */,
 				2D8D1720247BB58E009C38CC /* Login.swift */,
 			);
 			path = Models;
@@ -380,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D8D82552481473100B3617A /* Goods.swift in Sources */,
 				2DA8529D24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift in Sources */,
 				2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */,
 				2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */,

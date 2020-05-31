@@ -18,6 +18,7 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var nameTextField : CustomInputField!
     @IBOutlet weak var priceTextField : CustomInputField!
 
+    @IBOutlet weak var icon_id: UILabel!
     @IBOutlet weak var group_id: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
@@ -26,18 +27,32 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
 
     var pickerOficinas: CustomPickerInput!
     var salutations: JSON = []
-    let icons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    var icons = [Int]()
     var selectedIcon: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.createIconsList()
         self.iconsCollectionView.delegate = self
         self.iconsCollectionView.dataSource = self
+        self.priceTextField.keyboardType = .decimalPad
+        group_idTextField.delegate = self
+        nameTextField.delegate = self
+        priceTextField.delegate = self
+        group_id.text = "Группа"
+        name.text = "Краткое название"
+        price.text = "Цена за 10 единицу"
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loadGroups()
+    }
+    
+    func createIconsList() {
+        for i in 1...15 {
+            icons.append(i)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,24 +62,21 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = iconsCollectionView.dequeueReusableCell(withReuseIdentifier: "shopIconsCell", for: indexPath) as! ShopIconsCollectionViewCell
         cell.iconImage.image = UIImage(named: String(icons[indexPath.row]))
-        cell.contentView.layer.cornerRadius = 10
-        cell.contentView.clipsToBounds = true
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = iconsCollectionView.cellForItem(at: indexPath) as? ShopIconsCollectionViewCell {
-            cell.contentView.backgroundColor = UIColor(red: 94/255, green: 186/255, blue: 125/255, alpha: 0.2)
+            UIView.animate(withDuration: 0.1, animations: {
+                cell.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            }, completion: { finish in
+                UIView.animate(withDuration: 0.05, animations: {
+                    cell.transform = CGAffineTransform.identity
+                })
+            })
         }
-        if selectedIcon != indexPath.row {
-            selectedIcon = indexPath.row
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if let cell = iconsCollectionView.cellForItem(at: indexPath) as? ShopIconsCollectionViewCell {
-            cell.contentView.backgroundColor = nil
-        }
+        selectedIcon = indexPath.row + 1
+        iconError(type: false)
     }
 
     @IBAction func closeButton(_ sender: Any) {
@@ -83,10 +95,44 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
             }
         }
     }
+    
+    func iconError(type: Bool) {
+        if let label = self.value(forKey: "icon_id") as? CustomLabel {
+            label.errorText = type ? "Не выбрана иконка." : "Иконка"
+            label.error = type
+        }
+    }
 
     @IBAction func saveGoodTapped(_ sender: UIButton) {
-        print(group_idTextField.text as Any)
-        print(salutations[group_idTextField.tag])
+        guard 0 < selectedIcon && selectedIcon < 15 else {
+            iconError(type: true)
+            return
+        }
+        guard let name = nameTextField.text, let price = priceTextField.text, name != "", price != "" else { return }
+        let group_id = group_idTextField.tag
+        let good = Goods(icon_id: selectedIcon, group_id: group_id, name: name, price: price)
+        AF.request("https://ineedapp:8890/good",
+                   method: .post,
+                   parameters: good,
+                   encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value as Any)
+                let status = response.response!.statusCode
+                switch status {
+                case 422:
+                    for (key, error) in json {
+                        self?.callError(key: key, errors: error)
+                    }
+                case 200:
+                    self?.dismiss(animated: true, completion: nil)
+                default:
+                    print("error")
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 

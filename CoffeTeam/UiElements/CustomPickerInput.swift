@@ -24,11 +24,13 @@ class CustomPickerInput: UIPickerView, UIPickerViewDataSource, UIPickerViewDeleg
 
         if pickerData.count > 0 {
             self.pickerTextField.text = self.pickerData[0]["name"].string
+            self.pickerTextField.tag = self.pickerData[0]["id"].int!
             self.pickerTextField.isEnabled = true
         } else {
             self.pickerTextField.text = nil
             self.pickerTextField.isEnabled = false
         }
+
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -51,6 +53,6 @@ class CustomPickerInput: UIPickerView, UIPickerViewDataSource, UIPickerViewDeleg
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let item = pickerData[row]
         pickerTextField.text = item["name"].string
-        pickerTextField.tag = row
+        pickerTextField.tag = item["id"].int!
     }
 }

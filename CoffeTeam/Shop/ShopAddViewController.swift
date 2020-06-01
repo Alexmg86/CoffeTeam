@@ -30,6 +30,7 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
     var icons = [Int]()
     var selectedIcon: Int = 0
     var editData: Any = []
+    var goodId: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,11 +108,17 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
     
     func setupEdit() {
         let json = JSON(editData as Any)
-        nameTextField.text = json["name"].string
-        priceTextField.text = json["price"].string
-        selectedIcon = Int(json["icon_id"].string!)!
-        let indexPath = IndexPath(row: selectedIcon - 1, section: 0)
-        iconsCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
+        if json.count > 0 {
+            print(json)
+            goodId = json["id"].int!
+            group_idTextField.tag = json["group_id"].int!
+            nameTextField.text = json["name"].string
+            priceTextField.text = json["price"].string
+            selectedIcon = Int(json["icon_id"].string!)!
+            let indexPath = IndexPath(row: selectedIcon - 1, section: 0)
+            iconsCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
+            saveGood.setTitle("Изменить", for: .normal)
+        }
     }
 
     @IBAction func saveGoodTapped(_ sender: UIButton) {
@@ -122,8 +129,13 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
         guard let name = nameTextField.text, let price = priceTextField.text, name != "", price != "" else { return }
         let group_id = group_idTextField.tag
         let good = Goods(icon_id: selectedIcon, group_id: group_id, name: name, price: price)
-        AF.request("https://ineedapp:8890/good",
-                   method: .post,
+        var url = "https://ineedapp:8890/good"
+        if goodId > 0 {
+            url += "/\(String(goodId))"
+        }
+        print(url)
+        AF.request(url,
+                   method: goodId > 0 ? .put : .post,
                    parameters: good,
                    encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
             switch response.result {
@@ -136,6 +148,7 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
                         self?.callError(key: key, errors: error)
                     }
                 case 200:
+                    print(json)
                     self?.dismiss(animated: true, completion: nil)
                 default:
                     print("error")

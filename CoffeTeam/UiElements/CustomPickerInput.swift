@@ -13,8 +13,7 @@ class CustomPickerInput: UIPickerView, UIPickerViewDataSource, UIPickerViewDeleg
 
     var pickerData = JSON()
     var pickerTextField : UITextField!
-    var editModeName: String = ""
-    var editModeId: Int = 0
+    var selected: Int = 0
 
     init(frame: CGRect, pickerData: JSON, dropdownField: UITextField) {
         super.init(frame: frame)
@@ -25,14 +24,22 @@ class CustomPickerInput: UIPickerView, UIPickerViewDataSource, UIPickerViewDeleg
         self.dataSource = self
 
         if pickerData.count > 0 {
-            self.pickerTextField.text = self.pickerData[0]["name"].string
-            self.pickerTextField.tag = self.pickerData[0]["id"].int!
+            setName()
+            self.pickerTextField.text = self.pickerData[selected]["name"].string
+            self.pickerTextField.tag = self.pickerData[selected]["id"].int!
             self.pickerTextField.isEnabled = true
         } else {
             self.pickerTextField.text = nil
             self.pickerTextField.isEnabled = false
         }
-
+    }
+    
+    private func setName() {
+        for (index, item) in pickerData {
+            if (item["id"].int == pickerTextField.tag) {
+                selected = Int(index)!
+            }
+        }
     }
 
     required init(coder aDecoder: NSCoder) {

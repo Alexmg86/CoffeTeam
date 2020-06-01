@@ -7,40 +7,62 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ShopViewController: UITableViewController {
+    
+    var items = [JSON]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadItems()
+        self.tableView.tableFooterView = UIView()
+        tableView.allowsSelection = false
+    }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadItems()
+    }
+    
+    func loadItems() {
+        AF.request("https://ineedapp:8890/good").responseJSON { [weak self] (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                self?.items = json.arrayValue
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return items.isEmpty ? 0 : items.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return items[section]["name"].string
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.isEmpty ? 0 : items[section]["goods"].count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "shopListCell", for: indexPath) as! ShopTableViewCell
+        let itemSection = items[indexPath.section]
+        let item = itemSection["goods"][indexPath.row]
+        cell.goodName.text = item["name"].string
+        cell.goodPrice.text = item["price"].string
+        cell.goodImage.image = UIImage(named: item["icon_id"].string!)
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

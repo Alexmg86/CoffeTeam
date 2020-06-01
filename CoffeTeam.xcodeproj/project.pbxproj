@@ -30,6 +30,7 @@
 		2D8D171F247819C5009C38CC /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D171E247819C5009C38CC /* Registration.swift */; };
 		2D8D1721247BB58E009C38CC /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D1720247BB58E009C38CC /* Login.swift */; };
 		2D8D82552481473100B3617A /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D82542481473000B3617A /* Goods.swift */; };
+		2D8D82572485178C00B3617A /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D82562485178B00B3617A /* ShopTableViewCell.swift */; };
 		2D93DC2624192436008E7972 /* WPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC2524192436008E7972 /* WPViewController.swift */; };
 		2D93DC28241924A9008E7972 /* WCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC27241924A9008E7972 /* WCViewController.swift */; };
 		2DA85292247D4B5F00766CD1 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85291247D4B5F00766CD1 /* ProfileEditViewController.swift */; };
@@ -74,6 +75,7 @@
 		2D8D171E247819C5009C38CC /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		2D8D1720247BB58E009C38CC /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		2D8D82542481473000B3617A /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
+		2D8D82562485178B00B3617A /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
 		2D93DC2524192436008E7972 /* WPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPViewController.swift; sourceTree = "<group>"; };
 		2D93DC27241924A9008E7972 /* WCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCViewController.swift; sourceTree = "<group>"; };
 		2DA85291247D4B5F00766CD1 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				2DA85296247E862400766CD1 /* ShopAddViewController.swift */,
 				2DA8529A247FFB0000766CD1 /* ShopViewController.swift */,
+				2D8D82562485178B00B3617A /* ShopTableViewCell.swift */,
 				2DA8529C24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift */,
 			);
 			path = Shop;
@@ -388,6 +391,7 @@
 				2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */,
 				2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */,
 				2DA85297247E862400766CD1 /* ShopAddViewController.swift in Sources */,
+				2D8D82572485178C00B3617A /* ShopTableViewCell.swift in Sources */,
 				2DFA8DCC243A782300680567 /* MainTabBarViewController.swift in Sources */,
 				2DF74C8F247688920026EF90 /* GroupTableViewCell.swift in Sources */,
 				2D025F5B2417D1F7007287FC /* ViewController.swift in Sources */,

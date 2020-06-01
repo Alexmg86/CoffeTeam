@@ -18,7 +18,6 @@ class ShopViewController: UITableViewController {
         super.viewDidLoad()
         loadItems()
         self.tableView.tableFooterView = UIView()
-        tableView.allowsSelection = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +62,10 @@ class ShopViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "shopAddView",sender: self)
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -99,14 +102,18 @@ class ShopViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "shopAddView" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let itemSection = items[indexPath.section]
+            let item = itemSection["goods"][indexPath.row]
+
+            let controller = segue.destination as! ShopAddViewController
+            controller.editData = item
+        }
     }
-    */
 
 }

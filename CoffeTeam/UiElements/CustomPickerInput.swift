@@ -13,6 +13,8 @@ class CustomPickerInput: UIPickerView, UIPickerViewDataSource, UIPickerViewDeleg
 
     var pickerData = JSON()
     var pickerTextField : UITextField!
+    var editModeName: String = ""
+    var editModeId: Int = 0
 
     init(frame: CGRect, pickerData: JSON, dropdownField: UITextField) {
         super.init(frame: frame)

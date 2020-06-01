@@ -29,6 +29,7 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
     var salutations: JSON = []
     var icons = [Int]()
     var selectedIcon: Int = 0
+    var editData: Any = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,7 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
         group_id.text = "Группа"
         name.text = "Краткое название"
         price.text = "Цена за 10 единицу"
+        setupEdit()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +103,15 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
             label.errorText = type ? "Не выбрана иконка." : "Иконка"
             label.error = type
         }
+    }
+    
+    func setupEdit() {
+        let json = JSON(editData as Any)
+        nameTextField.text = json["name"].string
+        priceTextField.text = json["price"].string
+        selectedIcon = Int(json["icon_id"].string!)!
+        let indexPath = IndexPath(row: selectedIcon - 1, section: 0)
+        iconsCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
     }
 
     @IBAction func saveGoodTapped(_ sender: UIButton) {

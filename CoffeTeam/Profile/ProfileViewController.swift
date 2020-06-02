@@ -69,21 +69,9 @@ class ProfileViewController: UIViewController {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginOne") as! LoginViewController
         self.present(nextViewController, animated:true, completion:nil)
     }
-
-    @IBAction func signOut(_ sender: Any) {
-        let parameters: Parameters = [:]
-        AF.request("https://ineedapp.ru/logout",
-                   method: .post,
-                   parameters: parameters,
-                   encoding: JSONEncoding.default).response { [weak self] response in
-            switch response.result {
-            case .success( _):
-                self?.user.userExit()
-                self?.isUserExist()
-            case .failure(_):
-                print("error")
-            }
-        }
+    
+    @IBAction func editAccount(_ sender: Any) {
+        self.performSegue(withIdentifier: "profileEdit",sender: self)
     }
     
     /*

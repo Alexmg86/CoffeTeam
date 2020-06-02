@@ -133,7 +133,6 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
         if goodId > 0 {
             url += "/\(String(goodId))"
         }
-        print(url)
         AF.request(url,
                    method: goodId > 0 ? .put : .post,
                    parameters: good,

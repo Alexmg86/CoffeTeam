@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ProfileEditViewController: KeyboardEasyViewController {
+class ProfileEditViewController: KeyboadController {
     
     @IBOutlet weak var nameTextField: CustomInputField!
     @IBOutlet weak var updateAccount: CustomButton!
@@ -23,6 +23,7 @@ class ProfileEditViewController: KeyboardEasyViewController {
         super.viewDidLoad()
         nameTextField.delegate = self
         name.text = "Имя (то как вас будут видеть)"
+        nameTextField.text = user.getName()
     }
     
     @IBAction func closeButton(_ sender: Any) {

@@ -338,7 +338,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Edit" image="pencil.circle.fill" catalog="system" id="orj-k0-ZXw">
                             <color key="tintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="x2q-dw-gwl" kind="presentation" id="CcV-ah-yIb"/>
+                                <action selector="editAccount:" destination="Ce8-Ab-nxA" id="GN5-Qq-uq6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -349,6 +349,7 @@
                         <outlet property="infoStackView" destination="96y-PQ-ksZ" id="e90-sM-naw"/>
                         <outlet property="loginStackView" destination="PaC-1p-QKX" id="Jzg-Oq-wSl"/>
                         <outlet property="userNameLabel" destination="U1L-gU-Lq1" id="PVd-KW-DrR"/>
+                        <segue destination="qzd-mL-6Fp" kind="presentation" identifier="profileEdit" id="p2N-he-bSA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMV-kY-lzg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -580,49 +581,64 @@
             </objects>
             <point key="canvasLocation" x="4180" y="269"/>
         </scene>
-        <!--Редактирование-->
-        <scene sceneID="iSM-8F-f1b">
+        <!--Profile Edit View Controller-->
+        <scene sceneID="z1C-FO-CUc">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="WHy-CN-dhb" customClass="ProfileEditViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Fpw-NE-YmP">
+                <viewController modalPresentationStyle="fullScreen" id="qzd-mL-6Fp" customClass="ProfileEditViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jGY-Vd-Lym" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VUm-BG-TLY">
-                                <rect key="frame" x="20" y="118" width="374" height="347.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaL-np-dRZ">
+                                <rect key="frame" x="370" y="56" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="5UH-dm-Wct"/>
+                                    <constraint firstAttribute="width" constant="20" id="KCj-bE-ZuD"/>
+                                </constraints>
+                                <color key="tintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="cross">
+                                    <color key="titleColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButton:" destination="EWN-PL-qcr" eventType="touchUpInside" id="9V1-3I-yrA"/>
+                                    <action selector="closeButton:" destination="qzd-mL-6Fp" eventType="touchUpInside" id="9a4-AC-Wso"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eDo-VN-7HJ">
+                                <rect key="frame" x="20" y="327.5" width="374" height="241.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wFW-vl-zmv">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JNN-eW-ZCr">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="56.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя (то как вас будут видеть)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LR7-Sk-zIr" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя (то как вас будут видеть)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NA-ia-N8a" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="13.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2dq-Or-RUf" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vee-cc-qJK" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="18.5" width="374" height="38"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="38" id="9x7-sf-bgH"/>
+                                                    <constraint firstAttribute="height" constant="38" id="HVe-T0-gKx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="2dq-Or-RUf" firstAttribute="leading" secondItem="wFW-vl-zmv" secondAttribute="leading" id="I4K-fi-r6E"/>
-                                            <constraint firstAttribute="trailing" secondItem="2dq-Or-RUf" secondAttribute="trailing" id="OwA-fi-EHV"/>
+                                            <constraint firstItem="vee-cc-qJK" firstAttribute="leading" secondItem="JNN-eW-ZCr" secondAttribute="leading" id="ATC-R0-Vlh"/>
+                                            <constraint firstAttribute="trailing" secondItem="vee-cc-qJK" secondAttribute="trailing" id="ZGT-bF-arb"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FYp-R2-BGh">
-                                        <rect key="frame" x="49" y="106.5" width="276" height="241"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Rb2-Lo-nWF">
+                                        <rect key="frame" x="107" y="106.5" width="160" height="135"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyd-nz-1ba" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="98" width="260" height="60"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiM-Gx-LW2" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
                                                 <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="FPz-ab-snM"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="b45-Nt-yyA"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="ADp-yI-QD8"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Eix-uh-Dp6"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -630,14 +646,14 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="updateUser:" destination="WHy-CN-dhb" eventType="touchUpInside" id="c0t-Vw-8It"/>
+                                                    <action selector="updateUser:" destination="qzd-mL-6Fp" eventType="touchUpInside" id="Xdd-t8-gik"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXp-uG-0V7">
-                                                <rect key="frame" x="8" y="173" width="260" height="60"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kap-TK-uYI">
+                                                <rect key="frame" x="0.0" y="75" width="160" height="60"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="7YX-h0-U2b"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="kg0-We-lkc"/>
+                                                    <constraint firstAttribute="height" constant="60" id="iMp-68-3vN"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="xaf-mR-aGM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -645,45 +661,36 @@
                                                     <color key="titleColor" red="0.64705882349999999" green="0.65098039220000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="exitUser:" destination="WHy-CN-dhb" eventType="touchUpInside" id="I0a-VK-cfr"/>
+                                                    <action selector="exitUser:" destination="qzd-mL-6Fp" eventType="touchUpInside" id="hOL-d1-rId"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <edgeInsets key="layoutMargins" top="98" left="8" bottom="8" right="8"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="wFW-vl-zmv" secondAttribute="trailing" id="ed0-dY-UAK"/>
-                                    <constraint firstItem="wFW-vl-zmv" firstAttribute="leading" secondItem="VUm-BG-TLY" secondAttribute="leading" id="yyL-PV-Vcj"/>
+                                    <constraint firstItem="JNN-eW-ZCr" firstAttribute="leading" secondItem="eDo-VN-7HJ" secondAttribute="leading" id="Trf-oP-VYf"/>
+                                    <constraint firstAttribute="trailing" secondItem="JNN-eW-ZCr" secondAttribute="trailing" id="q7L-fQ-v9O"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="sv8-PD-A2T" firstAttribute="trailing" secondItem="VUm-BG-TLY" secondAttribute="trailing" constant="20" id="R3C-xC-Hrm"/>
-                            <constraint firstItem="VUm-BG-TLY" firstAttribute="centerX" secondItem="Fpw-NE-YmP" secondAttribute="centerX" id="jfc-B5-rHE"/>
-                            <constraint firstItem="VUm-BG-TLY" firstAttribute="top" secondItem="sv8-PD-A2T" secondAttribute="top" constant="30" id="svb-eT-Mqk"/>
-                            <constraint firstItem="VUm-BG-TLY" firstAttribute="leading" secondItem="sv8-PD-A2T" secondAttribute="leading" constant="20" id="y0w-Fs-hhk"/>
+                            <constraint firstItem="eDo-VN-7HJ" firstAttribute="leading" secondItem="Mwn-OT-hyP" secondAttribute="leading" constant="20" id="E2P-So-net"/>
+                            <constraint firstItem="zaL-np-dRZ" firstAttribute="top" secondItem="jGY-Vd-Lym" secondAttribute="top" constant="56" id="MSu-v7-xSR"/>
+                            <constraint firstItem="eDo-VN-7HJ" firstAttribute="centerY" secondItem="jGY-Vd-Lym" secondAttribute="centerY" id="X0Z-yM-BbU"/>
+                            <constraint firstItem="Mwn-OT-hyP" firstAttribute="trailing" secondItem="zaL-np-dRZ" secondAttribute="trailing" constant="24" id="hx6-of-bSw"/>
+                            <constraint firstItem="Mwn-OT-hyP" firstAttribute="trailing" secondItem="eDo-VN-7HJ" secondAttribute="trailing" constant="20" id="r3S-R6-aBL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="sv8-PD-A2T"/>
+                        <viewLayoutGuide key="safeArea" id="Mwn-OT-hyP"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Редактирование" id="YI9-cB-fjz">
-                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="1xM-Vx-7Nz">
-                            <connections>
-                                <action selector="closeButton:" destination="WHy-CN-dhb" id="DlL-C7-vqF"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
-                        <outlet property="exitAccount" destination="SXp-uG-0V7" id="zJw-CR-5Sy"/>
-                        <outlet property="name" destination="LR7-Sk-zIr" id="mfX-jh-MJW"/>
-                        <outlet property="nameTextField" destination="2dq-Or-RUf" id="dFR-SB-mXB"/>
-                        <outlet property="updateAccount" destination="tyd-nz-1ba" id="oj7-YC-pZ6"/>
+                        <outlet property="name" destination="0NA-ia-N8a" id="hzo-cM-zAM"/>
+                        <outlet property="nameTextField" destination="vee-cc-qJK" id="eit-gQ-vPA"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="05B-VZ-YfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZAM-3j-Ozg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5089.8550724637689" y="1027.9017857142858"/>
+            <point key="canvasLocation" x="4180" y="1029"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="TJv-aO-tDv">
@@ -1453,24 +1460,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8O-BH-XEg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4179.7101449275369" y="1782.5892857142856"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="2i2-Yl-Pkg">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="x2q-dw-gwl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SKV-g8-fz7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="WHy-CN-dhb" kind="relationship" relationship="rootViewController" id="Q7x-Zd-YAl"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rv4-n1-vzE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4179.7101449275369" y="1027.9017857142858"/>
         </scene>
         <!--Лавка-->
         <scene sceneID="mhK-ag-TmX">

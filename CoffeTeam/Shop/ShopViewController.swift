@@ -26,7 +26,7 @@ class ShopViewController: UITableViewController {
     }
     
     func loadItems() {
-        AF.request("https://ineedapp:8890/good").responseJSON { [weak self] (response) in
+        AF.request("https://ineedapp.ru/good").responseJSON { [weak self] (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)

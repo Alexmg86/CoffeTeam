@@ -47,7 +47,7 @@ class RegistrationViewController: KeyboadController {
         }
         let registration = Registration(email: email, password: password, password_confirmation: passwordConfirm, name: nickname)
 
-        AF.request("https://ineedapp:8890/register",
+        AF.request("https://ineedapp.ru/register",
                    method: .post,
                    parameters: registration,
                    encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in

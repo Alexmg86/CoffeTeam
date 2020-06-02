@@ -27,7 +27,7 @@ class GroupAddViewController: KeyboadController {
         let hash = user.getHash()
         guard let name = groupName.text, name != "", hash != "" else { return }
         weak var pvc = self.presentingViewController
-        AF.request("https://ineedapp:8890/group",
+        AF.request("https://ineedapp.ru/group",
                    method: .post,
                    parameters: ["name": name, "hash": hash],
                    encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in

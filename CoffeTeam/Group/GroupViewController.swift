@@ -57,7 +57,7 @@ class GroupViewController: UITableViewController {
             checkPopup()
             return
         }
-        AF.request("https://ineedapp:8890/group").responseJSON { [weak self] (response) in
+        AF.request("https://ineedapp.ru/group").responseJSON { [weak self] (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)

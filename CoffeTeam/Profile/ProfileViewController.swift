@@ -35,7 +35,7 @@ class ProfileViewController: UIViewController {
     }
 
     func getUser() {
-        AF.request("https://ineedapp:8890/getUser").responseJSON { (response) in
+        AF.request("https://ineedapp.ru/getUser").responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -72,7 +72,7 @@ class ProfileViewController: UIViewController {
 
     @IBAction func signOut(_ sender: Any) {
         let parameters: Parameters = [:]
-        AF.request("https://ineedapp:8890/logout",
+        AF.request("https://ineedapp.ru/logout",
                    method: .post,
                    parameters: parameters,
                    encoding: JSONEncoding.default).response { [weak self] response in

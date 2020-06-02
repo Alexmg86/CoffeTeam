@@ -87,7 +87,7 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
     }
 
     func loadGroups() {
-        AF.request("https://ineedapp:8890/group").responseJSON { [weak self] (response) in
+        AF.request("https://ineedapp.ru/group").responseJSON { [weak self] (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -129,7 +129,7 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
         guard let name = nameTextField.text, let price = priceTextField.text, name != "", price != "" else { return }
         let group_id = group_idTextField.tag
         let good = Goods(icon_id: selectedIcon, group_id: group_id, name: name, price: price)
-        var url = "https://ineedapp:8890/good"
+        var url = "https://ineedapp.ru/good"
         if goodId > 0 {
             url += "/\(String(goodId))"
         }

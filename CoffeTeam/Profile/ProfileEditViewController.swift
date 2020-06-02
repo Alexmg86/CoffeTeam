@@ -36,7 +36,7 @@ class ProfileEditViewController: KeyboardEasyViewController {
         let hash = user.getHash()
         guard hash != "" else { return }
         
-        AF.request("https://ineedapp:8890/updateUser",
+        AF.request("https://ineedapp.ru/updateUser",
                    method: .post,
                    parameters: ["name": nickname, "hash": hash],
                    encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
@@ -63,7 +63,7 @@ class ProfileEditViewController: KeyboardEasyViewController {
     }
     @IBAction func exitUser(_ sender: Any) {
         let parameters: Parameters = [:]
-        AF.request("https://ineedapp:8890/logout",
+        AF.request("https://ineedapp.ru/logout",
                    method: .post,
                    parameters: parameters,
                    encoding: JSONEncoding.default).response { [weak self] response in

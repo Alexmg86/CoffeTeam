@@ -39,7 +39,6 @@
 		2DA85299247FD88D00766CD1 /* CustomPickerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85298247FD88D00766CD1 /* CustomPickerInput.swift */; };
 		2DA8529B247FFB0000766CD1 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8529A247FFB0000766CD1 /* ShopViewController.swift */; };
 		2DA8529D24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8529C24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift */; };
-		2DF648BE241A4DB000EABEC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */; };
 		2DF74C8F247688920026EF90 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */; };
 		2DF74C9124768D8E0026EF90 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF74C9024768D8E0026EF90 /* Groups.swift */; };
 		2DFA8DC6243A771300680567 /* BubbleTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA8DC5243A771300680567 /* BubbleTabBar.swift */; };
@@ -84,7 +83,6 @@
 		2DA85298247FD88D00766CD1 /* CustomPickerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerInput.swift; sourceTree = "<group>"; };
 		2DA8529A247FFB0000766CD1 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		2DA8529C24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopIconsCollectionViewCell.swift; sourceTree = "<group>"; };
-		2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		2DF74C9024768D8E0026EF90 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		2DFA8DC5243A771300680567 /* BubbleTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTabBar.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				2D025F5F2417D1F9007287FC /* Assets.xcassets */,
 				2D025F612417D1F9007287FC /* LaunchScreen.storyboard */,
 				2D025F642417D1F9007287FC /* Info.plist */,
-				2DF648BD241A4DB000EABEC4 /* GoogleService-Info.plist */,
 			);
 			path = CoffeTeam;
 			sourceTree = "<group>";
@@ -331,7 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D025F632417D1F9007287FC /* LaunchScreen.storyboard in Resources */,
-				2DF648BE241A4DB000EABEC4 /* GoogleService-Info.plist in Resources */,
 				2D025F602417D1F9007287FC /* Assets.xcassets in Resources */,
 				2D025F5E2417D1F7007287FC /* Main.storyboard in Resources */,
 			);

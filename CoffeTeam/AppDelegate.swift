@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let userDefaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
         UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.9607843137, green: 0.968627451, blue: 0.9882352941, alpha: 1)
 //        userDefaults.set(false, forKey: "presentationShowed")
         return true

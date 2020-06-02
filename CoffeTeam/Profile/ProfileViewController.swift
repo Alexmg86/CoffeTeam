@@ -34,18 +34,6 @@ class ProfileViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
 
-    func getUser() {
-        AF.request("https://ineedapp.ru/getUser").responseJSON { (response) in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print(json)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-
     func isUserExist() {
         if user.isUserExist() {
             infoStackView.isHidden = false

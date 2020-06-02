@@ -36,10 +36,10 @@ class ProfileEditViewController: KeyboadController {
         }
         let hash = user.getHash()
         guard hash != "" else { return }
-        
-        AF.request("https://ineedapp.ru/updateUser",
-                   method: .post,
-                   parameters: ["name": nickname, "hash": hash],
+        let url = "https://ineedapp.ru/user/\(String(hash))"
+        AF.request(url,
+                   method: .put,
+                   parameters: ["name": nickname],
                    encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
@@ -47,12 +47,7 @@ class ProfileEditViewController: KeyboadController {
                 let status = response.response!.statusCode
                 switch status {
                 case 200:
-                    if (json.count == 3) {
-                        let userDefaults = UserDefaults.standard
-                        for (key, value) in json {
-                            userDefaults.set(value.stringValue, forKey: "coffeapp_user_"+key)
-                        }
-                    }
+                    self?.user.userUpdate(json: json)
                     self?.dismiss(animated: true, completion: nil)
                 default:
                     print("error")

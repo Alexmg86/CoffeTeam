@@ -1352,7 +1352,7 @@
             </objects>
             <point key="canvasLocation" x="2394" y="1783"/>
         </scene>
-        <!--Shop View Controller-->
+        <!--Лавка-->
         <scene sceneID="6Dg-LM-N9F">
             <objects>
                 <tableViewController id="rUP-Hp-saU" customClass="ShopViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
@@ -1411,7 +1411,7 @@
                             <outlet property="delegate" destination="rUP-Hp-saU" id="xyr-rc-PIz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fYb-Ht-B2P">
+                    <navigationItem key="navigationItem" title="Лавка" id="fYb-Ht-B2P">
                         <barButtonItem key="rightBarButtonItem" image="plus.circle.fill" catalog="system" id="AAH-FX-OPA">
                             <color key="tintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>

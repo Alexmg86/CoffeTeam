@@ -109,7 +109,6 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
     func setupEdit() {
         let json = JSON(editData as Any)
         if json.count > 0 {
-            print(json)
             goodId = json["id"].int!
             group_idTextField.tag = json["group_id"].int!
             nameTextField.text = json["name"].string
@@ -147,7 +146,6 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
                         self?.callError(key: key, errors: error)
                     }
                 case 200:
-                    print(json)
                     self?.dismiss(animated: true, completion: nil)
                 default:
                     print("error")

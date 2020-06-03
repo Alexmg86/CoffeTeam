@@ -152,96 +152,132 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle.fill" catalog="system" id="Xu9-HK-fVv">
                             <color key="tintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="8rO-p7-kGl" kind="presentation" id="vH2-BR-0LV"/>
+                                <segue destination="dEP-3g-0NV" kind="presentation" identifier="groupAdd" id="KsX-rH-Z4j"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="dEP-3g-0NV" kind="presentation" identifier="groupEdit" id="PhJ-45-Pbc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agN-eU-Zon" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3287" y="1783"/>
         </scene>
-        <!--Добавить-->
-        <scene sceneID="Fcj-W5-wVw">
+        <!--Group Add View Controller-->
+        <scene sceneID="fsX-IA-fG5">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="ISs-nh-4ye" customClass="GroupAddViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eqI-R7-IYq" customClass="UIScrollView">
+                <viewController modalPresentationStyle="fullScreen" id="dEP-3g-0NV" customClass="GroupAddViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B6S-DK-4uD" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="b3T-2m-Nmy">
-                                <rect key="frame" x="20" y="377" width="374" height="142.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="xgl-Zx-Qea">
+                                <rect key="frame" x="20" y="130" width="374" height="256.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cTW-ma-NKA">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="61.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUU-6Y-AkT">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="MmJ-5B-1nG"/>
+                                        </constraints>
+                                        <string key="text">Введите название группы,
+после вы получите уникальный код,
+по которому вашу группу найдут коллеги</string>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                        <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="OX5-Ck-NzO">
+                                        <rect key="frame" x="0.0" y="100" width="374" height="156.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guE-0g-mm3" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="102" height="13.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L3C-jm-E2z" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="23.5" width="374" height="38"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7nQ-Rz-ieZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="56.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sv1-2m-ceV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="56.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugO-Mr-bY0" customClass="CustomLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="102" height="13.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                                <color key="textColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7U-k5-GT3" customClass="CustomInputField" customModule="CoffeTeam" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="18.5" width="374" height="38"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="38" id="3ex-YM-Yao"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="M7U-k5-GT3" firstAttribute="leading" secondItem="sv1-2m-ceV" secondAttribute="leading" id="TQK-f3-enk"/>
+                                                            <constraint firstAttribute="trailing" secondItem="M7U-k5-GT3" secondAttribute="trailing" id="x2a-c9-OqN"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LT-pk-slG" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
+                                                <rect key="frame" x="107" y="106.5" width="160" height="50"/>
+                                                <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="38" id="had-gW-ysi"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="BAN-pu-5CO"/>
+                                                    <constraint firstAttribute="height" constant="50" id="asz-Jj-kHF"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <state key="normal" title="Добавить">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonAdd:" destination="dEP-3g-0NV" eventType="touchUpInside" id="xM3-td-cVk"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="L3C-jm-E2z" firstAttribute="leading" secondItem="cTW-ma-NKA" secondAttribute="leading" id="hXC-T3-ULj"/>
-                                            <constraint firstAttribute="trailing" secondItem="L3C-jm-E2z" secondAttribute="trailing" id="wsz-m0-5cD"/>
+                                            <constraint firstItem="7nQ-Rz-ieZ" firstAttribute="leading" secondItem="OX5-Ck-NzO" secondAttribute="leading" id="JmZ-RS-9hE"/>
+                                            <constraint firstAttribute="trailing" secondItem="7nQ-Rz-ieZ" secondAttribute="trailing" id="NYW-Zg-HWV"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nso-PB-Baj" customClass="CustomButton" customModule="CoffeTeam" customModuleProvider="target">
-                                        <rect key="frame" x="107" y="92.5" width="160" height="50"/>
-                                        <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="KSD-93-GQh"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="bKW-XL-hn6"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <state key="normal" title="Добавить">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonAdd:" destination="ISs-nh-4ye" eventType="touchUpInside" id="lsN-Tn-eb8"/>
-                                            <action selector="closePresentation:" destination="tav-2H-v3N" eventType="touchUpInside" id="T78-37-Ngq"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="cTW-ma-NKA" secondAttribute="trailing" id="VVL-jI-Zmz"/>
-                                    <constraint firstItem="cTW-ma-NKA" firstAttribute="leading" secondItem="b3T-2m-Nmy" secondAttribute="leading" id="rZq-GD-axi"/>
-                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DF-qY-mlK">
+                                <rect key="frame" x="370" y="56" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Qoj-rh-i0k"/>
+                                    <constraint firstAttribute="width" constant="20" id="TFh-IK-iP7"/>
+                                </constraints>
+                                <color key="tintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="cross">
+                                    <color key="titleColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButton:" destination="EWN-PL-qcr" eventType="touchUpInside" id="JDj-nr-NvK"/>
+                                    <action selector="closeButton:" destination="dEP-3g-0NV" eventType="touchUpInside" id="UYs-YY-fMq"/>
+                                    <action selector="closeButton:" destination="qzd-mL-6Fp" eventType="touchUpInside" id="YDt-7M-4Bl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="b3T-2m-Nmy" firstAttribute="centerX" secondItem="eqI-R7-IYq" secondAttribute="centerX" id="99m-fK-e0a"/>
-                            <constraint firstItem="iTM-Uf-h2D" firstAttribute="trailing" secondItem="b3T-2m-Nmy" secondAttribute="trailing" constant="20" id="NoJ-uL-IL9"/>
-                            <constraint firstItem="b3T-2m-Nmy" firstAttribute="leading" secondItem="iTM-Uf-h2D" secondAttribute="leading" constant="20" id="uUh-pe-qAT"/>
-                            <constraint firstItem="b3T-2m-Nmy" firstAttribute="centerY" secondItem="eqI-R7-IYq" secondAttribute="centerY" id="wWY-Wv-pcY"/>
+                            <constraint firstItem="xgl-Zx-Qea" firstAttribute="top" secondItem="B6S-DK-4uD" secondAttribute="top" constant="130" id="XFq-da-sNm"/>
+                            <constraint firstItem="xgl-Zx-Qea" firstAttribute="leading" secondItem="4js-pb-M4A" secondAttribute="leading" constant="20" id="YS6-u0-XJK"/>
+                            <constraint firstItem="4js-pb-M4A" firstAttribute="trailing" secondItem="9DF-qY-mlK" secondAttribute="trailing" constant="24" id="YYy-rM-cdu"/>
+                            <constraint firstItem="9DF-qY-mlK" firstAttribute="top" secondItem="B6S-DK-4uD" secondAttribute="top" constant="56" id="nZW-VC-1sx"/>
+                            <constraint firstItem="4js-pb-M4A" firstAttribute="trailing" secondItem="xgl-Zx-Qea" secondAttribute="trailing" constant="20" id="okf-ma-tzD"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iTM-Uf-h2D"/>
+                        <viewLayoutGuide key="safeArea" id="4js-pb-M4A"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Добавить" id="hQh-Br-y4g">
-                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="scu-v7-BYd">
-                            <connections>
-                                <action selector="closeButton:" destination="ISs-nh-4ye" id="8aC-mI-jtX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
-                        <outlet property="groupName" destination="L3C-jm-E2z" id="r8d-Kf-Uya"/>
+                        <outlet property="name" destination="ugO-Mr-bY0" id="iXB-kt-6lU"/>
+                        <outlet property="nameTextField" destination="M7U-k5-GT3" id="HXn-VB-PNS"/>
+                        <outlet property="saveGroup" destination="2LT-pk-slG" id="eyc-Bl-pDA"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="byK-pG-kZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyC-ha-mmv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5089.8550724637689" y="1782.5892857142856"/>
+            <point key="canvasLocation" x="4180" y="1783"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="UtP-La-CRb">
@@ -1443,24 +1479,6 @@
             </objects>
             <point key="canvasLocation" x="2393" y="1028"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="z54-N6-oDY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="8rO-p7-kGl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8PP-fS-G4P">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ISs-nh-4ye" kind="relationship" relationship="rootViewController" id="q8b-NG-YBy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u8O-BH-XEg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4179.7101449275369" y="1782.5892857142856"/>
-        </scene>
         <!--Лавка-->
         <scene sceneID="mhK-ag-TmX">
             <objects>
@@ -1481,6 +1499,9 @@
             <point key="canvasLocation" x="2392.753623188406" y="268.52678571428572"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PhJ-45-Pbc"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="close" width="70" height="70"/>
         <image name="cross" width="72" height="72"/>

@@ -14,6 +14,7 @@ class GroupViewController: UITableViewController {
 
     var items = [JSON]()
     let user = User()
+    var selectedRow: Int = 0
 
     func configureRefreshControl() {
         let refreshControl = UIRefreshControl()
@@ -107,5 +108,32 @@ class GroupViewController: UITableViewController {
         cell.nameLabel.text = item["name"].string
         cell.codeLabel.text = "@\(item["code"])"
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Удалить") { (action, sourceView, completionHandler) in
+            completionHandler(false)
+        }
+        let edit = UIContextualAction(style: .normal, title: "Изменить") { [weak self] (action, sourceView, completionHandler) in
+            self?.selectedRow = indexPath.row
+            self?.performSegue(withIdentifier: "groupEdit",sender: self)
+            completionHandler(false)
+        }
+        edit.backgroundColor = .blue
+        let swipeAction = UISwipeActionsConfiguration(actions: [delete, edit])
+        swipeAction.performsFirstActionWithFullSwipe = false
+        return swipeAction
+    }
+
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "groupEdit" {
+            let item = items[selectedRow]
+            let controller = segue.destination as! GroupAddViewController
+            controller.editData = JSON(item as Any)
+        }
     }
 }

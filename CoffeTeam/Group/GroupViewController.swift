@@ -54,23 +54,22 @@ class GroupViewController: UITableViewController {
     
     func loadGroups() {
         if (!user.isUserExist()) {
-            items = []
-            checkPopup()
+            checkPopup(value: [])
             return
         }
         AF.request("https://ineedapp.ru/group").responseJSON { [weak self] (response) in
             switch response.result {
             case .success(let value):
-                let json = JSON(value)
-                self?.items = json.arrayValue
-                self?.checkPopup()
+                self?.checkPopup(value: value)
             case .failure(let error):
                 print(error)
             }
         }
     }
     
-    func checkPopup() {
+    func checkPopup(value: Any) {
+        let json = JSON(value as Any)
+        items = json.arrayValue
         if let viewWithTag = self.view.viewWithTag(1234) {
             viewWithTag.removeFromSuperview()
         }
@@ -112,7 +111,8 @@ class GroupViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .destructive, title: "Удалить") { (action, sourceView, completionHandler) in
+        let delete = UIContextualAction(style: .destructive, title: "Удалить") { [weak self] (action, sourceView, completionHandler) in
+            self?.deleteItem(row: indexPath.row)
             completionHandler(false)
         }
         let edit = UIContextualAction(style: .normal, title: "Изменить") { [weak self] (action, sourceView, completionHandler) in
@@ -134,6 +134,23 @@ class GroupViewController: UITableViewController {
             let item = items[selectedRow]
             let controller = segue.destination as! GroupAddViewController
             controller.editData = JSON(item as Any)
+        }
+    }
+    
+    func deleteItem(row: Int) {
+        let hash = user.getHash()
+        let item = items[row]
+        let url = "https://ineedapp.ru/group/\(String(item["id"].int!))"
+        AF.request(url,
+                   method: .delete,
+                   parameters: ["hash": hash],
+                   encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+            switch response.result {
+            case .success(let value):
+                self?.checkPopup(value: value)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }

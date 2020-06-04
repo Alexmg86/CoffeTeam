@@ -20,7 +20,12 @@ class ShopViewController: MainTableViewController {
         super.modelName = "good"
     }
 
+    
     // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return items.isEmpty ? 0 : items.count
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.isEmpty ? 0 : items[section]["goods"].count
@@ -52,17 +57,31 @@ class ShopViewController: MainTableViewController {
         view.addSubview(label)
         return view
     }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Удалить") { [weak self] (action, sourceView, completionHandler) in
+            self?.deleteItem(indexPath: indexPath, column: "id", subsection: "goods")
+            completionHandler(false)
+        }
+        let edit = UIContextualAction(style: .normal, title: "Изменить") { [weak self] (action, sourceView, completionHandler) in
+            self?.selectedIndex = indexPath
+            self?.performSegue(withIdentifier: "goodEdit",sender: self)
+            completionHandler(false)
+        }
+        edit.backgroundColor = .blue
+        let swipeAction = UISwipeActionsConfiguration(actions: [delete, edit])
+        swipeAction.performsFirstActionWithFullSwipe = false
+        return swipeAction
+    }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "shopAddView" {
-            guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let itemSection = items[indexPath.section]
-            let item = itemSection["goods"][indexPath.row]
-
+        if segue.identifier == "goodEdit" {
+            let itemSection = items[selectedIndex.section]
+            let item = itemSection["goods"][selectedIndex.row]
             let controller = segue.destination as! ShopAddViewController
-            controller.editData = item
+            controller.editData = JSON(item as Any)
         }
     }
 }

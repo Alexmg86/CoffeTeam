@@ -15,6 +15,7 @@ class MainTableViewController: UITableViewController {
     var items = [JSON]()
     let user = User()
     var itemOldCount: Int = 0
+    var selectedIndex: IndexPath = []
 
     var modelName: String = ""
     var popupIcon: String = ""
@@ -49,6 +50,27 @@ class MainTableViewController: UITableViewController {
             return
         }
         AF.request("https://ineedapp.ru/\(modelName)").responseJSON { [weak self] (response) in
+            switch response.result {
+            case .success(let value):
+                self?.checkItems(value: value)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
+    func deleteItem(indexPath: IndexPath, column: String, subsection: String) {
+        let hash = user.getHash()
+        var item = items[indexPath.row]
+        if subsection != "" {
+            let itemSection = items[indexPath.section]
+            item = itemSection[subsection][indexPath.row]
+        }
+        let url = "https://ineedapp.ru/\(modelName)/\(String(item[column].int!))"
+        AF.request(url,
+                    method: .delete,
+                    parameters: ["hash": hash],
+                    encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
                 self?.checkItems(value: value)
@@ -112,15 +134,5 @@ class MainTableViewController: UITableViewController {
         DispatchQueue.main.async {
            self.tableView.refreshControl?.endRefreshing()
         }
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return items.isEmpty ? 0 : 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.isEmpty ? 0 : items.count
     }
 }

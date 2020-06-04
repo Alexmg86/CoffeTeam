@@ -1443,10 +1443,13 @@
                         <barButtonItem key="rightBarButtonItem" image="plus.circle.fill" catalog="system" id="AAH-FX-OPA">
                             <color key="tintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="EWN-PL-qcr" kind="presentation" identifier="shopAddView" id="CK0-sb-fYj"/>
+                                <segue destination="EWN-PL-qcr" kind="presentation" identifier="goodAdd" id="CK0-sb-fYj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="EWN-PL-qcr" kind="presentation" identifier="goodEdit" id="vXa-IW-cUI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWP-6O-EA4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1492,6 +1495,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="CK0-sb-fYj"/>
         <segue reference="PhJ-45-Pbc"/>
     </inferredMetricsTieBreakers>
     <resources>

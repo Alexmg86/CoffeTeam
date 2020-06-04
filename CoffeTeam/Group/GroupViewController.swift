@@ -39,19 +39,19 @@ class GroupViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         tableView.allowsSelection = false
     }
-    
+
     @objc func refreshData() {
         loadGroups()
         DispatchQueue.main.async {
            self.tableView.refreshControl?.endRefreshing()
         }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadGroups()
     }
-    
+
     func loadGroups() {
         if (!user.isUserExist()) {
             checkPopup(value: [])
@@ -66,7 +66,7 @@ class GroupViewController: UITableViewController {
             }
         }
     }
-    
+
     func checkPopup(value: Any) {
         let json = JSON(value as Any)
         items = json.arrayValue
@@ -112,11 +112,10 @@ class GroupViewController: UITableViewController {
         cell.codeLabel.text = "@\(item["code"])"
         return cell
     }
-    
-    
+
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Удалить") { [weak self] (action, sourceView, completionHandler) in
-            self?.deleteItem(row: indexPath.row)
+            self?.callAlert(row: indexPath.row)
             completionHandler(false)
         }
         let edit = UIContextualAction(style: .normal, title: "Изменить") { [weak self] (action, sourceView, completionHandler) in
@@ -132,7 +131,6 @@ class GroupViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "groupEdit" {
             let item = items[selectedRow]
@@ -140,15 +138,24 @@ class GroupViewController: UITableViewController {
             controller.editData = JSON(item as Any)
         }
     }
-    
+
+    func callAlert(row: Int) {
+        let alert = UIAlertController(title: "Внимание!", message: "Будут удалены также все товары этой группы, но они останутся в статистиках, если по ним были покупки.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: { [weak self] action in
+            self?.deleteItem(row: row)
+        }))
+        self.present(alert, animated: true)
+    }
+
     func deleteItem(row: Int) {
         let hash = user.getHash()
         let item = items[row]
         let url = "https://ineedapp.ru/group/\(String(item["id"].int!))"
         AF.request(url,
-                   method: .delete,
-                   parameters: ["hash": hash],
-                   encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+                    method: .delete,
+                    parameters: ["hash": hash],
+                    encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
                 self?.checkPopup(value: value)

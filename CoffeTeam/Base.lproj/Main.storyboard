@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UFg-eb-gGS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -388,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMV-kY-lzg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3287" y="1029"/>
+            <point key="canvasLocation" x="3303" y="2640"/>
         </scene>
         <!--Добавить-->
         <scene sceneID="sBL-0L-sIM">
@@ -613,7 +613,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g02-jk-lRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4180" y="269"/>
+            <point key="canvasLocation" x="4180" y="942"/>
         </scene>
         <!--Profile Edit View Controller-->
         <scene sceneID="z1C-FO-CUc">
@@ -724,7 +724,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAM-3j-Ozg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4180" y="1029"/>
+            <point key="canvasLocation" x="4180" y="2640"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="TJv-aO-tDv">
@@ -930,22 +930,6 @@
             </objects>
             <point key="canvasLocation" x="45" y="-530"/>
         </scene>
-        <!--Покупки-->
-        <scene sceneID="JX1-eZ-22E">
-            <objects>
-                <viewController id="say-9t-vQY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="q96-ul-Tzl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="RSn-0u-Pxb"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Покупки" image="plus" catalog="system" id="nAz-RG-W3Y"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k82-dE-Id6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="812" y="1783"/>
-        </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="UdH-3h-Jbk">
             <objects>
@@ -956,7 +940,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="say-9t-vQY" kind="relationship" relationship="viewControllers" id="xJB-nt-eTq"/>
+                        <segue destination="uuL-eM-ho9" kind="relationship" relationship="viewControllers" id="6G4-5s-TKY"/>
                         <segue destination="rEZ-2Y-4Fn" kind="relationship" relationship="viewControllers" id="9ze-rR-bHL"/>
                         <segue destination="eCX-fo-DfU" kind="relationship" relationship="viewControllers" id="C1n-pl-Wvq"/>
                         <segue destination="EWR-BG-1mR" kind="relationship" relationship="viewControllers" id="Mer-gO-R5J"/>
@@ -1361,6 +1345,85 @@
             </objects>
             <point key="canvasLocation" x="3287" y="-530"/>
         </scene>
+        <!--Покупки-->
+        <scene sceneID="1lE-WJ-trh">
+            <objects>
+                <tableViewController id="Oad-OE-53P" customClass="OrderViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LAz-jf-dvW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ordersListCell" id="GFu-40-dKN" customClass="OrderTableViewCell" customModule="CoffeTeam" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GFu-40-dKN" id="6Gr-Sq-mf2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q1y-x1-f53">
+                                            <rect key="frame" x="20" y="12.5" width="35" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="2Qy-32-Q8t"/>
+                                                <constraint firstAttribute="width" constant="35" id="5At-8D-3WY"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54v-xX-nHP">
+                                            <rect key="frame" x="70" y="14" width="34.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBA-D2-vLV">
+                                            <rect key="frame" x="20" y="15.5" width="374" height="29"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                            <color key="textColor" red="0.85098039215686272" green="0.61960784313725492" blue="0.58823529411764708" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwq-lG-PG4">
+                                            <rect key="frame" x="70" y="34" width="26.5" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Cwq-lG-PG4" firstAttribute="leading" secondItem="6Gr-Sq-mf2" secondAttribute="leadingMargin" constant="50" id="4SG-I3-JmB"/>
+                                        <constraint firstItem="fBA-D2-vLV" firstAttribute="trailing" secondItem="6Gr-Sq-mf2" secondAttribute="trailingMargin" id="58f-9I-R21"/>
+                                        <constraint firstItem="54v-xX-nHP" firstAttribute="leading" secondItem="6Gr-Sq-mf2" secondAttribute="leadingMargin" constant="50" id="DBL-XQ-l7Z"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="54v-xX-nHP" secondAttribute="trailing" id="IFT-BD-i6a"/>
+                                        <constraint firstItem="fBA-D2-vLV" firstAttribute="centerY" secondItem="6Gr-Sq-mf2" secondAttribute="centerY" id="Ln4-a9-Cjt"/>
+                                        <constraint firstItem="54v-xX-nHP" firstAttribute="top" secondItem="6Gr-Sq-mf2" secondAttribute="topMargin" constant="3" id="PII-Ob-D1r"/>
+                                        <constraint firstItem="Q1y-x1-f53" firstAttribute="leading" secondItem="6Gr-Sq-mf2" secondAttribute="leading" constant="20" id="Srm-Yc-qak"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Cwq-lG-PG4" secondAttribute="bottom" constant="3" id="WO5-SH-GPj"/>
+                                        <constraint firstItem="fBA-D2-vLV" firstAttribute="leading" secondItem="6Gr-Sq-mf2" secondAttribute="leadingMargin" id="mig-ZW-xIh"/>
+                                        <constraint firstItem="Q1y-x1-f53" firstAttribute="centerY" secondItem="6Gr-Sq-mf2" secondAttribute="centerY" id="qNV-7o-9do"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Cwq-lG-PG4" secondAttribute="trailing" id="qyF-w8-JiJ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="goodDate" destination="Cwq-lG-PG4" id="bPy-z4-iyw"/>
+                                    <outlet property="goodImage" destination="Q1y-x1-f53" id="7G9-RI-egX"/>
+                                    <outlet property="goodName" destination="54v-xX-nHP" id="8Wz-ru-6Dg"/>
+                                    <outlet property="goodPrice" destination="fBA-D2-vLV" id="xYO-UD-MX0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Oad-OE-53P" id="9rV-Ug-Kli"/>
+                            <outlet property="delegate" destination="Oad-OE-53P" id="3IK-fz-gYc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Покупки" id="OQf-2I-dh2">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle.fill" catalog="system" id="ajN-Sr-wu4">
+                            <color key="tintColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0M4-bl-2Pk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3303" y="209"/>
+        </scene>
         <!--Группы-->
         <scene sceneID="eyT-h6-lOe">
             <objects>
@@ -1453,7 +1516,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWP-6O-EA4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3302.898550724638" y="268.52678571428572"/>
+            <point key="canvasLocation" x="3303" y="942"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="pDQ-O5-Zcx">
@@ -1472,7 +1535,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRa-JX-M5j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2393" y="1028"/>
+            <point key="canvasLocation" x="2393" y="2640"/>
         </scene>
         <!--Лавка-->
         <scene sceneID="mhK-ag-TmX">
@@ -1491,7 +1554,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIt-5J-hBb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2392.753623188406" y="268.52678571428572"/>
+            <point key="canvasLocation" x="2393" y="942"/>
+        </scene>
+        <!--Покупки-->
+        <scene sceneID="JLL-9z-eyD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uuL-eM-ho9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Покупки" image="plus" catalog="system" id="Y6y-ab-XOG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ukg-sh-cdj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Oad-OE-53P" kind="relationship" relationship="rootViewController" id="zbi-F9-o7s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vtt-HJ-xkP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2393" y="209"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

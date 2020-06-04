@@ -30,6 +30,8 @@
 		2D8D1721247BB58E009C38CC /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D1720247BB58E009C38CC /* Login.swift */; };
 		2D8D82552481473100B3617A /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D82542481473000B3617A /* Goods.swift */; };
 		2D8D82572485178C00B3617A /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D82562485178B00B3617A /* ShopTableViewCell.swift */; };
+		2D8D825A248995C400B3617A /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D8259248995C400B3617A /* OrderViewController.swift */; };
+		2D8D825C248998D800B3617A /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D825B248998D800B3617A /* OrderTableViewCell.swift */; };
 		2D93DC2624192436008E7972 /* WPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC2524192436008E7972 /* WPViewController.swift */; };
 		2D93DC28241924A9008E7972 /* WCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93DC27241924A9008E7972 /* WCViewController.swift */; };
 		2DA85292247D4B5F00766CD1 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85291247D4B5F00766CD1 /* ProfileEditViewController.swift */; };
@@ -74,6 +76,8 @@
 		2D8D1720247BB58E009C38CC /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		2D8D82542481473000B3617A /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
 		2D8D82562485178B00B3617A /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
+		2D8D8259248995C400B3617A /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		2D8D825B248998D800B3617A /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		2D93DC2524192436008E7972 /* WPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPViewController.swift; sourceTree = "<group>"; };
 		2D93DC27241924A9008E7972 /* WCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCViewController.swift; sourceTree = "<group>"; };
 		2DA85291247D4B5F00766CD1 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 		2D025F552417D1F7007287FC /* CoffeTeam */ = {
 			isa = PBXGroup;
 			children = (
+				2D8D82582489959C00B3617A /* Order */,
 				2DA85295247E860400766CD1 /* Shop */,
 				2D04F44E246835DD0077F34F /* Group */,
 				2D3865922466D823004D7918 /* Models */,
@@ -218,6 +223,15 @@
 				2D2C8AC5246BCF18003A414D /* CustomLabel.swift */,
 			);
 			path = UiElements;
+			sourceTree = "<group>";
+		};
+		2D8D82582489959C00B3617A /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				2D8D8259248995C400B3617A /* OrderViewController.swift */,
+				2D8D825B248998D800B3617A /* OrderTableViewCell.swift */,
+			);
+			path = Order;
 			sourceTree = "<group>";
 		};
 		2D93DC24241923EF008E7972 /* Welcome */ = {
@@ -412,11 +426,13 @@
 				2D84C0412434BC1F007ED54D /* LoginViewController.swift in Sources */,
 				2D2C8AC6246BCF18003A414D /* CustomLabel.swift in Sources */,
 				2D04F450246836370077F34F /* GroupViewController.swift in Sources */,
+				2D8D825C248998D800B3617A /* OrderTableViewCell.swift in Sources */,
 				2D84C03F2433593B007ED54D /* CustomInputField.swift in Sources */,
 				2D3865962466D8B5004D7918 /* User.swift in Sources */,
 				2D93DC2624192436008E7972 /* WPViewController.swift in Sources */,
 				2D3BAAF6243BCD6700464490 /* PopUpRegistrationViewController.swift in Sources */,
 				2D93DC28241924A9008E7972 /* WCViewController.swift in Sources */,
+				2D8D825A248995C400B3617A /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

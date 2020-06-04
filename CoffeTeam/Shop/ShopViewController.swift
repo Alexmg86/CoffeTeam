@@ -14,7 +14,7 @@ class ShopViewController: MainTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.popupIcon = "groups"
+        super.popupIcon = "goods"
         super.popupTitle = "Лавка"
         super.popupSubtitle = "В лавке явно не хватает кофе.\nНужно срочно добавить!"
         super.modelName = "good"

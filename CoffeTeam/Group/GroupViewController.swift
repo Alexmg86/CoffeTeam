@@ -15,6 +15,7 @@ class GroupViewController: UITableViewController {
     var items = [JSON]()
     let user = User()
     var selectedRow: Int = 0
+    var itemOldCount: Int = 0
 
     func configureRefreshControl() {
         let refreshControl = UIRefreshControl()
@@ -35,7 +36,6 @@ class GroupViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureRefreshControl()
-        loadGroups()
         self.tableView.tableFooterView = UIView()
         tableView.allowsSelection = false
     }
@@ -71,11 +71,15 @@ class GroupViewController: UITableViewController {
         let json = JSON(value as Any)
         items = json.arrayValue
         if let viewWithTag = self.view.viewWithTag(1234) {
+            if (items.count == itemOldCount) {
+                return
+            }
             viewWithTag.removeFromSuperview()
         }
         if (items.count == 0) {
             callPopup()
         }
+        itemOldCount = items.count
         tableView.reloadData()
     }
 

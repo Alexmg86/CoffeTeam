@@ -303,9 +303,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="closePresentation:" destination="tav-2H-v3N" eventType="touchUpInside" id="VtX-sA-kPV"/>
                                             <action selector="createAccount:" destination="Ce8-Ab-nxA" eventType="touchUpInside" id="TVb-DP-Ca1"/>
-                                            <action selector="loginTapper:" destination="0f7-NU-yvf" eventType="touchUpInside" id="TCC-UO-dWr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJ7-4P-MkB">
@@ -1066,7 +1064,6 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="closePresentation:" destination="tav-2H-v3N" eventType="touchUpInside" id="cSh-72-36O"/>
                                                     <action selector="loginTapper:" destination="0f7-NU-yvf" eventType="touchUpInside" id="XeQ-zV-c1y"/>
                                                 </connections>
                                             </button>
@@ -1188,8 +1185,6 @@
                                         </state>
                                         <connections>
                                             <action selector="closePopUp:" destination="3jV-Lm-oVg" eventType="touchUpInside" id="Xqz-a4-g79"/>
-                                            <action selector="closePresentation:" destination="tav-2H-v3N" eventType="touchUpInside" id="CFL-Jf-bby"/>
-                                            <action selector="loginTapper:" destination="0f7-NU-yvf" eventType="touchUpInside" id="WEq-gP-04N"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1335,9 +1330,6 @@
                                         </state>
                                         <connections>
                                             <action selector="closePopUp:" destination="V3f-dQ-y65" eventType="touchUpInside" id="0XU-4r-18b"/>
-                                            <action selector="closePopUp:" destination="3jV-Lm-oVg" eventType="touchUpInside" id="W88-WH-xOt"/>
-                                            <action selector="closePresentation:" destination="tav-2H-v3N" eventType="touchUpInside" id="6Ss-7M-Kry"/>
-                                            <action selector="loginTapper:" destination="0f7-NU-yvf" eventType="touchUpInside" id="aIy-2i-rbG"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -10,100 +10,19 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class GroupViewController: UITableViewController {
+class GroupViewController: MainTableViewController {
 
-    var items = [JSON]()
-    let user = User()
     var selectedRow: Int = 0
-    var itemOldCount: Int = 0
-
-    func configureRefreshControl() {
-        let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
-        refreshControl.attributedTitle = NSAttributedString(string: "Обновление данных...")
-        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-        if #available(iOS 10.0, *) {
-            self.tableView.refreshControl = refreshControl
-        } else {
-            self.tableView.addSubview(refreshControl)
-        }
-    }
-
-    override func viewDidLayoutSubviews() {
-        tableView.isScrollEnabled = tableView.contentSize.height > tableView.frame.size.height || items.count > 0
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureRefreshControl()
-        self.tableView.tableFooterView = UIView()
-        tableView.allowsSelection = false
-    }
-
-    @objc func refreshData() {
-        loadGroups()
-        DispatchQueue.main.async {
-           self.tableView.refreshControl?.endRefreshing()
-        }
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadGroups()
-    }
-
-    func loadGroups() {
-        if (!user.isUserExist()) {
-            checkPopup(value: [])
-            return
-        }
-        AF.request("https://ineedapp.ru/group").responseJSON { [weak self] (response) in
-            switch response.result {
-            case .success(let value):
-                self?.checkPopup(value: value)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-
-    func checkPopup(value: Any) {
-        let json = JSON(value as Any)
-        items = json.arrayValue
-        if let viewWithTag = self.view.viewWithTag(1234) {
-            if (items.count == itemOldCount) {
-                return
-            }
-            viewWithTag.removeFromSuperview()
-        }
-        if (items.count == 0) {
-            callPopup()
-        }
-        itemOldCount = items.count
-        tableView.reloadData()
-    }
-
-    func callPopup() {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupMain") as! PopUpMainViewController
-        self.addChild(popOverVC)
-        popOverVC.wPopipImage = "groups"
-        popOverVC.wPopipTitle = "Группы"
-        popOverVC.wPopipSubTitle = "Вы можете создавать группы\nили искать уже имеющиеся."
-        popOverVC.view.frame = (self.view.frame)
-        popOverVC.view.tag = 1234
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParent: self)
+        super.popupIcon = "groups"
+        super.popupTitle = "Группы"
+        super.popupSubtitle = "Вы можете создавать группы\nили искать уже имеющиеся."
+        super.modelName = "group"
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return items.isEmpty ? 0 : 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.isEmpty ? 0 : items.count
-    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupListCell", for: indexPath) as! GroupTableViewCell
@@ -158,7 +77,7 @@ class GroupViewController: UITableViewController {
                     encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
-                self?.checkPopup(value: value)
+                self?.checkItems(value: value)
             case .failure(let error):
                 print(error)
             }

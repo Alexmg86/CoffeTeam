@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2D025F572417D1F7007287FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D025F562417D1F7007287FC /* AppDelegate.swift */; };
 		2D025F592417D1F7007287FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D025F582417D1F7007287FC /* SceneDelegate.swift */; };
-		2D025F5B2417D1F7007287FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D025F5A2417D1F7007287FC /* ViewController.swift */; };
 		2D025F5E2417D1F7007287FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F5C2417D1F7007287FC /* Main.storyboard */; };
 		2D025F602417D1F9007287FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F5F2417D1F9007287FC /* Assets.xcassets */; };
 		2D025F632417D1F9007287FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D025F612417D1F9007287FC /* LaunchScreen.storyboard */; };
@@ -39,6 +38,7 @@
 		2DA85299247FD88D00766CD1 /* CustomPickerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA85298247FD88D00766CD1 /* CustomPickerInput.swift */; };
 		2DA8529B247FFB0000766CD1 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8529A247FFB0000766CD1 /* ShopViewController.swift */; };
 		2DA8529D24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8529C24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift */; };
+		2DC90AC92488F8FC0016EF63 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC90AC82488F8FC0016EF63 /* MainTableViewController.swift */; };
 		2DF74C8F247688920026EF90 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */; };
 		2DF74C9124768D8E0026EF90 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF74C9024768D8E0026EF90 /* Groups.swift */; };
 		2DFA8DC6243A771300680567 /* BubbleTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA8DC5243A771300680567 /* BubbleTabBar.swift */; };
@@ -52,7 +52,6 @@
 		2D025F532417D1F7007287FC /* CoffeTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D025F562417D1F7007287FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D025F582417D1F7007287FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D025F5A2417D1F7007287FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D025F5D2417D1F7007287FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D025F5F2417D1F9007287FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D025F622417D1F9007287FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +82,7 @@
 		2DA85298247FD88D00766CD1 /* CustomPickerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerInput.swift; sourceTree = "<group>"; };
 		2DA8529A247FFB0000766CD1 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		2DA8529C24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopIconsCollectionViewCell.swift; sourceTree = "<group>"; };
+		2DC90AC82488F8FC0016EF63 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		2DF74C9024768D8E0026EF90 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		2DFA8DC5243A771300680567 /* BubbleTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTabBar.swift; sourceTree = "<group>"; };
@@ -137,7 +137,6 @@
 				2D93DC24241923EF008E7972 /* Welcome */,
 				2D025F562417D1F7007287FC /* AppDelegate.swift */,
 				2D025F582417D1F7007287FC /* SceneDelegate.swift */,
-				2D025F5A2417D1F7007287FC /* ViewController.swift */,
 				2D025F5C2417D1F7007287FC /* Main.storyboard */,
 				2D025F5F2417D1F9007287FC /* Assets.xcassets */,
 				2D025F612417D1F9007287FC /* LaunchScreen.storyboard */,
@@ -162,6 +161,7 @@
 				2D84C0422434E734007ED54D /* KeyboardController.swift */,
 				2DA85293247D568800766CD1 /* KeyboardEasyViewController.swift */,
 				2DFA8DCB243A782300680567 /* MainTabBarViewController.swift */,
+				2DC90AC82488F8FC0016EF63 /* MainTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -390,12 +390,12 @@
 				2D8D82572485178C00B3617A /* ShopTableViewCell.swift in Sources */,
 				2DFA8DCC243A782300680567 /* MainTabBarViewController.swift in Sources */,
 				2DF74C8F247688920026EF90 /* GroupTableViewCell.swift in Sources */,
-				2D025F5B2417D1F7007287FC /* ViewController.swift in Sources */,
 				2DA85299247FD88D00766CD1 /* CustomPickerInput.swift in Sources */,
 				2DA85294247D568800766CD1 /* KeyboardEasyViewController.swift in Sources */,
 				2DFA8DC6243A771300680567 /* BubbleTabBar.swift in Sources */,
 				2D8D171F247819C5009C38CC /* Registration.swift in Sources */,
 				2D025F572417D1F7007287FC /* AppDelegate.swift in Sources */,
+				2DC90AC92488F8FC0016EF63 /* MainTableViewController.swift in Sources */,
 				2DA85292247D4B5F00766CD1 /* ProfileEditViewController.swift in Sources */,
 				2DA8529B247FFB0000766CD1 /* ShopViewController.swift in Sources */,
 				2D025F592417D1F7007287FC /* SceneDelegate.swift in Sources */,

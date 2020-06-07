@@ -16,7 +16,7 @@ class OrderViewController: MainTableViewController {
         super.popupIcon = "orders"
         super.popupTitle = "Покупки"
         super.popupSubtitle = "Выберите себе кофе или чай,\nа последние операции\nбудут отражены здесь."
-        super.modelName = "good"
+        super.modelName = "order"
     }
 
     // MARK: - Table view data source

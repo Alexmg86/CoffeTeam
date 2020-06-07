@@ -81,6 +81,27 @@ class OrderAddViewController: UIViewController, UITableViewDelegate, UITableView
         return view
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let itemSection = items[indexPath.section]
+        let item = itemSection["goods"][indexPath.row]
+        let group_id = String(itemSection["id"].int!)
+        let price = item["price"].string
+        let good = String(item["id"].int!)
+        let hash = user.getHash()
+        
+        AF.request("https://ineedapp.ru/order",
+                   method: .post,
+                   parameters: ["group": group_id, "good": good, "price": price, "hash": hash],
+                   encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+            switch response.result {
+            case .success(let _):
+                self?.dismiss(animated: true, completion: nil)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

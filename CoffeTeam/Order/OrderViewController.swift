@@ -43,7 +43,7 @@ class OrderViewController: MainTableViewController {
         let item = itemSection["items"][indexPath.row]
         cell.goodName.text = item["name"].string
         cell.goodPrice.text = "-\(item["price"].string!)"
-        cell.goodDate.text = item["name"].string
+        cell.goodDate.text = item["created_at"].string
         cell.goodImage.image = UIImage(named: item["icon_id"].string!)
         return cell
     }

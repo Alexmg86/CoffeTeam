@@ -16,6 +16,7 @@ class MainTableViewController: UITableViewController {
     let user = User()
     var itemOldCount: Int = 0
     var selectedIndex: IndexPath = []
+    var isNeedReload: Bool = true
 
     var modelName: String = ""
     var popupIcon: String = ""
@@ -24,6 +25,8 @@ class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
         tableView.allowsSelection = false
         configureRefreshControl()
@@ -31,7 +34,7 @@ class MainTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadItems()
+        loadItems(isNeedReload: isNeedReload)
     }
 
     /*
@@ -42,9 +45,12 @@ class MainTableViewController: UITableViewController {
     }
 
     /*
-     Загрузка списков. Проверка авторизован ли пользователь, если нет, то передаем пестой массив дальше.
+     Загрузка списков. Проверка авторизован ли пользователь, если нет, то передаем пустой массив дальше.
      */
-    func loadItems() {
+    func loadItems(isNeedReload: Bool) {
+        if !isNeedReload {
+            return
+        }
         if (!user.isUserExist()) {
             checkItems(value: [])
             return
@@ -130,7 +136,7 @@ class MainTableViewController: UITableViewController {
     }
 
     @objc func refreshData() {
-        loadItems()
+        loadItems(isNeedReload: true)
         DispatchQueue.main.async {
            self.tableView.refreshControl?.endRefreshing()
         }

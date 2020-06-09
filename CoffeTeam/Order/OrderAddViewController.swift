@@ -16,6 +16,8 @@ class OrderAddViewController: UIViewController, UITableViewDelegate, UITableView
     var items = [JSON]()
     let user = User()
     let modelName = "good"
+    
+    var mainViewController: MainTableViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,7 @@ class OrderAddViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func closeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+
     func loadItems() {
         if (!user.isUserExist()) {
             checkItems(value: [])
@@ -84,33 +86,21 @@ class OrderAddViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let itemSection = items[indexPath.section]
         let item = itemSection["goods"][indexPath.row]
-        let group_id = String(itemSection["id"].int!)
-        let price = item["price"].string
-        let good = String(item["id"].int!)
-        let hash = user.getHash()
+        
+        let order = Order(group: itemSection["id"].int!, price: item["price"].string!, good: item["id"].int!, hash: user.getHash())
         
         AF.request("https://ineedapp.ru/order",
                    method: .post,
-                   parameters: ["group": group_id, "good": good, "price": price, "hash": hash],
+                   parameters: order,
                    encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
             switch response.result {
-            case .success(let _):
-                self?.dismiss(animated: true, completion: nil)
+            case .success(let value):
+                self?.dismiss(animated: true, completion: {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadItems"), object: value)
+                })
             case .failure(let error):
                 print(error)
             }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

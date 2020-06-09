@@ -22,19 +22,33 @@ class GroupViewController: MainTableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return items.isEmpty ? 0 : 1
+        return items.isEmpty ? 0 : items.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.isEmpty ? 0 : items.count
+        return items.isEmpty ? 0 : items[section]["items"].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupListCell", for: indexPath) as! GroupTableViewCell
-        let item = items[indexPath.row]
+        let itemSection = items[indexPath.section]
+        let item = itemSection["items"][indexPath.row]
         cell.nameLabel.text = item["name"].string
         cell.codeLabel.text = "@\(item["code"])"
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        let label = UILabel(frame: CGRect(x: 20, y: 0, width: tableView.frame.width, height: 50))
+        label.text = items[section]["name"].string
+        label.font = UIFont.systemFont(ofSize: 22, weight: .light)
+        view.addSubview(label)
+        return view
     }
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

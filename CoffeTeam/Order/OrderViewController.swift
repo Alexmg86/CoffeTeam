@@ -34,13 +34,13 @@ class OrderViewController: MainTableViewController {
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.isEmpty ? 0 : items[section]["goods"].count
+        return items.isEmpty ? 0 : items[section]["items"].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ordersListCell", for: indexPath) as! OrderTableViewCell
         let itemSection = items[indexPath.section]
-        let item = itemSection["goods"][indexPath.row]
+        let item = itemSection["items"][indexPath.row]
         cell.goodName.text = item["name"].string
         cell.goodPrice.text = "-\(item["price"].string!)"
         cell.goodDate.text = item["name"].string

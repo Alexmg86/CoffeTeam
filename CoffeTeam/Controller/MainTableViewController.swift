@@ -43,6 +43,19 @@ class MainTableViewController: UITableViewController {
     override func viewDidLayoutSubviews() {
         tableView.isScrollEnabled = tableView.contentSize.height > tableView.frame.size.height || items.count > 0
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        let label = UILabel(frame: CGRect(x: 20, y: 0, width: tableView.frame.width, height: 50))
+        label.text = items[section]["name"].string
+        label.font = UIFont.systemFont(ofSize: 22, weight: .light)
+        view.addSubview(label)
+        return view
+    }
 
     /*
      Загрузка списков. Проверка авторизован ли пользователь, если нет, то передаем пустой массив дальше.
@@ -67,10 +80,12 @@ class MainTableViewController: UITableViewController {
 
     func deleteItem(indexPath: IndexPath, column: String, subsection: String) {
         let hash = user.getHash()
-        var item = items[indexPath.row]
+        var item = JSON()
         if subsection != "" {
             let itemSection = items[indexPath.section]
             item = itemSection[subsection][indexPath.row]
+        } else {
+            item = items[indexPath.row]
         }
         let url = "https://ineedapp.ru/\(modelName)/\(String(item[column].int!))"
         AF.request(url,

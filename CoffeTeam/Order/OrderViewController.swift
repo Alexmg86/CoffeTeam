@@ -51,17 +51,4 @@ class OrderViewController: MainTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "shopAddView",sender: self)
     }
-
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
-    }
-
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
-        let label = UILabel(frame: CGRect(x: 20, y: 0, width: tableView.frame.width, height: 50))
-        label.text = items[section]["name"].string
-        label.font = UIFont.systemFont(ofSize: 22, weight: .light)
-        view.addSubview(label)
-        return view
-    }
 }

@@ -37,19 +37,6 @@ class GroupViewController: MainTableViewController {
         cell.codeLabel.text = "@\(item["code"])"
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
-    }
-
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
-        let label = UILabel(frame: CGRect(x: 20, y: 0, width: tableView.frame.width, height: 50))
-        label.text = items[section]["name"].string
-        label.font = UIFont.systemFont(ofSize: 22, weight: .light)
-        view.addSubview(label)
-        return view
-    }
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Удалить") { [weak self] (action, sourceView, completionHandler) in
@@ -81,7 +68,7 @@ class GroupViewController: MainTableViewController {
         let alert = UIAlertController(title: "Внимание!", message: "Будут удалены также все товары этой группы, но они останутся в статистиках, если по ним были покупки.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: { [weak self] action in
-            self?.deleteItem(indexPath: indexPath, column: "id", subsection: "")
+            self?.deleteItem(indexPath: indexPath, column: "id", subsection: "items")
         }))
         self.present(alert, animated: true)
     }

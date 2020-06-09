@@ -26,7 +26,6 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var saveGood: CustomButton!
 
     var pickerOficinas: CustomPickerInput!
-    var salutations: JSON = []
     var icons = [Int]()
     var selectedIcon: Int = 0
     var editData: Any = []
@@ -91,8 +90,7 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                self?.salutations = json
-                self?.group_idTextField.loadDropdownData(data: json)
+                self?.group_idTextField.loadDropdownData(data: json[0]["items"])
             case .failure(let error):
                 print(error)
             }

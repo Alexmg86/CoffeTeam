@@ -12,10 +12,12 @@ class GroupInnerViewController: UIViewController {
     
     var groupName: String = ""
     var groupCode: String = ""
+    @IBOutlet weak var code: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = groupName
+        code.text = groupCode
     }
     
 

@@ -36,7 +36,7 @@ class CustomLabel: UILabel {
     }
 
     private func configure() {
-        textColor = #colorLiteral(red: 0.2196078431, green: 0.2431372549, blue: 0.2588235294, alpha: 0.5)
+        textColor = #colorLiteral(red: 0.8509803922, green: 0.6196078431, blue: 0.5882352941, alpha: 1)
         font = UIFont.systemFont(ofSize: 11.0, weight: .bold)
         labelText = text!
     }

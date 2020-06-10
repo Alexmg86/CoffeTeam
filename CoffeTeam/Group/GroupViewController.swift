@@ -35,6 +35,8 @@ class GroupViewController: MainTableViewController {
         let item = itemSection["items"][indexPath.row]
         cell.nameLabel.text = item["name"].string
         cell.codeLabel.text = "@\(item["code"])"
+        cell.countLabel.text = String(item["count"].int!)
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
 

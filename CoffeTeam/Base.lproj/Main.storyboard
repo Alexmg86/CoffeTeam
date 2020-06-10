@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UFg-eb-gGS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -131,14 +131,32 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AKq-c5-Pp0">
+                                            <rect key="frame" x="359.5" y="16" width="34.5" height="28"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avE-uW-nfU" customClass="BadgeLabel" customModule="CoffeTeam" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="34.5" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="1Sj-27-Sos"/>
+                                                        <constraint firstAttribute="height" constant="28" id="Uvq-3J-Iqw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Zas-aQ-AEH" firstAttribute="centerY" secondItem="HRl-eZ-AlL" secondAttribute="centerY" id="7IS-GV-NYR"/>
+                                        <constraint firstItem="AKq-c5-Pp0" firstAttribute="centerY" secondItem="HRl-eZ-AlL" secondAttribute="centerY" id="PWa-fj-fAL"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="AKq-c5-Pp0" secondAttribute="trailing" id="Wvm-MY-vLV"/>
                                         <constraint firstItem="Zas-aQ-AEH" firstAttribute="leading" secondItem="HRl-eZ-AlL" secondAttribute="leading" constant="20" id="uEa-GS-Omr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="codeLabel" destination="ork-ah-siQ" id="1r5-69-LG7"/>
+                                    <outlet property="countLabel" destination="avE-uW-nfU" id="JLj-c1-qfF"/>
                                     <outlet property="nameLabel" destination="YXu-QZ-aPq" id="vcr-bT-eIt"/>
                                 </connections>
                             </tableViewCell>

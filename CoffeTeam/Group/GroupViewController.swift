@@ -31,11 +31,10 @@ class GroupViewController: MainTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupListCell", for: indexPath) as! GroupTableViewCell
-        let itemSection = items[indexPath.section]
-        let item = itemSection["items"][indexPath.row]
-        cell.nameLabel.text = item["name"].string
-        cell.codeLabel.text = "@\(item["code"])"
-        cell.countLabel.text = String(item["count"].int!)
+        getSelectedItem(indexPath: indexPath, relation: "items")
+        cell.nameLabel.text = selectedItem["name"].string
+        cell.codeLabel.text = "@\(selectedItem["code"])"
+        cell.countLabel.text = String(selectedItem["count"].int!)
         cell.accessoryType = .disclosureIndicator
         return cell
     }
@@ -46,7 +45,7 @@ class GroupViewController: MainTableViewController {
             completionHandler(false)
         }
         let edit = UIContextualAction(style: .normal, title: "Изменить") { [weak self] (action, sourceView, completionHandler) in
-            self?.selectedIndex = indexPath
+            self?.getSelectedItem(indexPath: indexPath, relation: "items")
             self?.performSegue(withIdentifier: "groupEdit",sender: self)
             completionHandler(false)
         }
@@ -55,14 +54,23 @@ class GroupViewController: MainTableViewController {
         swipeAction.performsFirstActionWithFullSwipe = false
         return swipeAction
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        getSelectedItem(indexPath: indexPath, relation: "items")
+        self.performSegue(withIdentifier: "groupShow", sender: self)
+    }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "groupEdit" {
-            let item = items[selectedIndex.row]
             let controller = segue.destination as! GroupAddViewController
-            controller.editData = JSON(item as Any)
+            controller.editData = JSON(selectedItem as Any)
+        }
+        if segue.identifier == "groupShow" {
+            let controller = segue.destination as! GroupInnerViewController
+            controller.groupName = selectedItem["name"].stringValue
+            controller.groupCode = selectedItem["code"].stringValue
         }
     }
 

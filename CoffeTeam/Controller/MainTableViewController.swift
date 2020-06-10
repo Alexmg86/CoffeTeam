@@ -13,9 +13,9 @@ import SwiftyJSON
 class MainTableViewController: UITableViewController {
 
     var items = [JSON]()
+    var selectedItem: JSON = []
     let user = User()
     var itemOldCount: Int = 0
-    var selectedIndex: IndexPath = []
     var isNeedReload: Bool = true
 
     var modelName: String = ""
@@ -28,7 +28,6 @@ class MainTableViewController: UITableViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
-        tableView.allowsSelection = false
         configureRefreshControl()
     }
 
@@ -118,6 +117,11 @@ class MainTableViewController: UITableViewController {
         }
         itemOldCount = items.count
         tableView.reloadData()
+    }
+    
+    func getSelectedItem(indexPath: IndexPath, relation: String) {
+        let itemSection = items[indexPath.section]
+        selectedItem = itemSection[relation][indexPath.row]
     }
 
     /*

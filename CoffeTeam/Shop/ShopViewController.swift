@@ -17,6 +17,7 @@ class ShopViewController: MainTableViewController {
         super.popupTitle = "Лавка"
         super.popupSubtitle = "В лавке явно не хватает кофе.\nНужно срочно добавить!"
         super.modelName = "good"
+        tableView.allowsSelection = false
     }
 
     
@@ -32,16 +33,11 @@ class ShopViewController: MainTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shopListCell", for: indexPath) as! ShopTableViewCell
-        let itemSection = items[indexPath.section]
-        let item = itemSection["goods"][indexPath.row]
-        cell.goodName.text = item["name"].string
-        cell.goodPrice.text = item["price"].string
-        cell.goodImage.image = UIImage(named: item["icon_id"].string!)
+        getSelectedItem(indexPath: indexPath, relation: "goods")
+        cell.goodName.text = selectedItem["name"].string
+        cell.goodPrice.text = selectedItem["price"].string
+        cell.goodImage.image = UIImage(named: selectedItem["icon_id"].string!)
         return cell
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "shopAddView",sender: self)
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -50,7 +46,7 @@ class ShopViewController: MainTableViewController {
             completionHandler(false)
         }
         let edit = UIContextualAction(style: .normal, title: "Изменить") { [weak self] (action, sourceView, completionHandler) in
-            self?.selectedIndex = indexPath
+            self?.getSelectedItem(indexPath: indexPath, relation: "goods")
             self?.performSegue(withIdentifier: "goodEdit",sender: self)
             completionHandler(false)
         }
@@ -64,10 +60,8 @@ class ShopViewController: MainTableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goodEdit" {
-            let itemSection = items[selectedIndex.section]
-            let item = itemSection["goods"][selectedIndex.row]
             let controller = segue.destination as! ShopAddViewController
-            controller.editData = JSON(item as Any)
+            controller.editData = JSON(selectedItem as Any)
         }
     }
 }

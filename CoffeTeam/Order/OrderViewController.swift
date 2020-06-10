@@ -19,6 +19,7 @@ class OrderViewController: MainTableViewController {
         super.modelName = "order"
         super.isNeedReload = false
         loadItems(isNeedReload: true)
+        tableView.allowsSelection = false
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadItems), name: NSNotification.Name(rawValue: "reloadItems"), object: nil)
     }
 
@@ -39,16 +40,11 @@ class OrderViewController: MainTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ordersListCell", for: indexPath) as! OrderTableViewCell
-        let itemSection = items[indexPath.section]
-        let item = itemSection["items"][indexPath.row]
-        cell.goodName.text = item["name"].string
-        cell.goodPrice.text = "-\(item["price"].string!)"
-        cell.goodDate.text = item["created_at"].string
-        cell.goodImage.image = UIImage(named: item["icon_id"].string!)
+        getSelectedItem(indexPath: indexPath, relation: "items")
+        cell.goodName.text = selectedItem["name"].string
+        cell.goodPrice.text = "-\(selectedItem["price"].string!)"
+        cell.goodDate.text = selectedItem["created_at"].string
+        cell.goodImage.image = UIImage(named: selectedItem["icon_id"].string!)
         return cell
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "shopAddView",sender: self)
     }
 }

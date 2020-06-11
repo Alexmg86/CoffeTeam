@@ -13,7 +13,8 @@ class GroupInnerViewController: UIViewController {
     var groupName: String = ""
     var groupCode: String = ""
     @IBOutlet weak var code: UILabel!
-
+    @IBOutlet weak var usersList: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = groupName

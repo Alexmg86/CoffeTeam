@@ -71,6 +71,7 @@ class GroupViewController: MainTableViewController {
             let controller = segue.destination as! GroupInnerViewController
             controller.groupName = selectedItem["name"].stringValue
             controller.groupCode = selectedItem["code"].stringValue
+            controller.groupId = selectedItem["id"].stringValue
         }
     }
 

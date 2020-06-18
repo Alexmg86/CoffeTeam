@@ -14,10 +14,13 @@ class GroupInnerViewController: UIViewController, UITableViewDelegate, UITableVi
 
     var groupName: String = ""
     var groupCode: String = ""
+    var groupId: String = ""
     @IBOutlet weak var code: UILabel!
     @IBOutlet weak var usersList: UITableView!
     var items = [JSON]()
+    var selectedItem: JSON = []
     let user = User()
+    let modelName = "group"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,33 @@ class GroupInnerViewController: UIViewController, UITableViewDelegate, UITableVi
         code.text = groupCode
         self.usersList.delegate = self
         self.usersList.dataSource = self
-//        loadItems()
+        loadItems()
+    }
+    
+    func loadItems() {
+        if (!user.isUserExist()) {
+            checkItems(value: [])
+            return
+        }
+        AF.request("https://ineedapp.ru/\(modelName)/\(groupId)").responseJSON { [weak self] (response) in
+            switch response.result {
+            case .success(let value):
+                self?.checkItems(value: value)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func checkItems(value: Any) {
+        let json = JSON(value as Any)
+        items = json.arrayValue
+        usersList.reloadData()
+    }
+    
+    func getSelectedItem(indexPath: IndexPath, relation: String) {
+        let itemSection = items[indexPath.section]
+        selectedItem = itemSection[relation][indexPath.row]
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,7 +67,17 @@ class GroupInnerViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = usersList.dequeueReusableCell(withIdentifier: "usersListCell", for: indexPath) as! GroupInnerTableViewCell
+        getSelectedItem(indexPath: indexPath, relation: "users")
+        cell.nameLabel.text = selectedItem["name"].string
+        cell.contactLabel.text = selectedItem["email"].string
+        let total = selectedItem["total"].int!
+        cell.countLabel.text = String(total)
+        if total >= 0 {
+            cell.countLabel.textColor = #colorLiteral(red: 0.3450980392, green: 0.5882352941, blue: 0.5450980392, alpha: 1)
+        }
+        cell.accessoryType = .disclosureIndicator
+        return cell
     }
 
 }

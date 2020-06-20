@@ -46,6 +46,17 @@ class GroupInnerViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
     }
+    @IBAction func copyGroup(_ sender: Any) {
+        UIPasteboard.general.string = groupCode
+        
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupNewGroup") as! PopUpNewGroupViewController
+        popOverVC.wNumber = groupCode
+        popOverVC.wSubtitle = "Код скопирован!\nОтправьте его своим коллегам,\nчтобы они могли найти группу."
+        self.addChild(popOverVC)
+        popOverVC.view.frame = (self.view.frame)
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParent: self)
+    }
     
     func checkItems(value: Any) {
         let json = JSON(value as Any)

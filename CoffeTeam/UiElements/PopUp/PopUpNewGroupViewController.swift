@@ -11,19 +11,21 @@ import UIKit
 class PopUpNewGroupViewController: UIViewController {
     
     @IBOutlet weak var number: UILabel!
+    @IBOutlet weak var subtitle: UILabel!
     
     var wNumber = ""
+    var wSubtitle = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         number.text = wNumber
+        subtitle.text = wSubtitle
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         self.showAnimate()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func closePopUp(_ sender: AnyObject) {

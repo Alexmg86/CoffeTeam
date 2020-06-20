@@ -42,6 +42,7 @@ class GroupAddViewController: KeyboadController {
             if self.editDataCount == 0 {
                 let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupNewGroup") as! PopUpNewGroupViewController
                 popOverVC.wNumber = code
+                popOverVC.wSubtitle = "Отправьте данный номер\nсвоим коллегам,\nчтобы они могли найти группу."
                 pvc?.addChild(popOverVC)
                 popOverVC.view.frame = (pvc?.view.frame)!
                 pvc?.view.addSubview(popOverVC.view)

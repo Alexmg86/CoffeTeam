@@ -24,6 +24,7 @@
 		2D3BAAFA243BCE0700464490 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF9243BCE0700464490 /* ProfileViewController.swift */; };
 		2D5F2F092491644E00997D0B /* GroupInnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F2F082491644E00997D0B /* GroupInnerViewController.swift */; };
 		2D632B86249BE83D00C1E7C3 /* GroupInnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D632B85249BE83D00C1E7C3 /* GroupInnerTableViewCell.swift */; };
+		2D632B89249E7FB600C1E7C3 /* InnerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D632B88249E7FB600C1E7C3 /* InnerTableViewController.swift */; };
 		2D7B930F24696306001FF444 /* PopUpMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B930E24696306001FF444 /* PopUpMainViewController.swift */; };
 		2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FC99824234D14004C5A9E /* RegistrationViewController.swift */; };
 		2D84C03F2433593B007ED54D /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C03E2433593B007ED54D /* CustomInputField.swift */; };
@@ -76,6 +77,7 @@
 		2D3BAAF9243BCE0700464490 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2D5F2F082491644E00997D0B /* GroupInnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInnerViewController.swift; sourceTree = "<group>"; };
 		2D632B85249BE83D00C1E7C3 /* GroupInnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInnerTableViewCell.swift; sourceTree = "<group>"; };
+		2D632B88249E7FB600C1E7C3 /* InnerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerTableViewController.swift; sourceTree = "<group>"; };
 		2D7B930E24696306001FF444 /* PopUpMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMainViewController.swift; sourceTree = "<group>"; };
 		2D7FC99824234D14004C5A9E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2D84C03E2433593B007ED54D /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		2D04F44E246835DD0077F34F /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				2D632B87249E7F4B00C1E7C3 /* Inner */,
 				2D04F44F246836370077F34F /* GroupViewController.swift */,
 				2D5F2F082491644E00997D0B /* GroupInnerViewController.swift */,
 				2DF74C8E247688920026EF90 /* GroupTableViewCell.swift */,
@@ -216,6 +219,14 @@
 				2DA85291247D4B5F00766CD1 /* ProfileEditViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		2D632B87249E7F4B00C1E7C3 /* Inner */ = {
+			isa = PBXGroup;
+			children = (
+				2D632B88249E7FB600C1E7C3 /* InnerTableViewController.swift */,
+			);
+			path = Inner;
 			sourceTree = "<group>";
 		};
 		2D7FC99724234C5B004C5A9E /* Auth */ = {
@@ -438,6 +449,7 @@
 				2D04F45224683DCD0077F34F /* GroupAddViewController.swift in Sources */,
 				2D1BC21524743DD100419918 /* PopUpNewGroupViewController.swift in Sources */,
 				2D84C0462434EE2E007ED54D /* CustomButton.swift in Sources */,
+				2D632B89249E7FB600C1E7C3 /* InnerTableViewController.swift in Sources */,
 				2D632B86249BE83D00C1E7C3 /* GroupInnerTableViewCell.swift in Sources */,
 				2D84C0432434E734007ED54D /* KeyboardController.swift in Sources */,
 				2DF74C9124768D8E0026EF90 /* Groups.swift in Sources */,

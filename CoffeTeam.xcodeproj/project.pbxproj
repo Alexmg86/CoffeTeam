@@ -25,6 +25,7 @@
 		2D5F2F092491644E00997D0B /* GroupInnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F2F082491644E00997D0B /* GroupInnerViewController.swift */; };
 		2D632B86249BE83D00C1E7C3 /* GroupInnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D632B85249BE83D00C1E7C3 /* GroupInnerTableViewCell.swift */; };
 		2D632B89249E7FB600C1E7C3 /* InnerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D632B88249E7FB600C1E7C3 /* InnerTableViewController.swift */; };
+		2D632BAD249FB36D00C1E7C3 /* InnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D632BAC249FB36D00C1E7C3 /* InnerViewController.swift */; };
 		2D7B930F24696306001FF444 /* PopUpMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B930E24696306001FF444 /* PopUpMainViewController.swift */; };
 		2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FC99824234D14004C5A9E /* RegistrationViewController.swift */; };
 		2D84C03F2433593B007ED54D /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84C03E2433593B007ED54D /* CustomInputField.swift */; };
@@ -78,6 +79,7 @@
 		2D5F2F082491644E00997D0B /* GroupInnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInnerViewController.swift; sourceTree = "<group>"; };
 		2D632B85249BE83D00C1E7C3 /* GroupInnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInnerTableViewCell.swift; sourceTree = "<group>"; };
 		2D632B88249E7FB600C1E7C3 /* InnerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerTableViewController.swift; sourceTree = "<group>"; };
+		2D632BAC249FB36D00C1E7C3 /* InnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerViewController.swift; sourceTree = "<group>"; };
 		2D7B930E24696306001FF444 /* PopUpMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMainViewController.swift; sourceTree = "<group>"; };
 		2D7FC99824234D14004C5A9E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2D84C03E2433593B007ED54D /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				2D632B88249E7FB600C1E7C3 /* InnerTableViewController.swift */,
+				2D632BAC249FB36D00C1E7C3 /* InnerViewController.swift */,
 			);
 			path = Inner;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				2D0CB7122490C08F007EC85E /* BadgeLabel.swift in Sources */,
 				2D8D82552481473100B3617A /* Goods.swift in Sources */,
 				2DA8529D24801CAB00766CD1 /* ShopIconsCollectionViewCell.swift in Sources */,
+				2D632BAD249FB36D00C1E7C3 /* InnerViewController.swift in Sources */,
 				2D24A860248FBE7900556526 /* Order.swift in Sources */,
 				2D7FC99924234D14004C5A9E /* RegistrationViewController.swift in Sources */,
 				2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */,

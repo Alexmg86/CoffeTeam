@@ -7,24 +7,38 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class InnerViewController: UIViewController {
 
+    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var goodLabel: UILabel!
+    @IBOutlet weak var goodImage: UIImageView!
+    var data = [JSON]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateData() {
+        if data.isEmpty {
+            userLabel.text = "Пока нет"
+            totalLabel.text = "0"
+            goodLabel.text = "Пока нет"
+            goodImage.image = UIImage(named: "1")
+        } else {
+            let json = JSON(data as Any)
+            totalLabel.text = json[0]["total"].stringValue
+            if !json[0]["user"].isEmpty {
+                userLabel.text = json[0]["user"]["name"].stringValue
+            }
+            if !json[0]["good"].isEmpty {
+                goodLabel.text = json[0]["good"]["name"].stringValue
+                goodImage.image = UIImage(named: json[0]["good"]["icon_id"].stringValue)
+            }
+        }
     }
-    */
 
 }

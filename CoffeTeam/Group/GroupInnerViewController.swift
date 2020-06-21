@@ -15,6 +15,7 @@ class GroupInnerViewController: UIViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var code: UILabel!
     @IBOutlet weak var userListView: UIView!
+    @IBOutlet weak var statListView: UIView!
     
     var groupName: String = ""
     var groupCode: String = ""
@@ -28,19 +29,23 @@ class GroupInnerViewController: UIViewController {
         super.viewDidLoad()
         self.title = groupName
         code.text = groupCode
+        statListView.isHidden = true
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadItems()
     }
+
     @IBAction func toggleView(_ sender: Any) {
         switch segmentControl.selectedSegmentIndex {
         case 0:
             userListView.isHidden = false
+            statListView.isHidden = true
             break
         case 1:
             userListView.isHidden = true
+            statListView.isHidden = false
             break
         default:
             break
@@ -61,6 +66,19 @@ class GroupInnerViewController: UIViewController {
             }
         }
     }
+
+    func checkItems(value: Any) {
+        let json = JSON(value as Any)
+        items = json["users"].arrayValue
+        stats = json["stats"].arrayValue
+        let innerVC = self.children[0] as! InnerTableViewController
+        innerVC.items = items
+        innerVC.tableView.reloadData()
+        let innerVC2 = self.children[1] as! InnerViewController
+        innerVC2.data = stats
+        innerVC2.updateData()
+    }
+
     @IBAction func copyGroup(_ sender: Any) {
         UIPasteboard.general.string = groupCode
         
@@ -71,14 +89,5 @@ class GroupInnerViewController: UIViewController {
         popOverVC.view.frame = (self.view.frame)
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParent: self)
-    }
-    
-    func checkItems(value: Any) {
-        let json = JSON(value as Any)
-        items = json["users"].arrayValue
-        stats = json["users"].arrayValue
-        let innerVC = self.children[0] as! InnerTableViewController
-        innerVC.items = items
-        innerVC.tableView.reloadData()
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UFg-eb-gGS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UFg-eb-gGS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -296,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyC-ha-mmv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4180" y="1783"/>
+            <point key="canvasLocation" x="4180" y="1679"/>
         </scene>
         <!--Group Inner View Controller-->
         <scene sceneID="uwL-qg-4Fn">
@@ -342,7 +342,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgw-k8-LTC">
-                                <rect key="frame" x="0.0" y="223" width="414" height="590"/>
+                                <rect key="frame" x="0.0" y="222.5" width="414" height="590.5"/>
                                 <connections>
                                     <segue destination="r4V-6d-m3U" kind="embed" id="fBY-Zs-Fv5"/>
                                 </connections>
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akr-4a-ny9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5056.521739130435" y="1782.5892857142856"/>
+            <point key="canvasLocation" x="5058" y="1783"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="UtP-La-CRb">
@@ -1841,12 +1841,96 @@
             </objects>
             <point key="canvasLocation" x="5057" y="2484"/>
         </scene>
+        <!--Inner User View Controller-->
+        <scene sceneID="rVV-02-fiR">
+            <objects>
+                <viewController storyboardIdentifier="innerUser" modalPresentationStyle="fullScreen" id="9EW-M8-NkE" customClass="InnerUserViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dHy-4x-qqN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3Z-4T-Sc6">
+                                <rect key="frame" x="175" y="108" width="64.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
+                                <color key="textColor" red="0.85098039215686272" green="0.61960784313725492" blue="0.58823529411764708" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bKD-d2-Nza">
+                                <rect key="frame" x="20" y="166.5" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Покупки"/>
+                                    <segment title="Оплаты"/>
+                                    <segment title="Доступы"/>
+                                </segments>
+                                <connections>
+                                    <action selector="toggleView:" destination="Vvy-Ot-0qn" eventType="valueChanged" id="LwC-cR-zKD"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fl-1D-mJZ">
+                                <rect key="frame" x="364" y="110" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="60c-mn-xwn"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Oag-kv-PJD"/>
+                                    <constraint firstAttribute="height" constant="30" id="XFj-tu-POP"/>
+                                    <constraint firstAttribute="width" constant="30" id="l8s-bJ-DKj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="bell" catalog="system"/>
+                                <connections>
+                                    <action selector="copyGroup:" destination="Vvy-Ot-0qn" eventType="touchUpInside" id="xTx-si-NID"/>
+                                    <action selector="sentNotification:" destination="9EW-M8-NkE" eventType="touchUpInside" id="20L-2A-mYe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuH-DB-uNt">
+                                <rect key="frame" x="20" y="110" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="31e-5b-yjB"/>
+                                    <constraint firstAttribute="height" constant="30" id="Z5n-9g-jjU"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="dCb-Oc-meE"/>
+                                    <constraint firstAttribute="width" constant="30" id="kah-20-s7Y"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="r7T-Sl-UNo"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="30" id="ydb-ee-t25"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.25882352939999997" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="creditcard" catalog="system"/>
+                                <connections>
+                                    <action selector="addPayment:" destination="9EW-M8-NkE" eventType="touchUpInside" id="qmm-Hu-G8k"/>
+                                    <action selector="copyGroup:" destination="Vvy-Ot-0qn" eventType="touchUpInside" id="dUQ-mk-scW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QuH-DB-uNt" firstAttribute="leading" secondItem="QOm-lm-HTO" secondAttribute="leading" constant="20" id="1iw-zw-xZq"/>
+                            <constraint firstItem="QuH-DB-uNt" firstAttribute="top" secondItem="QOm-lm-HTO" secondAttribute="top" constant="22" id="2zD-ko-jcr"/>
+                            <constraint firstItem="bKD-d2-Nza" firstAttribute="top" secondItem="c3Z-4T-Sc6" secondAttribute="bottom" constant="25" id="A22-Ss-mDT"/>
+                            <constraint firstItem="bKD-d2-Nza" firstAttribute="leading" secondItem="QOm-lm-HTO" secondAttribute="leading" constant="20" id="E4K-cS-wJa"/>
+                            <constraint firstItem="QOm-lm-HTO" firstAttribute="trailing" secondItem="2Fl-1D-mJZ" secondAttribute="trailing" constant="20" id="Hra-Ze-NSG"/>
+                            <constraint firstItem="c3Z-4T-Sc6" firstAttribute="top" secondItem="QOm-lm-HTO" secondAttribute="top" constant="20" id="iSk-wV-yzP"/>
+                            <constraint firstItem="c3Z-4T-Sc6" firstAttribute="centerX" secondItem="dHy-4x-qqN" secondAttribute="centerX" id="lCr-te-SyU"/>
+                            <constraint firstItem="2Fl-1D-mJZ" firstAttribute="top" secondItem="QOm-lm-HTO" secondAttribute="top" constant="22" id="lyJ-Py-RhY"/>
+                            <constraint firstItem="QOm-lm-HTO" firstAttribute="trailing" secondItem="bKD-d2-Nza" secondAttribute="trailing" constant="20" id="xSs-c8-vRr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QOm-lm-HTO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oJt-31-Ebm"/>
+                    <connections>
+                        <outlet property="balanceLabel" destination="c3Z-4T-Sc6" id="EIT-Jb-4XA"/>
+                        <outlet property="userSegmentControll" destination="bKD-d2-Nza" id="uA1-3k-CZB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spn-3H-6AS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6903" y="2381"/>
+        </scene>
         <!--Inner View Controller-->
         <scene sceneID="DiK-gu-6OO">
             <objects>
                 <viewController id="r4V-6d-m3U" customClass="InnerViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8IW-dw-KJc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="590"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="590.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="o9p-v5-26I">
@@ -1964,6 +2048,7 @@
                             <constraint firstItem="o9p-v5-26I" firstAttribute="leading" secondItem="8IW-dw-KJc" secondAttribute="leading" constant="20" id="im5-cu-ZSV"/>
                             <constraint firstItem="bb1-9W-eDZ" firstAttribute="top" secondItem="o9p-v5-26I" secondAttribute="bottom" constant="40" id="xY5-9I-eWY"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="fmy-8L-bnN"/>
                     </view>
                     <connections>
                         <outlet property="goodImage" destination="Lmz-T5-dLo" id="sRa-0p-yYe"/>
@@ -1976,13 +2061,34 @@
             </objects>
             <point key="canvasLocation" x="6079.7101449275369" y="1782.5892857142856"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g2g-eu-FCL">
+            <objects>
+                <navigationController storyboardIdentifier="innerUserNav" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="RfP-Q0-SwP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="cmL-yU-xty"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9ZI-JE-hMG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9EW-M8-NkE" kind="relationship" relationship="rootViewController" id="Icy-tH-8ts"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wsi-PS-75x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6076.811594202899" y="2380.9151785714284"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="CK0-sb-fYj"/>
         <segue reference="PhJ-45-Pbc"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="close" width="70" height="70"/>
+        <image name="creditcard" catalog="system" width="128" height="91"/>
         <image name="cross" width="72" height="72"/>
         <image name="lamp_fon" width="258" height="249"/>
         <image name="open" width="70" height="70"/>

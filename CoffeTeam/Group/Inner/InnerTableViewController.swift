@@ -47,4 +47,12 @@ class InnerTableViewController: UITableViewController {
         cell.accessoryType = .disclosureIndicator
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        getSelectedItem(indexPath: indexPath, relation: "users")
+        let innerUserVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "innerUser") as! InnerUserViewController
+        innerUserVC.title = selectedItem["name"].string
+        innerUserVC.balance = selectedItem["total"].int!
+        self.navigationController?.pushViewController(innerUserVC, animated: true)
+    }
 }

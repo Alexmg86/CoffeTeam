@@ -52,6 +52,7 @@ class MainTableViewController: UITableViewController {
         let label = UILabel(frame: CGRect(x: 20, y: 0, width: tableView.frame.width, height: 50))
         label.text = items[section]["name"].string
         label.font = UIFont.systemFont(ofSize: 22, weight: .light)
+        view.backgroundColor = .white
         view.addSubview(label)
         return view
     }

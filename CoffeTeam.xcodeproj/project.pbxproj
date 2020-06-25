@@ -22,6 +22,7 @@
 		2D3BAAF4243BC85F00464490 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF3243BC85F00464490 /* PopUp.swift */; };
 		2D3BAAF6243BCD6700464490 /* PopUpRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF5243BCD6700464490 /* PopUpRegistrationViewController.swift */; };
 		2D3BAAFA243BCE0700464490 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BAAF9243BCE0700464490 /* ProfileViewController.swift */; };
+		2D55BFDA24A4CA1A00A344DC /* InnerUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D55BFD924A4CA1A00A344DC /* InnerUserViewController.swift */; };
 		2D5F2F092491644E00997D0B /* GroupInnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F2F082491644E00997D0B /* GroupInnerViewController.swift */; };
 		2D632B86249BE83D00C1E7C3 /* GroupInnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D632B85249BE83D00C1E7C3 /* GroupInnerTableViewCell.swift */; };
 		2D632B89249E7FB600C1E7C3 /* InnerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D632B88249E7FB600C1E7C3 /* InnerTableViewController.swift */; };
@@ -76,6 +77,7 @@
 		2D3BAAF3243BC85F00464490 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		2D3BAAF5243BCD6700464490 /* PopUpRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpRegistrationViewController.swift; sourceTree = "<group>"; };
 		2D3BAAF9243BCE0700464490 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2D55BFD924A4CA1A00A344DC /* InnerUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerUserViewController.swift; sourceTree = "<group>"; };
 		2D5F2F082491644E00997D0B /* GroupInnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInnerViewController.swift; sourceTree = "<group>"; };
 		2D632B85249BE83D00C1E7C3 /* GroupInnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInnerTableViewCell.swift; sourceTree = "<group>"; };
 		2D632B88249E7FB600C1E7C3 /* InnerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerTableViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				2D632B88249E7FB600C1E7C3 /* InnerTableViewController.swift */,
 				2D632BAC249FB36D00C1E7C3 /* InnerViewController.swift */,
+				2D55BFD924A4CA1A00A344DC /* InnerUserViewController.swift */,
 			);
 			path = Inner;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				2D04F450246836370077F34F /* GroupViewController.swift in Sources */,
 				2D8D825C248998D800B3617A /* OrderTableViewCell.swift in Sources */,
 				2D84C03F2433593B007ED54D /* CustomInputField.swift in Sources */,
+				2D55BFDA24A4CA1A00A344DC /* InnerUserViewController.swift in Sources */,
 				2D3865962466D8B5004D7918 /* User.swift in Sources */,
 				2D93DC2624192436008E7972 /* WPViewController.swift in Sources */,
 				2D3BAAF6243BCD6700464490 /* PopUpRegistrationViewController.swift in Sources */,

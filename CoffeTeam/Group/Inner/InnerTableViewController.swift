@@ -12,6 +12,7 @@ import SwiftyJSON
 class InnerTableViewController: UITableViewController {
     
     var items = [JSON]()
+    var groupId: String = ""
     var selectedItem: JSON = []
     
     override func viewDidLoad() {
@@ -53,6 +54,9 @@ class InnerTableViewController: UITableViewController {
         let innerUserVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "innerUser") as! InnerUserViewController
         innerUserVC.title = selectedItem["name"].string
         innerUserVC.balance = selectedItem["total"].int!
+        innerUserVC.groupId = groupId
+        innerUserVC.userHash = selectedItem["hash"].string!
         self.navigationController?.pushViewController(innerUserVC, animated: true)
+        print(selectedItem)
     }
 }

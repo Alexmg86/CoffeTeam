@@ -73,6 +73,7 @@ class GroupInnerViewController: UIViewController {
         stats = json["stats"].arrayValue
         let innerVC = self.children[0] as! InnerTableViewController
         innerVC.items = items
+        innerVC.groupId = groupId
         innerVC.tableView.reloadData()
         let innerVC2 = self.children[1] as! InnerViewController
         innerVC2.data = stats

@@ -13,6 +13,8 @@ class InnerUserViewController: UIViewController {
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet  var userSegmentControll: UISegmentedControl!
     var balance: Int = 0
+    var userHash: String = ""
+    var groupId: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +32,5 @@ class InnerUserViewController: UIViewController {
     }
     @IBAction func sentNotification(_ sender: Any) {
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -1921,19 +1921,29 @@
                                     <segue destination="6dZ-P8-CX5" kind="embed" id="fzN-pG-rqF"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhB-iH-XrA">
+                                <rect key="frame" x="0.0" y="223" width="414" height="639"/>
+                                <connections>
+                                    <segue destination="xJ6-87-u9I" kind="embed" id="obK-6o-oGS"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="VhB-iH-XrA" firstAttribute="leading" secondItem="QOm-lm-HTO" secondAttribute="leading" id="0Ti-7o-zZm"/>
                             <constraint firstItem="QuH-DB-uNt" firstAttribute="leading" secondItem="QOm-lm-HTO" secondAttribute="leading" constant="20" id="1iw-zw-xZq"/>
                             <constraint firstItem="QuH-DB-uNt" firstAttribute="top" secondItem="QOm-lm-HTO" secondAttribute="top" constant="22" id="2zD-ko-jcr"/>
                             <constraint firstItem="QOm-lm-HTO" firstAttribute="trailing" secondItem="lNf-hY-klK" secondAttribute="trailing" id="5H1-Nb-tbZ"/>
                             <constraint firstItem="bKD-d2-Nza" firstAttribute="top" secondItem="c3Z-4T-Sc6" secondAttribute="bottom" constant="25" id="A22-Ss-mDT"/>
+                            <constraint firstItem="VhB-iH-XrA" firstAttribute="bottom" secondItem="QOm-lm-HTO" secondAttribute="bottom" id="E2B-fg-Nh9"/>
                             <constraint firstItem="bKD-d2-Nza" firstAttribute="leading" secondItem="QOm-lm-HTO" secondAttribute="leading" constant="20" id="E4K-cS-wJa"/>
                             <constraint firstItem="QOm-lm-HTO" firstAttribute="trailing" secondItem="2Fl-1D-mJZ" secondAttribute="trailing" constant="20" id="Hra-Ze-NSG"/>
                             <constraint firstItem="lNf-hY-klK" firstAttribute="leading" secondItem="dHy-4x-qqN" secondAttribute="leading" id="Nav-8l-9kc"/>
+                            <constraint firstItem="VhB-iH-XrA" firstAttribute="top" secondItem="bKD-d2-Nza" secondAttribute="bottom" constant="25" id="WIy-jh-8y0"/>
                             <constraint firstItem="QOm-lm-HTO" firstAttribute="bottom" secondItem="lNf-hY-klK" secondAttribute="bottom" id="esw-Ad-3DY"/>
                             <constraint firstItem="c3Z-4T-Sc6" firstAttribute="top" secondItem="QOm-lm-HTO" secondAttribute="top" constant="20" id="iSk-wV-yzP"/>
                             <constraint firstItem="c3Z-4T-Sc6" firstAttribute="centerX" secondItem="dHy-4x-qqN" secondAttribute="centerX" id="lCr-te-SyU"/>
+                            <constraint firstItem="VhB-iH-XrA" firstAttribute="trailing" secondItem="QOm-lm-HTO" secondAttribute="trailing" id="lfa-nc-afJ"/>
                             <constraint firstItem="2Fl-1D-mJZ" firstAttribute="top" secondItem="QOm-lm-HTO" secondAttribute="top" constant="22" id="lyJ-Py-RhY"/>
                             <constraint firstItem="lNf-hY-klK" firstAttribute="top" secondItem="bKD-d2-Nza" secondAttribute="bottom" constant="25" id="p9L-Z2-4kd"/>
                             <constraint firstItem="QOm-lm-HTO" firstAttribute="trailing" secondItem="bKD-d2-Nza" secondAttribute="trailing" constant="20" id="xSs-c8-vRr"/>
@@ -1944,12 +1954,85 @@
                     <connections>
                         <outlet property="balanceLabel" destination="c3Z-4T-Sc6" id="EIT-Jb-4XA"/>
                         <outlet property="ordersList" destination="lNf-hY-klK" id="rjk-gV-hgh"/>
+                        <outlet property="paymentsList" destination="VhB-iH-XrA" id="dmb-hr-PWf"/>
                         <outlet property="userSegmentControll" destination="bKD-d2-Nza" id="uA1-3k-CZB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spn-3H-6AS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6902.898550724638" y="2380.5803571428569"/>
+        </scene>
+        <!--Inner User Payments Table View Controller-->
+        <scene sceneID="VA3-oo-d8D">
+            <objects>
+                <tableViewController id="xJ6-87-u9I" customClass="InnerUserPaymentsTableViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ofy-Pz-dwl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="639"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userPaymentInfo" id="Lmr-JP-VN6" customClass="InnerUserPaymentsCell" customModule="CoffeTeam" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lmr-JP-VN6" id="JF2-de-aoJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iaI-Ab-pF4">
+                                            <rect key="frame" x="20" y="13" width="88.5" height="34"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поступление" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rf-lM-dW6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="88.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpV-WQ-GrR">
+                                                    <rect key="frame" x="0.0" y="22" width="88.5" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DOO-9E-Xo7">
+                                            <rect key="frame" x="332.5" y="16" width="61.5" height="28"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ji0-9t-1kU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="61.5" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="ZAl-i0-Pef"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="tMr-FX-iA4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                    <color key="textColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="DOO-9E-Xo7" secondAttribute="trailing" constant="20" id="WI2-wK-4ty"/>
+                                        <constraint firstItem="DOO-9E-Xo7" firstAttribute="centerY" secondItem="JF2-de-aoJ" secondAttribute="centerY" id="l6s-uO-rjN"/>
+                                        <constraint firstItem="iaI-Ab-pF4" firstAttribute="centerY" secondItem="JF2-de-aoJ" secondAttribute="centerY" id="pdD-9H-9Ar"/>
+                                        <constraint firstItem="iaI-Ab-pF4" firstAttribute="leading" secondItem="JF2-de-aoJ" secondAttribute="leading" constant="20" id="xRK-s1-dAn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="rpV-WQ-GrR" id="QiM-YU-M7G"/>
+                                    <outlet property="paymentLabel" destination="ji0-9t-1kU" id="QBu-Xe-7E6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xJ6-87-u9I" id="rCc-St-x5r"/>
+                            <outlet property="delegate" destination="xJ6-87-u9I" id="P8q-yQ-L0c"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M7B-8K-24Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7738" y="2377"/>
         </scene>
         <!--Inner User Orders Table View Controller-->
         <scene sceneID="f4P-KX-Lh8">

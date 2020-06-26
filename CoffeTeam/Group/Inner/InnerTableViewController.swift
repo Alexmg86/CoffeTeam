@@ -57,6 +57,5 @@ class InnerTableViewController: UITableViewController {
         innerUserVC.groupId = groupId
         innerUserVC.userHash = selectedItem["hash"].string!
         self.navigationController?.pushViewController(innerUserVC, animated: true)
-        print(selectedItem)
     }
 }

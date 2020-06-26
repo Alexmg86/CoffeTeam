@@ -1,5 +1,5 @@
 //
-//  InnerUserOrdersTableViewController.swift
+//  InnerUserPaymentsTableViewController.swift
 //  CoffeTeam
 //
 //  Created by Алексей Морозов on 26.06.2020.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class InnerUserOrdersTableViewController: UITableViewController {
+class InnerUserPaymentsTableViewController: UITableViewController {
 
     var items = [JSON]()
     var selectedItem: JSON = []
@@ -34,12 +34,11 @@ class InnerUserOrdersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userOrderInfo", for: indexPath) as! InnerUserOrdersTableCell
+        print(indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "userPaymentInfo", for: indexPath) as! InnerUserPaymentsCell
         getSelectedItem(indexPath: indexPath)
-        cell.goodName.text = selectedItem["name"].string
-        cell.goodPrice.text = "-\(selectedItem["price"].string!)"
-        cell.goodDate.text = selectedItem["created_at"].string
-        cell.goodImage.image = UIImage(named: selectedItem["icon_id"].string!)
+        cell.dateLabel.text = selectedItem["created_at"].string
+        cell.paymentLabel.text = selectedItem["payment"].string
         return cell
     }
 }

@@ -15,30 +15,34 @@ class InnerUserViewController: UIViewController {
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet  var userSegmentControll: UISegmentedControl!
     @IBOutlet weak var ordersList: UIView!
+    @IBOutlet weak var paymentsList: UIView!
     var balance: Int = 0
     var userHash: String = ""
     var groupId: String = ""
     let user = User()
     var items = [JSON]()
+    var payments = [JSON]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setBalance()
         loadItems()
+        paymentsList.isHidden = true
     }
 
     @IBAction func toggleView(_ sender: Any) {
         switch userSegmentControll.selectedSegmentIndex {
         case 0:
             ordersList.isHidden = false
-//            statListView.isHidden = true
+            paymentsList.isHidden = true
             break
         case 1:
             ordersList.isHidden = true
-//            statListView.isHidden = false
+            paymentsList.isHidden = false
             break
         case 2:
             ordersList.isHidden = true
+            paymentsList.isHidden = true
             break
         default:
             break
@@ -74,15 +78,17 @@ class InnerUserViewController: UIViewController {
     func checkItems(value: Any) {
         let json = JSON(value as Any)
         items = json["orders"].arrayValue
-//        stats = json["stats"].arrayValue
+        payments = json["payments"].arrayValue
+        
         let innerVC = self.children[0] as! InnerUserOrdersTableViewController
         innerVC.items = items
         innerVC.tableView.reloadData()
+        print(payments)
+        let innerVC2 = self.children[1] as! InnerUserPaymentsTableViewController
+        innerVC2.items = payments
+        innerVC2.tableView.reloadData()
         
         setBalance()
-//        let innerVC2 = self.children[1] as! InnerViewController
-//        innerVC2.data = stats
-//        innerVC2.updateData()
     }
 
     @IBAction func addPayment(_ sender: Any) {

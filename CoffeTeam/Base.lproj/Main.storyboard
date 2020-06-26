@@ -1927,6 +1927,12 @@
                                     <segue destination="xJ6-87-u9I" kind="embed" id="obK-6o-oGS"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-ud-csU">
+                                <rect key="frame" x="0.0" y="223" width="414" height="639"/>
+                                <connections>
+                                    <segue destination="MYK-QP-smo" kind="embed" id="w9K-af-6Pd"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1935,17 +1941,21 @@
                             <constraint firstItem="QuH-DB-uNt" firstAttribute="top" secondItem="QOm-lm-HTO" secondAttribute="top" constant="22" id="2zD-ko-jcr"/>
                             <constraint firstItem="QOm-lm-HTO" firstAttribute="trailing" secondItem="lNf-hY-klK" secondAttribute="trailing" id="5H1-Nb-tbZ"/>
                             <constraint firstItem="bKD-d2-Nza" firstAttribute="top" secondItem="c3Z-4T-Sc6" secondAttribute="bottom" constant="25" id="A22-Ss-mDT"/>
+                            <constraint firstItem="wLm-ud-csU" firstAttribute="bottom" secondItem="QOm-lm-HTO" secondAttribute="bottom" id="DcP-nK-Rle"/>
                             <constraint firstItem="VhB-iH-XrA" firstAttribute="bottom" secondItem="QOm-lm-HTO" secondAttribute="bottom" id="E2B-fg-Nh9"/>
                             <constraint firstItem="bKD-d2-Nza" firstAttribute="leading" secondItem="QOm-lm-HTO" secondAttribute="leading" constant="20" id="E4K-cS-wJa"/>
                             <constraint firstItem="QOm-lm-HTO" firstAttribute="trailing" secondItem="2Fl-1D-mJZ" secondAttribute="trailing" constant="20" id="Hra-Ze-NSG"/>
+                            <constraint firstItem="wLm-ud-csU" firstAttribute="leading" secondItem="dHy-4x-qqN" secondAttribute="leading" id="MYC-ad-bkX"/>
                             <constraint firstItem="lNf-hY-klK" firstAttribute="leading" secondItem="dHy-4x-qqN" secondAttribute="leading" id="Nav-8l-9kc"/>
                             <constraint firstItem="VhB-iH-XrA" firstAttribute="top" secondItem="bKD-d2-Nza" secondAttribute="bottom" constant="25" id="WIy-jh-8y0"/>
+                            <constraint firstItem="wLm-ud-csU" firstAttribute="top" secondItem="bKD-d2-Nza" secondAttribute="bottom" constant="25" id="a6G-fd-Spj"/>
                             <constraint firstItem="QOm-lm-HTO" firstAttribute="bottom" secondItem="lNf-hY-klK" secondAttribute="bottom" id="esw-Ad-3DY"/>
                             <constraint firstItem="c3Z-4T-Sc6" firstAttribute="top" secondItem="QOm-lm-HTO" secondAttribute="top" constant="20" id="iSk-wV-yzP"/>
                             <constraint firstItem="c3Z-4T-Sc6" firstAttribute="centerX" secondItem="dHy-4x-qqN" secondAttribute="centerX" id="lCr-te-SyU"/>
                             <constraint firstItem="VhB-iH-XrA" firstAttribute="trailing" secondItem="QOm-lm-HTO" secondAttribute="trailing" id="lfa-nc-afJ"/>
                             <constraint firstItem="2Fl-1D-mJZ" firstAttribute="top" secondItem="QOm-lm-HTO" secondAttribute="top" constant="22" id="lyJ-Py-RhY"/>
                             <constraint firstItem="lNf-hY-klK" firstAttribute="top" secondItem="bKD-d2-Nza" secondAttribute="bottom" constant="25" id="p9L-Z2-4kd"/>
+                            <constraint firstItem="wLm-ud-csU" firstAttribute="trailing" secondItem="QOm-lm-HTO" secondAttribute="trailing" id="w68-Kx-AFy"/>
                             <constraint firstItem="QOm-lm-HTO" firstAttribute="trailing" secondItem="bKD-d2-Nza" secondAttribute="trailing" constant="20" id="xSs-c8-vRr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QOm-lm-HTO"/>
@@ -1955,6 +1965,7 @@
                         <outlet property="balanceLabel" destination="c3Z-4T-Sc6" id="EIT-Jb-4XA"/>
                         <outlet property="ordersList" destination="lNf-hY-klK" id="rjk-gV-hgh"/>
                         <outlet property="paymentsList" destination="VhB-iH-XrA" id="dmb-hr-PWf"/>
+                        <outlet property="rolesList" destination="wLm-ud-csU" id="Vtl-XM-Bom"/>
                         <outlet property="userSegmentControll" destination="bKD-d2-Nza" id="uA1-3k-CZB"/>
                     </connections>
                 </viewController>
@@ -2032,7 +2043,60 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7B-8K-24Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7738" y="2377"/>
+            <point key="canvasLocation" x="8480" y="2398"/>
+        </scene>
+        <!--Inner User Roles Table View Controller-->
+        <scene sceneID="8Ta-cg-mQH">
+            <objects>
+                <tableViewController id="MYK-QP-smo" customClass="InnerUserRolesTableViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="E9p-eQ-2zC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="639"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userRoleInfo" id="Ow2-Uj-QkV" customClass="InnerUserRolesTableCell" customModule="CoffeTeam" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ow2-Uj-QkV" id="RMS-Ff-orE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поступление" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsU-Ey-JgR">
+                                            <rect key="frame" x="20" y="21.5" width="374" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTE-We-R1C">
+                                            <rect key="frame" x="345" y="14.5" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="toggleRole:" destination="Ow2-Uj-QkV" eventType="valueChanged" id="4oB-6A-EK1"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nsU-Ey-JgR" firstAttribute="leading" secondItem="RMS-Ff-orE" secondAttribute="leading" constant="20" id="BgB-zY-H2Q"/>
+                                        <constraint firstItem="nsU-Ey-JgR" firstAttribute="centerY" secondItem="RMS-Ff-orE" secondAttribute="centerY" id="CZh-Wp-STJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="nsU-Ey-JgR" secondAttribute="trailing" constant="20" id="Zh8-yZ-uNB"/>
+                                        <constraint firstAttribute="trailing" secondItem="PTE-We-R1C" secondAttribute="trailing" constant="20" id="cj8-vh-fZi"/>
+                                        <constraint firstItem="PTE-We-R1C" firstAttribute="centerY" secondItem="RMS-Ff-orE" secondAttribute="centerY" id="dCp-5u-JVu"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="nsU-Ey-JgR" id="cPr-ey-BFG"/>
+                                    <outlet property="roleSwitch" destination="PTE-We-R1C" id="2RJ-Mi-CBh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MYK-QP-smo" id="QIr-Wm-2RT"/>
+                            <outlet property="delegate" destination="MYK-QP-smo" id="UrA-If-fQW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LV3-e2-JaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9209" y="2398"/>
         </scene>
         <!--Inner User Orders Table View Controller-->
         <scene sceneID="f4P-KX-Lh8">
@@ -2107,7 +2171,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MgP-bc-mHA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6903" y="3024"/>
+            <point key="canvasLocation" x="7772" y="2398"/>
         </scene>
         <!--Inner View Controller-->
         <scene sceneID="DiK-gu-6OO">

@@ -16,18 +16,21 @@ class InnerUserViewController: UIViewController {
     @IBOutlet  var userSegmentControll: UISegmentedControl!
     @IBOutlet weak var ordersList: UIView!
     @IBOutlet weak var paymentsList: UIView!
+    @IBOutlet weak var rolesList: UIView!
     var balance: Int = 0
     var userHash: String = ""
     var groupId: String = ""
     let user = User()
     var items = [JSON]()
     var payments = [JSON]()
+    var roles = [JSON]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setBalance()
         loadItems()
         paymentsList.isHidden = true
+        rolesList.isHidden = true
     }
 
     @IBAction func toggleView(_ sender: Any) {
@@ -35,14 +38,17 @@ class InnerUserViewController: UIViewController {
         case 0:
             ordersList.isHidden = false
             paymentsList.isHidden = true
+            rolesList.isHidden = true
             break
         case 1:
             ordersList.isHidden = true
             paymentsList.isHidden = false
+            rolesList.isHidden = true
             break
         case 2:
             ordersList.isHidden = true
             paymentsList.isHidden = true
+            rolesList.isHidden = false
             break
         default:
             break
@@ -79,14 +85,20 @@ class InnerUserViewController: UIViewController {
         let json = JSON(value as Any)
         items = json["orders"].arrayValue
         payments = json["payments"].arrayValue
+        roles = json["roles"].arrayValue
         
         let innerVC = self.children[0] as! InnerUserOrdersTableViewController
         innerVC.items = items
         innerVC.tableView.reloadData()
-        print(payments)
+
         let innerVC2 = self.children[1] as! InnerUserPaymentsTableViewController
         innerVC2.items = payments
         innerVC2.tableView.reloadData()
+
+        let innerVC3 = self.children[2] as! InnerUserRolesTableViewController
+        innerVC3.items = roles
+        innerVC3.isowner = json["owner"].boolValue
+        innerVC3.tableView.reloadData()
         
         setBalance()
     }

@@ -16,6 +16,8 @@
 		2D03A9AE24A60AE900BC4219 /* InnerUserOrdersTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03A9AD24A60AE900BC4219 /* InnerUserOrdersTableCell.swift */; };
 		2D03A9B024A625ED00BC4219 /* InnerUserPaymentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03A9AF24A625ED00BC4219 /* InnerUserPaymentsTableViewController.swift */; };
 		2D03A9B224A6264200BC4219 /* InnerUserPaymentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03A9B124A6264200BC4219 /* InnerUserPaymentsCell.swift */; };
+		2D03A9B424A6306200BC4219 /* InnerUserRolesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03A9B324A6306100BC4219 /* InnerUserRolesTableViewController.swift */; };
+		2D03A9B624A6311800BC4219 /* InnerUserRolesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03A9B524A6311800BC4219 /* InnerUserRolesTableCell.swift */; };
 		2D04F450246836370077F34F /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D04F44F246836370077F34F /* GroupViewController.swift */; };
 		2D04F45224683DCD0077F34F /* GroupAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D04F45124683DCD0077F34F /* GroupAddViewController.swift */; };
 		2D0CB7122490C08F007EC85E /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CB7112490C08F007EC85E /* BadgeLabel.swift */; };
@@ -75,6 +77,8 @@
 		2D03A9AD24A60AE900BC4219 /* InnerUserOrdersTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerUserOrdersTableCell.swift; sourceTree = "<group>"; };
 		2D03A9AF24A625ED00BC4219 /* InnerUserPaymentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerUserPaymentsTableViewController.swift; sourceTree = "<group>"; };
 		2D03A9B124A6264200BC4219 /* InnerUserPaymentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerUserPaymentsCell.swift; sourceTree = "<group>"; };
+		2D03A9B324A6306100BC4219 /* InnerUserRolesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerUserRolesTableViewController.swift; sourceTree = "<group>"; };
+		2D03A9B524A6311800BC4219 /* InnerUserRolesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerUserRolesTableCell.swift; sourceTree = "<group>"; };
 		2D04F44F246836370077F34F /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		2D04F45124683DCD0077F34F /* GroupAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAddViewController.swift; sourceTree = "<group>"; };
 		2D0CB7112490C08F007EC85E /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
@@ -239,7 +243,9 @@
 				2D632B88249E7FB600C1E7C3 /* InnerTableViewController.swift */,
 				2D03A9AB24A5F9CB00BC4219 /* InnerUserOrdersTableViewController.swift */,
 				2D03A9AF24A625ED00BC4219 /* InnerUserPaymentsTableViewController.swift */,
+				2D03A9B324A6306100BC4219 /* InnerUserRolesTableViewController.swift */,
 				2D03A9AD24A60AE900BC4219 /* InnerUserOrdersTableCell.swift */,
+				2D03A9B524A6311800BC4219 /* InnerUserRolesTableCell.swift */,
 				2D03A9B124A6264200BC4219 /* InnerUserPaymentsCell.swift */,
 				2D632BAC249FB36D00C1E7C3 /* InnerViewController.swift */,
 				2D55BFD924A4CA1A00A344DC /* InnerUserViewController.swift */,
@@ -455,6 +461,7 @@
 				2D8D82572485178C00B3617A /* ShopTableViewCell.swift in Sources */,
 				2D03A9AC24A5F9CB00BC4219 /* InnerUserOrdersTableViewController.swift in Sources */,
 				2DFA8DCC243A782300680567 /* MainTabBarViewController.swift in Sources */,
+				2D03A9B624A6311800BC4219 /* InnerUserRolesTableCell.swift in Sources */,
 				2D03A9AE24A60AE900BC4219 /* InnerUserOrdersTableCell.swift in Sources */,
 				2DF74C8F247688920026EF90 /* GroupTableViewCell.swift in Sources */,
 				2DA85299247FD88D00766CD1 /* CustomPickerInput.swift in Sources */,
@@ -466,6 +473,7 @@
 				2DA85292247D4B5F00766CD1 /* ProfileEditViewController.swift in Sources */,
 				2DA8529B247FFB0000766CD1 /* ShopViewController.swift in Sources */,
 				2D025F592417D1F7007287FC /* SceneDelegate.swift in Sources */,
+				2D03A9B424A6306200BC4219 /* InnerUserRolesTableViewController.swift in Sources */,
 				2DB0FB1D248A929500BA6AC2 /* OrderAddViewController.swift in Sources */,
 				2D3BAAFA243BCE0700464490 /* ProfileViewController.swift in Sources */,
 				2D04F45224683DCD0077F34F /* GroupAddViewController.swift in Sources */,

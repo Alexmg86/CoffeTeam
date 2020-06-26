@@ -1,14 +1,14 @@
 //
-//  OrderTableViewCell.swift
+//  InnerUserOrdersTableCell.swift
 //  CoffeTeam
 //
-//  Created by Алексей Морозов on 05.06.2020.
+//  Created by Алексей Морозов on 26.06.2020.
 //  Copyright © 2020 Алексей Морозов. All rights reserved.
 //
 
 import UIKit
 
-class OrderTableViewCell: UITableViewCell {
+class InnerUserOrdersTableCell: UITableViewCell {
 
     @IBOutlet weak var goodPrice: UILabel!
     @IBOutlet weak var goodName: UILabel!

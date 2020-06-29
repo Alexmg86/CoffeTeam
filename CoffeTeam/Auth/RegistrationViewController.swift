@@ -21,6 +21,7 @@ class RegistrationViewController: KeyboadController {
     @IBOutlet weak var password: UILabel!
     @IBOutlet weak var password_confirmation: UILabel!
     @IBOutlet weak var name: UILabel!
+    let user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,7 @@ class RegistrationViewController: KeyboadController {
                         self?.callError(key: key, errors: error)
                     }
                 case 200:
+                    self?.user.userUpdate(json: json)
                     self?.dismiss(animated: true, completion: {
                         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popupRegistration") as! PopUpRegistrationViewController
                         pvc?.addChild(popOverVC)

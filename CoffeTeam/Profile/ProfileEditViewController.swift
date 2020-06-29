@@ -34,12 +34,13 @@ class ProfileEditViewController: KeyboadController {
             self.callError(key: "name", errors: ["Поле на заполнено"])
             return
         }
+        let id = user.getId()
         let hash = user.getHash()
-        guard hash != "" else { return }
-        let url = "https://ineedapp.ru/user/\(String(hash))"
+        guard id != "", hash != "" else { return }
+        let url = "https://ineedapp.ru/user/\(String(id))"
         AF.request(url,
                    method: .put,
-                   parameters: ["name": nickname],
+                   parameters: ["name": nickname, "hash": hash],
                    encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):

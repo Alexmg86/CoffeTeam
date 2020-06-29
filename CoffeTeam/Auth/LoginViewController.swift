@@ -19,6 +19,7 @@ class LoginViewController: KeyboadController {
     @IBOutlet weak var closeButtom: UIButton!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var password: UILabel!
+    let user = User()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +45,7 @@ class LoginViewController: KeyboadController {
                         self?.callError(key: key, errors: error)
                     }
                 case 200:
-                    if (json.count == 3) {
-                        let userDefaults = UserDefaults.standard
-                        for (key, value) in json {
-                            userDefaults.set(value.stringValue, forKey: "coffeapp_user_"+key)
-                        }
-                    }
+                    self?.user.userUpdate(json: json)
                     self?.dismiss(animated: true, completion: nil)
                 default:
                     print("error")

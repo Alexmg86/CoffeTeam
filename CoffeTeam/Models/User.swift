@@ -16,6 +16,7 @@ class User {
     let email: String = ""
     let hash: String = ""
     let name: String = ""
+    let id: String = ""
     
     func isUserExist() -> Bool {
         let hash = userDefaults.string(forKey: "coffeapp_user_hash")
@@ -32,14 +33,20 @@ class User {
         return ((name == nil) ? "" : name)!
     }
     
+    func getId() -> String {
+        let id = userDefaults.string(forKey: "coffeapp_user_id")
+        return ((id == nil) ? "" : id)!
+    }
+    
     func userExit() {
         userDefaults.set(nil, forKey: "coffeapp_user_hash")
         userDefaults.set(nil, forKey: "coffeapp_user_name")
         userDefaults.set(nil, forKey: "coffeapp_user_email")
+        userDefaults.set(nil, forKey: "coffeapp_user_id")
     }
     
     func userUpdate(json: JSON) {
-        if (json.count == 3) {
+        if (json.count == 4) {
             let userDefaults = UserDefaults.standard
             for (key, value) in json {
                 userDefaults.set(value.stringValue, forKey: "coffeapp_user_"+key)

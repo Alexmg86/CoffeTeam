@@ -55,7 +55,7 @@ class InnerTableViewController: UITableViewController {
         innerUserVC.title = selectedItem["name"].string
         innerUserVC.balance = selectedItem["total"].int!
         innerUserVC.groupId = groupId
-        innerUserVC.userHash = selectedItem["hash"].string!
+        innerUserVC.userId = selectedItem["id"].int!
         self.navigationController?.pushViewController(innerUserVC, animated: true)
     }
 }

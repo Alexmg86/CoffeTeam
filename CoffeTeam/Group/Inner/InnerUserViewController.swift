@@ -18,7 +18,7 @@ class InnerUserViewController: UIViewController {
     @IBOutlet weak var paymentsList: UIView!
     @IBOutlet weak var rolesList: UIView!
     var balance: Int = 0
-    var userHash: String = ""
+    var userId: Int = 0
     var groupId: String = ""
     let user = User()
     var items = [JSON]()
@@ -70,7 +70,7 @@ class InnerUserViewController: UIViewController {
         let url = "https://ineedapp.ru/user/getstat"
         AF.request(url,
                    method: .post,
-                   parameters: ["hash": userHash, "group_id": groupId],
+                   parameters: ["id": String(userId), "group_id": groupId],
                    encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):

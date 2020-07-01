@@ -31,6 +31,7 @@ class InnerUserViewController: UIViewController {
         loadItems()
         paymentsList.isHidden = true
         rolesList.isHidden = true
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateRules), name: NSNotification.Name(rawValue: "updateRules"), object: nil)
     }
 
     @IBAction func toggleView(_ sender: Any) {
@@ -94,13 +95,38 @@ class InnerUserViewController: UIViewController {
         let innerVC2 = self.children[1] as! InnerUserPaymentsTableViewController
         innerVC2.items = payments
         innerVC2.tableView.reloadData()
-
+        
         let innerVC3 = self.children[2] as! InnerUserRolesTableViewController
         innerVC3.items = roles
         innerVC3.isowner = json["owner"].boolValue
         innerVC3.tableView.reloadData()
-        
+
         setBalance()
+    }
+
+    @objc private func updateRules(notification: NSNotification) {
+        let json = JSON(notification.object as Any)
+        
+        if (!user.isUserExist()) {
+            checkItems(value: [])
+            return
+        }
+        let url = "https://ineedapp.ru/access"
+        AF.request(url,
+                   method: .post,
+                   parameters: [
+                       "group_id": groupId,
+                       "role_id": json["roleId"].stringValue,
+                       "user_id": String(userId),
+                       "switch": json["switch"].stringValue
+                   ],
+                   encoder: JSONParameterEncoder.default).responseJSON { response in
+            switch response.result {
+            case .success( _): break
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     @IBAction func addPayment(_ sender: Any) {

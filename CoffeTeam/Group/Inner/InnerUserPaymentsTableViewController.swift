@@ -34,7 +34,6 @@ class InnerUserPaymentsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "userPaymentInfo", for: indexPath) as! InnerUserPaymentsCell
         getSelectedItem(indexPath: indexPath)
         cell.dateLabel.text = selectedItem["created_at"].string

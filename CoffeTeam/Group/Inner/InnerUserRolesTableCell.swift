@@ -22,6 +22,8 @@ class InnerUserRolesTableCell: UITableViewCell {
             }
         }
     }
+    
+    var roleId: String = ""
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,10 +34,7 @@ class InnerUserRolesTableCell: UITableViewCell {
     }
 
     @IBAction func toggleRole(_ sender: Any) {
-        if roleSwitch.isOn {
-            print("On")
-        }
-//        print(roleSwitch)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateRules"), object: ["switch": roleSwitch.isOn, "roleId": roleId])
     }
     
 }

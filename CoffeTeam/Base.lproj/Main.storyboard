@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UFg-eb-gGS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UFg-eb-gGS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -1916,19 +1916,19 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNf-hY-klK">
-                                <rect key="frame" x="0.0" y="223" width="414" height="639"/>
+                                <rect key="frame" x="0.0" y="222.5" width="414" height="639.5"/>
                                 <connections>
                                     <segue destination="6dZ-P8-CX5" kind="embed" id="fzN-pG-rqF"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhB-iH-XrA">
-                                <rect key="frame" x="0.0" y="223" width="414" height="639"/>
+                                <rect key="frame" x="0.0" y="222.5" width="414" height="639.5"/>
                                 <connections>
                                     <segue destination="xJ6-87-u9I" kind="embed" id="obK-6o-oGS"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-ud-csU">
-                                <rect key="frame" x="0.0" y="223" width="414" height="639"/>
+                                <rect key="frame" x="0.0" y="222.5" width="414" height="639.5"/>
                                 <connections>
                                     <segue destination="MYK-QP-smo" kind="embed" id="w9K-af-6Pd"/>
                                 </connections>
@@ -1978,7 +1978,7 @@
             <objects>
                 <tableViewController id="xJ6-87-u9I" customClass="InnerUserPaymentsTableViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ofy-Pz-dwl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="639"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="639.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -2050,7 +2050,7 @@
             <objects>
                 <tableViewController id="MYK-QP-smo" customClass="InnerUserRolesTableViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="E9p-eQ-2zC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="639"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="639.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -2103,7 +2103,7 @@
             <objects>
                 <tableViewController id="6dZ-P8-CX5" customClass="InnerUserOrdersTableViewController" customModule="CoffeTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mkg-9A-wpl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="639"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="639.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>

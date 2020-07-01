@@ -40,6 +40,7 @@ class InnerUserRolesTableViewController: UITableViewController {
         cell.nameLabel.text = selectedItem["name"].string
         cell.roleSwitch.setOn(selectedItem["can"].boolValue, animated: true)
         cell.isowner = isowner
+        cell.roleId = selectedItem["id"].stringValue
         return cell
     }
 

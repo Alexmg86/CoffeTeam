@@ -64,7 +64,6 @@ class MainTableViewController: UITableViewController {
         if !isNeedReload {
             return
         }
-        print("111")
         if (!user.isUserExist()) {
             checkItems(value: [])
             return

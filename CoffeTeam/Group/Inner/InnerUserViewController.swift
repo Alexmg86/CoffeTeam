@@ -112,6 +112,9 @@ class InnerUserViewController: UIViewController {
             return
         }
         let url = "https://ineedapp.ru/access"
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
         AF.request(url,
                    method: .post,
                    parameters: [
@@ -120,7 +123,7 @@ class InnerUserViewController: UIViewController {
                        "user_id": String(userId),
                        "switch": json["switch"].stringValue
                    ],
-                   encoder: JSONParameterEncoder.default).responseJSON { response in
+                   encoder: JSONParameterEncoder.default, headers: headers).responseJSON { response in
             switch response.result {
             case .success( _): break
             case .failure(let error):

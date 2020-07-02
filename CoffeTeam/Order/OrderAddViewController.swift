@@ -36,7 +36,10 @@ class OrderAddViewController: UIViewController, UITableViewDelegate, UITableView
             checkItems(value: [])
             return
         }
-        AF.request("https://ineedapp.ru/\(modelName)").responseJSON { [weak self] (response) in
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
+        AF.request("https://ineedapp.ru/\(modelName)", headers: headers).responseJSON { [weak self] (response) in
             switch response.result {
             case .success(let value):
                 self?.checkItems(value: value)
@@ -88,12 +91,14 @@ class OrderAddViewController: UIViewController, UITableViewDelegate, UITableView
         let itemSection = items[indexPath.section]
         let item = itemSection["goods"][indexPath.row]
         
-        let order = Order(group: itemSection["id"].int!, price: item["price"].string!, good: item["id"].int!, hash: user.getHash())
-        
+        let order = Order(group: itemSection["id"].int!, price: item["price"].string!, good: item["id"].int!)
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
         AF.request("https://ineedapp.ru/order",
                    method: .post,
                    parameters: order,
-                   encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+                   headers: headers).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
                 self?.dismiss(animated: true, completion: {

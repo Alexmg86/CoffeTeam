@@ -57,10 +57,10 @@ class User {
     func userLogin() {
         if isUserExist() {
             let url = "https://ineedapp.ru/user/loginhash"
-            AF.request(url,
-                       method: .post,
-                       parameters: ["hash": getHash()],
-                       encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+            let headers: HTTPHeaders = [
+                "hash": getHash()
+            ]
+            AF.request(url, headers: headers).responseJSON { [weak self] response in
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value as Any)

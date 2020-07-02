@@ -68,7 +68,10 @@ class MainTableViewController: UITableViewController {
             checkItems(value: [])
             return
         }
-        AF.request("https://ineedapp.ru/\(modelName)").responseJSON { [weak self] (response) in
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
+        AF.request("https://ineedapp.ru/\(modelName)", headers: headers).responseJSON { [weak self] (response) in
             switch response.result {
             case .success(let value):
                 self?.checkItems(value: value)
@@ -79,7 +82,6 @@ class MainTableViewController: UITableViewController {
     }
 
     func deleteItem(indexPath: IndexPath, column: String, subsection: String) {
-        let hash = user.getHash()
         var item = JSON()
         if subsection != "" {
             let itemSection = items[indexPath.section]
@@ -88,10 +90,12 @@ class MainTableViewController: UITableViewController {
             item = items[indexPath.row]
         }
         let url = "https://ineedapp.ru/\(modelName)/\(String(item[column].int!))"
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
         AF.request(url,
                     method: .delete,
-                    parameters: ["hash": hash],
-                    encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+                    headers: headers).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
                 self?.checkItems(value: value)

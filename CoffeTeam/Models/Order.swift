@@ -12,12 +12,10 @@ struct Order: Codable {
     let group: String
     let price: String
     let good: String
-    let hash: String
     
-    init(group: Int, price: String, good: Int, hash: String) {
+    init(group: Int, price: String, good: Int) {
         self.group = String(group)
         self.price = price
         self.good = String(good)
-        self.hash = hash
     }
 }

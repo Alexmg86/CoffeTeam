@@ -57,7 +57,10 @@ class GroupInnerViewController: UIViewController {
             checkItems(value: [])
             return
         }
-        AF.request("https://ineedapp.ru/\(modelName)/\(groupId)").responseJSON { [weak self] (response) in
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
+        AF.request("https://ineedapp.ru/\(modelName)/\(groupId)", headers: headers).responseJSON { [weak self] (response) in
             switch response.result {
             case .success(let value):
                 self?.checkItems(value: value)

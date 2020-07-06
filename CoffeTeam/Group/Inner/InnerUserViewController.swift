@@ -69,10 +69,13 @@ class InnerUserViewController: UIViewController {
             return
         }
         let url = "https://ineedapp.ru/user/getstat"
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
         AF.request(url,
                    method: .post,
                    parameters: ["id": String(userId), "group_id": groupId],
-                   encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+                   headers: headers).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
                 self?.checkItems(value: value)
@@ -123,7 +126,7 @@ class InnerUserViewController: UIViewController {
                        "user_id": String(userId),
                        "switch": json["switch"].stringValue
                    ],
-                   encoder: JSONParameterEncoder.default, headers: headers).responseJSON { response in
+                   headers: headers).responseJSON { response in
             switch response.result {
             case .success( _): break
             case .failure(let error):

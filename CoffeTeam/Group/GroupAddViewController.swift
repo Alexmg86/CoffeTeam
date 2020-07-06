@@ -63,10 +63,13 @@ class GroupAddViewController: KeyboadController {
         if editDataCount > 0 {
             url += "/\(String(editData["id"].int!))"
         }
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
         AF.request(url,
                    method: editData.count > 0 ? .put : .post,
-                   parameters: ["name": name, "hash": hash],
-                   encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+                   parameters: ["name": name],
+                   headers: headers).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value as Any)

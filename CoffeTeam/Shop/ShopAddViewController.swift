@@ -30,6 +30,7 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
     var selectedIcon: Int = 0
     var editData: Any = []
     var goodId: Int = 0
+    let user = User()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +87,10 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
     }
 
     func loadGroups() {
-        AF.request("https://ineedapp.ru/group").responseJSON { [weak self] (response) in
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
+        AF.request("https://ineedapp.ru/group", headers: headers).responseJSON { [weak self] (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -130,10 +134,13 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
         if goodId > 0 {
             url += "/\(String(goodId))"
         }
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
         AF.request(url,
                    method: goodId > 0 ? .put : .post,
                    parameters: good,
-                   encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+                   headers: headers).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value as Any)

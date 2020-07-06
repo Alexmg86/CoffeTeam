@@ -38,10 +38,13 @@ class ProfileEditViewController: KeyboadController {
         let hash = user.getHash()
         guard id != "", hash != "" else { return }
         let url = "https://ineedapp.ru/user/\(String(id))"
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
         AF.request(url,
                    method: .put,
-                   parameters: ["name": nickname, "hash": hash],
-                   encoder: JSONParameterEncoder.default).responseJSON { [weak self] response in
+                   parameters: ["name": nickname],
+                   headers: headers).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value as Any)
@@ -60,10 +63,13 @@ class ProfileEditViewController: KeyboadController {
     }
     @IBAction func exitUser(_ sender: Any) {
         let parameters: Parameters = [:]
+        let headers: HTTPHeaders = [
+            "hash": user.getHash()
+        ]
         AF.request("https://ineedapp.ru/logout",
                    method: .post,
                    parameters: parameters,
-                   encoding: JSONEncoding.default).response { [weak self] response in
+                   headers: headers).response { [weak self] response in
             switch response.result {
             case .success( _):
                 self?.user.userExit()

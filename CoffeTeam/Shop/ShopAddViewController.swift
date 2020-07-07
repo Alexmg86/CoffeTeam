@@ -98,11 +98,11 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
         let headers: HTTPHeaders = [
             "hash": user.getHash()
         ]
-        AF.request("https://ineedapp.ru/group", headers: headers).responseJSON { [weak self] (response) in
+        AF.request("https://ineedapp.ru/group/shop", headers: headers).responseJSON { [weak self] (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                self?.group_idTextField.loadDropdownData(data: json[0]["items"])
+                self?.group_idTextField.loadDropdownData(data: json)
             case .failure(let error):
                 print(error)
             }

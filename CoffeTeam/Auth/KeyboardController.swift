@@ -60,7 +60,6 @@ class KeyboadController: UIViewController, UITextFieldDelegate {
         (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.width, height: self.view.bounds.height + kbFrameSize.height)
         (self.view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height - self.view.safeAreaInsets.bottom, right: 0)
         (self.view as! UIScrollView).contentOffset = CGPoint(x: 0, y: topPoint)
-        print(topPoint)
     }
     
     @objc func keyboardWillHide() {

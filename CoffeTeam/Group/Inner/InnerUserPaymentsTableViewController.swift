@@ -37,7 +37,7 @@ class InnerUserPaymentsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userPaymentInfo", for: indexPath) as! InnerUserPaymentsCell
         getSelectedItem(indexPath: indexPath)
         cell.dateLabel.text = selectedItem["created_at"].string
-        cell.paymentLabel.text = selectedItem["payment"].string
+        cell.paymentLabel.text = "+\(selectedItem["payment"].string!)"
         return cell
     }
 }

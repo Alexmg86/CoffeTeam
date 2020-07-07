@@ -19,6 +19,14 @@ class ProfileEditViewController: KeyboadController {
     
     let user = User()
     
+    override var disableScroll : Bool {
+        get {
+            return true
+        }
+        set {
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.delegate = self

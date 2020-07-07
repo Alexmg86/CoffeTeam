@@ -9,13 +9,18 @@ import UIKit
 import SwiftyJSON
 
 class KeyboadController: UIViewController, UITextFieldDelegate {
+    
+    var disableScroll = false
+    var topPoint = 226
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
-        self.addObserves()
+        if !disableScroll {
+            self.addObserves()
+        }
     }
 
     @objc func didTapView() {
@@ -54,7 +59,8 @@ class KeyboadController: UIViewController, UITextFieldDelegate {
         let kbFrameSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.width, height: self.view.bounds.height + kbFrameSize.height)
         (self.view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height - self.view.safeAreaInsets.bottom, right: 0)
-        (self.view as! UIScrollView).contentOffset = CGPoint(x: 0, y: (self.view.bounds.height / 2) - 200)
+        (self.view as! UIScrollView).contentOffset = CGPoint(x: 0, y: topPoint)
+        print(topPoint)
     }
     
     @objc func keyboardWillHide() {

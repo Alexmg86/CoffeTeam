@@ -31,6 +31,14 @@ class ShopAddViewController: KeyboadController, UICollectionViewDelegate, UIColl
     var editData: Any = []
     var goodId: Int = 0
     let user = User()
+    
+    override var topPoint : Int {
+        get {
+            return 190
+        }
+        set {
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

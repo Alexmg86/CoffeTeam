@@ -152,10 +152,9 @@ class MainTableViewController: UITableViewController {
         refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
         refreshControl.attributedTitle = NSAttributedString(string: "Обновление данных...")
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        refreshControl.layer.zPosition = -1
         if #available(iOS 10.0, *) {
             self.tableView.refreshControl = refreshControl
-        } else {
-            self.tableView.addSubview(refreshControl)
         }
     }
 

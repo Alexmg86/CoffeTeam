@@ -30,7 +30,6 @@ class LoginViewController: KeyboadController {
     
     func loginUser(email: String, password: String) {
         let login = Login(email: email, password: password)
-        
         AF.request("https://ineedapp.ru/login",
                    method: .post,
                    parameters: login,
@@ -57,7 +56,14 @@ class LoginViewController: KeyboadController {
     }
 
     @IBAction func loginTapper(_ sender: UIButton) {
-        guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else { return }
+        guard let email = emailTextField.text, email != "" else {
+            self.callError(key: "email", errors: ["Не указан логин"])
+            return
+        }
+        guard let password = passwordTextField.text, password != "" else {
+            self.callError(key: "password", errors: ["Не указан пароль"])
+            return
+        }
         loginUser(email: email, password: password)
     }
     

@@ -18,11 +18,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var infoStackView: UIStackView!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var editAccount: UIBarButtonItem!
     
     let user = User()
+    var rightBarButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rightBarButton = editAccount
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,9 +42,11 @@ class ProfileViewController: UIViewController {
             infoStackView.isHidden = false
             loginStackView.isHidden = true
             userNameLabel.text = user.getName()
+            self.navigationItem.rightBarButtonItem = rightBarButton
         } else {
             infoStackView.isHidden = true
             loginStackView.isHidden = false
+            self.navigationItem.rightBarButtonItem = nil
         }
     }
 
@@ -61,15 +66,4 @@ class ProfileViewController: UIViewController {
     @IBAction func editAccount(_ sender: Any) {
         self.performSegue(withIdentifier: "profileEdit",sender: self)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

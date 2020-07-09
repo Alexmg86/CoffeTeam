@@ -494,6 +494,7 @@
                     <connections>
                         <outlet property="balanceLabel" destination="iEU-SD-iK2" id="yQW-gr-yle"/>
                         <outlet property="createAccount" destination="gYY-Xe-fv5" id="0US-0X-bxj"/>
+                        <outlet property="editAccount" destination="orj-k0-ZXw" id="zjk-xj-55h"/>
                         <outlet property="enterAccountBtn" destination="OJ7-4P-MkB" id="NEf-ul-peO"/>
                         <outlet property="infoStackView" destination="96y-PQ-ksZ" id="e90-sM-naw"/>
                         <outlet property="loginStackView" destination="PaC-1p-QKX" id="Jzg-Oq-wSl"/>

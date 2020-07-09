@@ -45,6 +45,7 @@ class LoginViewController: KeyboadController {
                     }
                 case 200:
                     self?.user.userUpdate(json: json)
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadItems"), object: nil)
                     self?.dismiss(animated: true, completion: nil)
                 default:
                     print("error")

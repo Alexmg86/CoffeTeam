@@ -81,6 +81,7 @@ class ProfileEditViewController: KeyboadController {
             switch response.result {
             case .success( _):
                 self?.user.userExit()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadItems"), object: nil)
                 self?.dismiss(animated: true, completion: nil)
             case .failure(_):
                 print("error")

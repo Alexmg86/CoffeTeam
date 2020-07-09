@@ -23,8 +23,12 @@ class OrderViewController: MainTableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadItems), name: NSNotification.Name(rawValue: "reloadItems"), object: nil)
     }
 
-    @objc private func reloadItems(notification: NSNotification){
-        checkItems(value: notification.object as Any)
+    @objc private func reloadItems(notification: NSNotification) {
+        if notification.object != nil {
+            checkItems(value: notification.object as Any)
+        } else {
+            loadItems(isNeedReload: true)
+        }
     }
 
     // MARK: - Table view data source
